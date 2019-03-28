@@ -51,7 +51,6 @@ Paytrek aşağıda belirtilen ödeme yöntemlerine sahiptir.
     gösterir.</sub>
 
 ## Direkt Ödeme
-![Checkout Form](https://sandbox.paytrek.com/static/images/Direct_Charge.png)
 
 1. Müşteri üye işyerine ait ödeme sayfasına yönlenir.
 2. Müşteri kart bilgilerini üye işyerinin ödeme sayfasında paylaşır.
@@ -62,7 +61,6 @@ Paytrek aşağıda belirtilen ödeme yöntemlerine sahiptir.
 6. Ödeme işleminin sonucu üye işyerine cevap olarak dönülür.
 
 ## Kart Saklama ile Ödeme
-![Tokenization](https://sandbox.paytrek.com/static/images/Tokenization_Flow.png)
 
 1. Müşteri üye işyerine ait ödeme sayfasına yönlenir.
 2. Müşteri kart bilgilerini üye işyerinin ödeme sayfasında paylaşır
@@ -77,7 +75,6 @@ Paytrek aşağıda belirtilen ödeme yöntemlerine sahiptir.
 7. Ödeme işleminin sonucu üye işyerine cevap olarak dönülür.
 
 ## Ön Otorizasyon ile Ödeme
-![Pre-Authorization](https://sandbox.paytrek.com/static/images/Pre-Authorization.png)
 
 1. Müşteri üye işyerine ait ödeme sayfasına yönlenir.
 2. Müşteri kart bilgilerini üye işyerinin ödeme sayfasında paylaşır
@@ -178,9 +175,9 @@ desteklemektedir.
     Müşteri 3D işlemini başarılı bir şekilde tamamlayabilir ya da satışı 3D aşamasında
     bırakıp satışı tamamlamamayı tercih edebilir. İki durumda da paytrek tarafından üye
     işyerine işlem bilgili cevap olarak dönülür.
-11. Müşteri üye işyerinin sayfasına yönlendirilir.  [[3]](#)
+11. Müşteri üye işyerinin sayfasına yönlendirilir*.
 
-<sub> * [3] Paytrek üye işyeri tarafından Sale Kaynağına istekte bulunurken,
+<sub> * Paytrek üye işyeri tarafından Sale Kaynağına istekte bulunurken,
     paylaşmış olduğu `return_url` adresine müşteriyi yönlendirir. İlgili istek
     içerisinde `return_url` bulunmuyor ise müşteri, üye işyerinin kullanıcı bilgileri
     oluşturulurken vermiş olduğu url bilgisine yönlendirilir.</sub>
@@ -196,7 +193,7 @@ Paytrek tarafına iletilen tüm istekler basit kimlik doğrulama yöntemi
 kullanılarak gönderilmelidir [Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication).
 
 API isteği yapabilmek için bir kullanıcı adı(api_key) ve parola(secret) bilgisine sahip
-değilseniz lütfen https://sandbox.paytrek.com/sandbox/signup adresinden kayıt olunuz.
+değilseniz lütfen [https://sandbox.paytrek.com/sandbox/signup](https://sandbox.paytrek.com/sandbox/signup) adresinden kayıt olunuz.
 
 Kullanıcı adı(api_key) ve parola(secret) bilgileriniz [Hesap Bilgileri](https://sandbox.paytrek.com/dashboard/account_info/)
 sayfasında yer almaktadır.
