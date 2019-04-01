@@ -1168,7 +1168,7 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 | billing_phone | string, zorunlu | Müşterinin fatura telfon numarası.|
 | sale_data | object | Satışa ait ekstra bilgi alanı|
 
-# Vault
+# Kart Saklama
 
 Paytrek, müşterinizin PAN verilerini Paytrek'in güvenli kasasında saklamanıza olanak tanır.
 Bu endpointi kullanarak, Kredi kartı verilerini sadece müşterilerinizden yalnızca
@@ -1182,7 +1182,7 @@ bir kez almanız gerekecek ve istediğiniz zaman ödeme işlemi için aynı veri
 İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
 e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
 
-## Vault Card
+## Kart Saklama İşlemi
 
 > Request Headers
 
@@ -1247,7 +1247,7 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 | card_holder_name | string, zorunlu | Kart üzerindeki isim.|
 | card_label | string |  Kart alan adı.|
 
-## Vault Edilen Kartı Görüntüleme
+## Saklanan Kartı Görüntüleme
 
 > Request Headers
 
@@ -1296,7 +1296,7 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 |:-|:-|
 | card_token | Vault edilen karta ait kart token'ı |
 
-## Vault Edilen Kartları Listeleme
+## Saklanan Kartları Listeleme
 
 > Request Headers
 
@@ -1368,7 +1368,7 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 |card_user_id | opsiyonel | Kart kullanıcısın idsi (Vault oluştururken bu değer belirlenebilir)|
 |card_label | opsiyonel | Kart etiketi|
 
-## Vault Edilen Kartı Silme
+## Saklanan Kartı Silme
 
 > Request Headers
 
