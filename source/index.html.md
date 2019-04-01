@@ -1132,7 +1132,7 @@ edilir.
 Bir ödeme işlemi yapılırken kullanılan kartın tekrardan kullanımı için saklanmasını
 istiyorsanız `save_card` parametresini `true` olarak belirlemeniz gerekir.
 Bu parametre `true` olacak şekilde istek yapıldığında kart vault edilerek saklanır
-ve cevap içerisinde `card_token` parametresi dönülür. [Charge with token](#kart-saklama-ile-odeme-2).
+ve cevap içerisinde `card_token` parametresi dönülür. [Charge with token](#satis).
 
 | İstek Türü | Kaynak(Endpoint) |
 |:-:|:-:|
