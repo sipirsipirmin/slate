@@ -1,264 +1,227 @@
-# <a href='#paytrek' style='color: white; text-decoration: none; color:#7ccfaf' > Giriş</a>
+# <a href='#paytrek' style='color: white; text-decoration: none; color:#7ccfaf' > Paytrek</a>
 
-Paytrek PCI DSS Seviye 1, en yüksek seviye kart sahibi bilgi güvenliği,
-sertifikası ile 100'den fazla ülkede yasal kurulum gereksinimleri ücretsiz,
-kullanımı ve entegrasyonu kolay bir ödeme sistemi hizmeti sunmaktadır.
+Paytrek creates the ability to process transactions in more than
+100 countries as well as ensuring the
+highest-level cardholder information safety with its PCI DSS Level 1
+certification. Paytrek introduces a payment system that is easy-to-use
+and free of pricey legal installation requirements.
 
-# Ödeme Akışı
+# Payment Flows
 
-Hızlı ve kolay entegrasyon için aşağıdaki ödeme akışları önerilmektedir.
+Following payment flows are suggested ones for easy-to-use integrations.
 
-Paytrek ödeme sistemi kullanabilmeniz için öncelikle onaylanmış bir üye
-işyeri hesabına sahip olmanız gerekir.
-API isteğinde bulunabilmek için kullanıcı adı ve parolanız bulunmuyor
-ise lütfen [https://sandbox.paytrek.com/sandbox/signup](https://sandbox.paytrek.com/sandbox/signup) adresine
-giderek kullanıcınızı oluşturun. Paytrek entegrasyonunuzu
-tamamladıktan sonra takımımız sizinle canlı ortam
-bilgileri paylaşılacaktır.
+In order to be able to use Paytrek you must be a valid merchant.
+If you don’t have a username and password to use in the API calls,
+please sign up at [https://sandbox.paytrek.com/sandbox/signup](https://sandbox.paytrek.com/sandbox/signup)
+Once your integration is fully completed Paytrek Integration
+Team will provide the live credentials.
 
-Paytrek aşağıda belirtilen ödeme yöntemlerine sahiptir.
+Paytrek provides you following ways to integrate:
 
-+ Paytrek Ortak Ödeme Formu
-+ Direkt Ödeme
-+ Kart Saklama ile Ödeme
-+ Ön Otorizasyon ile Ödeme
++ Paytrek Hosted Payment Form
++ Direct Charge
++ Tokenization Flow
++ Pre-Authorization Flow
 
-## Paytrek Ortak Ödeme Formu
+## Paytrek Hosted Payment Flow
 
-1. Müşteri üye iş yerinin web sitesinde bir sipariş verir.
-2. Üye işyeri Paytrek'e [Sale](#satis-sale) Kaynağını kullanarak token isteğinde bulunur.
-3. Tarafımızdan üye işyerine `sale_token` bilgisi cevap olarak verilir.
-4. Üye işyeri müşterisini yukarıdaki token aracılığıyla ödeme sayfasına yönlendirir. [1]
-5. Müşteri ortak ödeme sayfasında ödeme için gereken bilgileri doldurur.
-6. Paytrek ödeme işlemini gerçekleştirir.
-7. Paytrek müşterinin girdiği bilgiler doğrultusunda ödemeyi gerçekleştirdiği istemciden
-    bilgileri alır.
-8. İşlem gerçekleştikten sonra muşteri ilgili üye işyerinin sayfasına `sale_token` ile yönlendirilir. [2]
+1. The customer submits an order on merchant web site.
+2. Merchant requests a token from Paytrek via the [Sale](#sale) Resource.
+3. Paytrek returns the merchant a `sale_token`.
+4. Merchant redirects the customer to checkout form on Paytrek with the token[1].
+5. Customer enters card data on Paytrek Hosted Form.
+6. Paytrek processes the payment.
+7. Paytrek receives a response from the related processor.
+8. Paytrek redirects the customer to your web site with the `sale_token`[2].
 
 
-<sub> * [1, 2] Sandbox ortak ödeme formu
-    [https://sandbox.paytrek.com](https://sandbox.paytrek.com), Production ortak ödeme sayfası ise
-    [https://secure.paytrek.com](https://secure.paytrek.com) da yer alır.
-    Üye işyeri yönlendirme yaparken bu URL'lerin sonuna `sale_token` bilgisi
-    ekleyerek ilgili ortamlarda bu sayfalara yönlendirme yapması gerekmektedir.
-    (ie. [https://sandbox.paytrek.com/?token=TOKEN_VALUE](https://sandbox.paytrek.com/?token=TOKEN_VALUE))</sub>
+<sub> * [1] Sandbox hosted form is located at
+    https://sandbox.paytrek.com and Production hosted form
+    is located at https://secure.paytrek.com.
+    You should redirect the user to these urls with
+    the token parameter added to the url.
+    (ie. https://sandbox.paytrek.com/?token=TOKEN_VALUE)</sub>
 
-<sub> * [1, 2] Ortak ödeme sayfasında müşteri
-    işlemi gerçekleştirdikten sonra Paytrek tarafından üye iş yeri sayfasına yönlendirilir
-    Bu esnada üye işyeri Sale Kaynağını kullanarak satışın durumunu sorgulamalıdır.
-    Satışın durumu  **Paid**, **Ready to Send**,
-    **Authorized** veya **PreAuthorized** ise bu satışın başarılı bir şekilde gerçekleştiğini
-    gösterir.</sub>
+<sub> * [2] You must check the status of the sale via Sale
+    Resource once the customer lands to your web site.
+    If the sale status is one of **Paid**, **Ready to Send**,
+    **Authorized** and **PreAuthorized** it means the sale has been
+    successfully charged.</sub>
 
-## Direkt Ödeme
+## Direct Charge
 
-1. Müşteri üye işyerine ait ödeme sayfasına yönlenir.
-2. Müşteri kart bilgilerini üye işyerinin ödeme sayfasında paylaşır.
-3. Üye işyeri [Direct Charge](#direkt-odeme-2) Kaynağını kullanarak
-   müşteriden aldığı bilgilerle ödeme işlemi için Paytrek'e istekte bulunur.
-4. Paytrek üye işyerinden gelen isteği karşılar.
-5. Paytrek ödemeyi gerçekleştirmek üzere ilgili istemciye istekte bulunur.
-6. Ödeme işleminin sonucu üye işyerine cevap olarak dönülür.
+1. The customer checks out on your web site.
+2. Customer enters card data on your web site.
+3. You charge on Paytrek via the [Direct Charge](#direct-charge) Resource.
+4. Paytrek processes the payment.
+5. Paytrek receives a response from the related processor.
+6. Paytrek returns you a response with the payment result.
 
-## Kart Saklama ile Ödeme
+## Tokenization Flow
 
-1. Müşteri üye işyerine ait ödeme sayfasına yönlenir.
-2. Müşteri kart bilgilerini üye işyerinin ödeme sayfasında paylaşır
-   ve üye iş yeri PaytrekJS aracılığıyla `Create Card Token` kullanarak,
-   kart bilgilerini tokenize eder.
-3. Üye iş yeri bu kart token'ı kaydettikten sonra [Sale](#satis) Kaynağını kullanarak
-   satış oluşturur.
-4. Üye işyeri ilgili `card_token` ve `sale_token` kullanarak [Charge with Card Token](#kart-saklama-ile-odeme-2) Kaynağına
-   istekte bulunur.
-5. Paytrek üye işyerinden gelen isteği karşılar.
-6. Paytrek ödemeyi gerçekleştirmek üzere ilgili istemciye istekte bulunur.
-7. Ödeme işleminin sonucu üye işyerine cevap olarak dönülür.
+1. The customer checks out on your web site.
+2. Customer enters card data on your form and and you make a call to `Create Card Token` with PaytrekJS.
+3. You save the card token and create a sale via [Sale](#sale) Resource.
+4. You make a call to [Charge with Card Token](#charge-with-token) Resource with card token and sale token.
+5. Paytrek processes the payment.
+6. Paytrek receives a response from the related processor.
+7. Paytrek returns you a response with the payment result.
 
-## Ön Otorizasyon ile Ödeme
+## Pre-Authorization
 
-1. Müşteri üye işyerine ait ödeme sayfasına yönlenir.
-2. Müşteri kart bilgilerini üye işyerinin ödeme sayfasında paylaşır
-   ve üye işyeri [Direct Charge](#direkt-odeme-2) Kaynağına
-   `pre_auth` parametresini `true` olacak şekilde gönderir (`pre_auth:true`).
-3. Üye iş yeri ```sale_token``` kullanarak [Capture](#capture) Kaynağına
-   istekte bulunur.
-4. Paytrek üye işyerinden gelen isteği karşılar.
-5. Paytrek ödemeyi gerçekleştirmek üzere ilgili istemciye istekte bulunur.
-6. Ödeme işleminin sonucu üye işyerine cevap olarak dönülür.
-
+1. The customer checks out on your web site.
+2. Customer enters card data on your form and you make a call to [Direct Charge](#direct-charge) Resource with `pre_auth: true` option.
+3. You make a call to [Capture](#capture) endpoint with ```sale_token```.
+4. Paytrek processes the payment.
+5. Paytrek receives a response from the related processor.
+6. Paytrek returns you a response with the payment result.
 
 
 # 3D Transactions
-Üye işyeri ve/veya müşteri ödeme işleminin MasterCard veya Visa
-tarafından sağlanan 3D güvenli ödeme işlemi olarak yapılmasını talep
-edebilir. Bu bağlamda Paytrek 3D ödeme işlemini tüm ödeme akışlarına
-desteklemektedir.
+You or your customers may choose a charge to be processed
+through 3D secure systems provided by MasterCard or Visa.
+In this case, Paytrek handles 3D transactions both on Hosted Form
+and Tokenization Flow.
 
-Üye işyeri 3D güvenli ödeme işlemi gerçekleştirmek için bulunduğu isteklerin içerisine ```secure_option``` parametresini ```true``` olarak eklemelidir (```secure_option:true```).
+When you choose a charge to be processed through 3D secure system, your API request
+must include ```secure_option``` parameter with `true` variable.
 
-## Paytrek Ortak Ödeme ile 3D Güvenli Ödeme İşlemi
+## 3D Transactions on Paytrek Hosted Payment Form
 
-1. Müşteri üye işyerine ait ödeme sayfasına yönlenir.
-2. Üye işyeri [Sale](#satis) Kaynağını kullanarak satış oluşturur.
-3. Paytrek tarafından üye işyerine `sale_token` bilgili cevap olarak dönülür.
-4. Üye işyeri `sale_token` bilgisi kullanarak müşterisini ortak ödeme sayfasına
-   yönlendirir. [1]
-5. Müşteri ortak ödeme sayfasında kart bilgilerini paylaşır.
-6. Paytrek tarafında 3D güvenli ödeme işlemi başlatılır ve müşteri karta ait
-   istemcinin 3D güvenli ödeme sayfasına yönlendirilir.
-7. Müşteri 3D ödeme işlemini gerçekleştirmek üzere PIN girişi yapar.
-8. Müşteri 3D ödeme sayfasından Paytrek sayfasına yönlendirilir.
-9. Paytrek ödeme işlemini 3D güvenli ödeme işlemi sonucuna göre işler. Bu bağlamda
-   Müşteri 3D işlemini başarılı bir şekilde tamamlayabilir ya da satışı 3D aşamasında
-   bırakıp satışı tamamlamamayı tercih edebilir. İki durumda da paytrek tarafından üye
-   işyerine işlem bilgili cevap olarak dönülür.
-10. Müşteri üye işyerinin sayfasına `sale_token` bilgisi ile yönlendirilir. [2]
+1. The customer checks out on your web site.
+2. You request a token from Paytrek via the [Sale](#sale) Resource.
+3. Paytrek returns you a `sale_token`.
+4. Redirect your customer to hosted form on Paytrek with the `sale_token`. [1]
+5. Customer enters card data.
+6. Paytrek starts a 3D transaction, redirects the customer to 3D secure system.
+7. Customer enters the PIN on the 3D secure system.
+8. 3D Secure system redirects the customer back to Paytrek.
+9. Paytrek processes the payment if 3D secure result is a success or halts the process if 3D secure result is failure.
+10. Paytrek redirects the customer to your web site with the `sale_token`. [2]
 
-<sub> * [1, 2] Sandbox ortak ödeme formu
-    https://sandbox.paytrek.com, Production ortak ödeme sayfası ise
-    https://secure.paytrek.com da yer alır.
-    Üye işyeri yönlendirme yaparken bu URL'lerin sonuna `sale_token` bilgisi
-    ekleyerek ilgili ortamlarda bu sayfalara yönlendirme yapması gerekmektedir.
-    (ie. https://sandbox.paytrek.com/?token=TOKEN_VALUE)</sub>
+<sub> * [1] Sandbox hosted form is located at
+    [https://sandbox.paytrek.com](https://sandbox.paytrek.com) and Production hosted form
+    is located at [https://secure.paytrek.com](https://secure.paytrek.com).
+    You should redirect the user to these urls with
+    the token parameter added to the url.
+    (ie. [https://sandbox.paytrek.com/?token=TOKEN_VALUE](https://sandbox.paytrek.com/?token=TOKEN_VALUE)))</sub>
 
-<sub> * [1, 2] Ortak ödeme sayfasında müşteri
-    işlemi gerçekleştirdikten sonra Paytrek tarafından üye iş yeri sayfasına yönlendirilir
-    Bu esnada üye işyeri Sale Kaynağını kullanarak satışın durumunu sorgulamalıdır.
-    Satışın durumu  **Paid**, **Ready to Send**,
-    **Authorized** veya **PreAuthorized** ise bu satışın başarılı bir şekilde gerçekleştiğini
-    gösterir.</sub>
+<sub> * [2] You must check the status of the sale via Sale
+    Resource once the customer lands to your web site.
+    If the sale status is one of **Paid**, **Ready to Send**,
+    **Authorized** and **PreAuthorized** it means the sale has been
+    successfully charged.</sub>
 
-## Direkt Ödeme ile 3D Güvenli Ödeme İşlemi
+## 3D Transactions on Direct Charge Flow
 
-1. Müşteri üye işyerine ait ödeme sayfasına yönlenir.
-2. Müşteri kart bilgilerini üye işyerinin ödeme sayfasında paylaşır.
-3. Üye işyeri [Direct Charge](#direkt-odeme-2) Kaynağını kullanarak
-   müşteriden aldığı bilgilerle ödeme işlemi için Paytrek'e istekte bulunur.
-4. Paytrek bu isteğe cevap olarak müşterinin 3D güvenli bilgilerini gireceği
-   `forward_url` bilgisini üye işyeri ile paylaşır.
-5. Üye işyeri müşterisini ilgi `forward_url` e yönlendirir.
-6. Müşteri bu forward url aracılığıyla 3D güvenli ödeme sayfasına yönlenir.
-7. Müşteri 3D güvenli ödemeyi gerçekleştirmek için PIN bilgilerini girer.
-8. 3D güvenli ödeme sayfasının başarılı bir şekilde tamamlanması sonucunda
-    müşteri Paytrek'e yönlendirilir.
-9. Paytrek ödeme işlemini 3D güvenli ödeme işlemi sonucuna göre işler. Bu bağlamda
-   Müşteri 3D işlemini başarılı bir şekilde tamamlayabilir ya da satışı 3D aşamasında
-   bırakıp satışı tamamlamamayı tercih edebilir. İki durumda da paytrek tarafından üye
-   işyerine işlem bilgili cevap olarak dönülür.
-10. Müşteri üye işyerinin sayfasına yönlendirilir. [1]
+1. The customer checks out on your web site.
+2. Customer enters card data on your web site.
+3. You charge on Paytrek via the [Direct Charge](#direct-charge) Resource.
+4. Paytrek returns you a response with a field `forward_url`.
+6. You redirect the customer to the given `forward_url`.
+7. Customer is redirected to Paytrek and Paytrek redirects the customer to 3D secure system.
+8. Customer enters the PIN on the 3D secure system.
+9. 3D Secure system redirects the customer back to Paytrek.
+10. Paytrek processes the payment if 3D secure result is a success or halts the process if 3D secure result is failure.
+11. Paytrek redirects the customer to your web site. [1]
 
 
-<sub> * [1] Paytrek üye işyeri tarafından Sale Kaynağına istekte bulunurken,
-    paylaşmış olduğu `return_url` adresine müşteriyi yönlendirir. İlgili istek
-    içerisinde `return_url` bulunmuyor ise müşteri, üye işyerinin kullanıcı bilgileri
-    oluşturulurken vermiş olduğu url bilgisine yönlendirilir.</sub>
+<sub> * [3] Paytrek redirects the customer to the given
+    `return_url` field when creating a new sale via Sale Resource.</sub>
 
 
-## Kart Saklama ile 3D Güvenli Ödeme İşlemi
+## 3D Transactions on Tokenization Flow
 
-1. Müşteri üye işyerine ait ödeme sayfasına yönlenir.
-2. Müşteri kart bilgilerini üye işyerinin ödeme sayfasında paylaşır
-   ve üye iş yeri PaytrekJS aracılığıyla `Create Card Token` kullanarak,
-   kart bilgilerini tokenize eder.
-3. Üye iş yeri bu kart token'ı kaydettikten sonra [Sale](#satis) Kaynağını kullanarak
-   satış oluşturur.
-4. Üye işyeri ilgili `card_token` ve `sale_token` kullanarak [Charge with Card Token](#kart-saklama-ile-odeme-2) Kaynağına
-   istekte bulunur.
-5. Paytrek bu isteğe cevap olarak müşterinin 3D güvenli bilgilerini gireceği
-   `forward_url` bilgisini üye işyeri ile paylaşır.
-6. Üye işyeri müşterisini ilgi `forward_url` e yönlendirir.
-7. Müşteri bu forward url aracılığıyla 3D güvenli ödeme sayfasına yönlenir.
-8. Müşteri 3D güvenli ödemeyi gerçekleştirmek için PIN bilgilerini girer.
-9. 3D güvenli ödeme sayfasının başarılı bir şekilde tamamlanması sonucunda
-    müşteri Paytrek'e yönlendirilir.
-10. Paytrek ödeme işlemini 3D güvenli ödeme işlemi sonucuna göre işler. Bu bağlamda
-    Müşteri 3D işlemini başarılı bir şekilde tamamlayabilir ya da satışı 3D aşamasında
-    bırakıp satışı tamamlamamayı tercih edebilir. İki durumda da paytrek tarafından üye
-    işyerine işlem bilgili cevap olarak dönülür.
-11. Müşteri üye işyerinin sayfasına yönlendirilir*.
+1. The customer checks out on your web site.
+2. Customer enters card data on your form and and you make a call to `Create Card Token` with PaytrekJS.
+3. You save the `card_token` and create a sale via [Sale Resource](#sale).
+4. You send a request to [Charge with Card Token Resource](#charge_with_token)  with the `card_token` you obtained and the sale you have created.
+5. Paytrek returns you a response with a field `forward_url`.
+6. You redirect the customer to the given `forward_url`.
+7. Customer is redirected to Paytrek and Paytrek redirects the customer to 3D secure system.
+8. Customer enters the PIN on the 3D secure system.
+9. 3D Secure system redirects the customer back to Paytrek.
+10. Paytrek processes the payment if 3D secure result is a success or halts the process if 3D secure result is failure.
+11. Paytrek redirects the customer to your web site. [[3]](#)
 
-<sub> * Paytrek üye işyeri tarafından Sale Kaynağına istekte bulunurken,
-    paylaşmış olduğu `return_url` adresine müşteriyi yönlendirir. İlgili istek
-    içerisinde `return_url` bulunmuyor ise müşteri, üye işyerinin kullanıcı bilgileri
-    oluşturulurken vermiş olduğu url bilgisine yönlendirilir.</sub>
+<sub> * [3] Paytrek redirects the customer to the given
+    return_url field when creating a new sale via Sale Resource.</sub>
 
 # Paytrek API
 
-Paytrek gateway API RESTful mimarisi esas alınarak en iyi endütriyel standartlara
-göre dizayn edilmiştir.
+Paytrek gateway API is designed with industry standard best practices,
+based on RESTful architecture.
 
-## Kimlik Doğrulama
 
-Paytrek tarafına iletilen tüm istekler basit kimlik doğrulama yöntemi
-kullanılarak gönderilmelidir [Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication).
+## Authentication
 
-API isteği yapabilmek için bir kullanıcı adı(api_key) ve parola(secret) bilgisine sahip
-değilseniz lütfen [https://sandbox.paytrek.com/sandbox/signup](https://sandbox.paytrek.com/sandbox/signup) adresinden kayıt olunuz.
+All requests must be authenticated using [Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication).
 
-Kullanıcı adı(api_key) ve parola(secret) bilgileriniz [Hesap Bilgileri](https://sandbox.paytrek.com/dashboard/account_info/)
-sayfasında yer almaktadır.
+If you don’t have a username(api_key) and password(secret) to use in the API calls,
+please sign up at [https://sandbox.paytrek.com/sandbox/signup](https://sandbox.paytrek.com/sandbox/signup).
+
+Your username(api_key) and password(secret) are located on [Account Info](https://sandbox.paytrek.com/dashboard/account_info/) page.
 
 ## Headers
 
-Tüm isteklerin headerları ```Content-Type: application/json``` içermelidir.
+All requests must include ```Content-Type: application/json```
 
 ## Endpoints
 
 
 | Resource      | Endpoint      | Allowed HTTP Methods |
 | ------------- |:-------------| :-----:|
-| [`Sale`](#satis)      | ```/api/v2/sale/``` | ```POST``` ```GET```|
-| [`Charge`](#odeme)      | ```/api/v2/charge/``` | ```POST``` |
-| [`Direct Charge`](#direkt-odeme-2)| ```/api/v2/direct_charge/``` | ```POST``` |
+| [`Sale`](#sale)      | ```/api/v2/sale/``` | ```POST``` ```GET```|
+| [`Charge`](#charge)      | ```/api/v2/charge/``` | ```POST``` |
+| [`Direct Charge`](#direct-charge)| ```/api/v2/direct_charge/``` | ```POST``` |
 | [`Vault`](#vault) | ```/api/v2/vault/``` | ```POST``` ```GET``` |
-| [`Charge With Token`](#kart-saklama-ile-odeme-2) | ```/api/v2/charge_with_token/``` | ```POST``` |
+| [`Charge With Token`](#charge-with-token) | ```/api/v2/charge_with_token/``` | ```POST``` |
 | [`Capture`](#capture) | ```/api/v2/capture/``` | ```POST``` |
-| [`Cancel`](#iptal) | ```/api/v2/cancel/``` | ```POST``` |
-| [`Refund`](#iade) | ```/api/v2/refund/``` | ```POST``` |
-| [`Installments`](#taksitler) | ```/api/v2/installments/``` | ```GET``` |
+| [`Cancel`](#cancel) | ```/api/v2/cancel/``` | ```POST``` |
+| [`Refund`](#refund) | ```/api/v2/refund/``` | ```POST``` |
+| [`Installments`](#installments) | ```/api/v2/installments/``` | ```GET``` |
 
 
-## Paytrek Ortamlarının URL'leri
+## Paytrek Environment URLs
 
 |||
 |:-|:-|
-|Sandbox (Test Ortamı) | [https://sandbox.paytrek.com](https://sandbox.paytrek.com)|
-|Canlı Ortam | [https://secure.paytrek.com.tr](https://secure.paytrek.com.tr)|
+|Sandbox (Test) | [https://sandbox.paytrek.com](https://sandbox.paytrek.com)|
+|Live Environment | [https://secure.paytrek.com.tr](https://secure.paytrek.com.tr)|
 
 
-# PaytrekJS Kütüphanesi
+# PaytrekJS Library
 
-PaytrekJS, Paytrek’e ait tokenization servisini müşteri tarafında bulunan
-uygulamanıza entegre etmenize yardımcı olacak küçük bir kütüphanedir.
-Bu bölümde bu kütüphaneyi inceleyeceğiz.
+PaytrekJS is a small library that will help you integrate Paytrek’s
+tokenization service with your client side application.
+In this section we are going to inspect this library.
 
+## Integrating PaytrekJS
 
-## PaytrekJS Entegrasyonu
+PaytrekJS does not interfere with your form submissions or event handlers.
+It only requires you to call it once everything you’d like to perform
+on your form’s onsubmit handler is done.
 
-PaytrekJS, form gönderimlerinizi veya etkinlik işleyicilerinizi etkilemez.
-Formunuzun onsubmit işleyicisinde gerçekleştirmek istediğiniz her işlemi bir
-kere çağırmanız yeterlidir.
-
-## PaytrekJS'yi Sitenize Dahil Etmek
+## Include PaytrekJS
 ```html
 <script type="text/javascript" src="https://secure.paytrek.com.tr/static/v2/js/paytrek.js"></script>
 ```
 
-> Paytrek Sandbox (Test Ortamı için), lütfen aşağıdaki şekilde sitenize dahil edin:
+> For Paytrek Sandbox, please include the following:
 
 ```html
 <script type="text/javascript" src="https://sandbox.paytrek.com/static/v2/js/paytrek.js"></script>
 ```
 
-PaytrekJS'i kullanabilmek için web sayfanıza eklemeniz gerekmektedir.
-Header veya footera ekleyebilirsiniz.
+In order to be able to use PaytrekJS you need to include it in your web page.
+You can either include it at the footer or the header.
 
-## PaytrekJS'yi Konfigüre Etme
+## Configuring PaytrekJS
 
-PaytrekJS, ayarlamanız gereken bazı yapılandırma seçeneklerine sahiptir.
-Seçenekler aşağıdaki gibi açıklanmıştır:
+PaytrekJS has some configuration options that you must set.
+The options are explained as follows:
 
-### PaytrekJS Ayarları
+### PaytrekJS Options
 
 > Aşağıda, PaytrekJS yi nasıl yerleştirebileceğinizi gösteren bir kod örneği verilmiştir.
 
@@ -290,26 +253,31 @@ form.addEventListener("submit", function(event) {
     });
 });
 ```
-| Değişken Adı| Açıklama |
-|:-|:-|
-|publishableKey| string Paytrek Dashboard üzerinden aldığınız publishable key bilgisi|
-|host| string İstekte bulunacağınız paytrek istemci bilgileri. Canlı ortam için host bilgisi secure.paytrek.com.tr test ortamı içinse sandbox.paytrek.com host bilgisi olarak kullanılabilir.
-|orderId| string Satış oluştururken kullanacağınız sipariş id bilgisi.Sipariş idsi her bir satış için tekil olmalıdır.|
-|currency| string Para biriminin ISO kodu formatı (ie: TRY, USD, EUR)|
-|amount| string Satışa ait tutar bilgisi. (ie: 23.99)|
-|removeCardElements| true ya da false. Paytrek Form'un bir token aldıktan sonra kredi kartıyla ilgili tüm öğeleri formunuzdan kaldırması gerekip gerekmediği kararı.|
-|resetCardElementValues| true or false. Paytrek Form'un bir kart belirteci aldıktan sonra kredi kartıyla ilgili tüm öğelerin değerini boş bir dizeye sıfırlayıp sıfırlamaması kararı.|
-|cardTokenField| string Paytrekten alınacak payment tokenın yazılabileceği hidden input alanının idsi.|
-|useVaultField| string Ödeme işlemi yapıldıktan sonra kartın kaydedilip kaydedilmeyeceğine karar verilen checkbox alanının idsi|
 
-PaytrekJS, iki temel bileşenden oluşur:
+| Parameter| Description |
+|:-|:-|
+|publishableKey|string The publishable key that you’ve obtained from Paytrek Dashboard.|
+|host|string Paytrek host that you are going to make the request. You need to use the secure.paytrek.com.tr host otherwise you have to use the secure.paytrek.com host.|
+|orderId|string The order id for the sale that you will use when creating a sale. Order ids must be unique for each sale.|
+|currency|string The 3 letter currency symbol for the sale. (ie: TRY, USD, EUR)|
+|amount|string The amount of the sale. (ie: 23.99)|
+|dccEnabled|true or false Whether you wish to enable listing dynamic currency options.|
+|removeCardElements|true or false. Whether Paytrek.Form should remove all credit card related elements from your form after obtaining a payment token.|
+|resetCardElementValues|true or false. Whether Paytrek.Form should reset all credit card related elements’ value to an empty string after obtaining a card token.|
+|cardTokenField|string. Id of the hidden input field of which value will be set to the payment token after obtaining it.|
+|useVaultField|string Id of the checkbox field of which value will be checked if the customer wanted their card data to be stored.|
+
+The following is a code sample to show you how you can embed PaytrekJS in
+your form submissions.
+
+PaytrekJS consists of two components that we will cover:
 
 ## Paytrek.Form
 
-Bu sınıf dosyası, ödeme formunuza bir JavaScript nesnesi eşlemesidir. Sınıfın özelliklerine göre
-Kredi kartı numaranızı, cvv, son kullanma tarihi ve kart sahibinin adı alanlarını eşler.
+This class file is a JavaScript object mapping to your checkout form. It will map your credit card number, cvc,
+expiration date and card holder name fields to its own properties.
 
-### Yapı
+### Constructor
 
 ```javascript
 // creating a Paytrek.Form object with an id
@@ -322,22 +290,22 @@ var paytrekForm = new Paytrek.Form(document.getElementById("myFormId"));
 var paytrekForm = new Paytrek.Form(document.forms[0]);
 ```
 
-Formunuzun id niteliğini veya form öğesinin kendisini sağlayarak Paytrek.Form sınıfını başlatabilirsiniz.
-İsteğinize göre form objesini ve objenin ilişkilendiği satış bilgilerini konfigüre edebilirsiniz.
+You can instantiate Paytrek.Form class by providing your form’s id attribute or the form element itself,
+an optional configuration object and an object related to sale information.
+
+If the constructor cannot find the form, it will throw an Error.
 
 
-Form bulunamaz ise ilgili öğe tarafından hata fırlatılır.
+### Sale Data Object
 
-### Sale Data Objesi
+Sale Data is an object that holds the minimum information
+regarding a sale that you will create after obtaining a card token.
+These are the data that you know beforehand creating a card token or
+sale such as the sale’s order id, sale’s amount and currency.
 
-Sale Data objesi bir card token oluşturulurken satışa ait asgari
-verinin tutulduğu objedir.
-Bu verilerden bazıları card token oluşturulurken halihazırda bildiğiniz satışa
-ait sipariş numarası, sipariş tutarı, para birimi gibi bilgilerdir.
+All the data that will be sent through sale data must be converted to string.
 
-Satış verileriyle gönderilecek tüm veriler string formatına dönüştürülmelidir.
-
-### Kart Token Oluşturma
+### Creating Card Token
 
 ```javascript
 paytrekForm.createToken(function(response){
@@ -346,17 +314,16 @@ paytrekForm.createToken(function(response){
 });
 ```
 
-Bir Paytrek.Form örneğiniz hazır olduğunda
-Kart belirteci almak için yapmanız gereken
-tek şey, `createToken ()` yöntemini çağırmaktır.
+Once you have a Paytrek.Form instance ready,
+all you have to do is to call the `createToken()` method on your
+instance in order to obtain a card token.
 
-`createToken ()` yöntemi tek bir argüman alır:
-Bu argüman Paytrek API tarafından callback fonksiyonu olarak
-dönülen ilk cevaptır.
+`createToken()` method takes only one argument:
+A callback function as an argument of which the first
+argument is the response returned from the Paytrek API.
 
 
-
-### Kart Token Cevabı
+### Card Token Response
 
 ```javascript
 paytrekForm.createToken(function(response){
@@ -368,32 +335,31 @@ paytrekForm.createToken(function(response){
 });
 ```
 
-Paytrek Tokenization API'nin döndürdüğü HTTP yanıtı her zaman
-JSON formatında olur.
-`Card_token` veya `error` anahtarlarına  sahip olacaktır.
+The HTTP response that Paytrek Tokenization API returns will always
+be in JSON format. It will have either `card_token` or `errors` keys.
 
-### Form Elementleri
-> Form Örneği;
+### Form Elements
+> Example
 
 ```html
 <form id="checkout">
    <input id="payment_token" name="payment_token" value="" />
    <div>
-     <label for="number">Kredi Kartı Numarası:</label>
+     <label for="number">Credit Card Number:</label>
      <input id="number" data-paytrek-field="number" />
    </div>
    <div>
-     <label for="chname">Kart Sahibi İsmi:</label>
+     <label for="chname">Card Holder Name:</label>
      <input id="chname" data-paytrek-field="card-holder-name" />
    </div>
    <div>
-     <label for="expmonth">Son Kullanım Ayı:</label>
+     <label for="expmonth">Expiration Month:</label>
      <select id="expmonth" data-paytrek-field="expiration-month">
        <option>1..12</option>
      </select>
    </div>
    <div>
-     <label for="expyear">Son Kullanım Yılı:</label>
+     <label for="expyear">Expiration Year:</label>
      <select id="expyear" data-paytrek-field="expiration-year">
        <option>2014..2020</option>
      </select>
@@ -401,11 +367,10 @@ JSON formatında olur.
 </form>
 ```
 
-Yeni bir Paytrek.Form nesnesi oluşturduktan sonra,
-form öğenizin altındaki bir özelliğe sahip tüm düğümlere
-“data-paytrek-field” denir.
-
-Yan panelde data-paytrek-field niteliğine sahip alanlara sahip form örneği yer almaktadır.
+Once you create a new Paytrek.Form object, it will search for all the
+nodes under your form element that have an attribute
+called “data-paytrek-field”. There is an example of a
+form with fields having data-paytrek-field attribute in left panel.
 
 ## Paytrek.CreditCard
 
@@ -419,16 +384,15 @@ var creditCard = new Paytrek.CreditCard(
 );
 ```
 
-Bu sınıf, kredi kartı ile ilgilenen bir JavaScript sınıfıdır.
-API isteği yapmadan önce kart verilerinin doğrulaması bu sınıf aracılığıyla yapılır.
+This is a JavaScript class that takes care of the credit
+card data and its validation before making an actual API request.
 
-### Yapı
+### Constructor
 
-Paytrek.CreditCard’ın ilgili öğesi, aşağıdaki sırayla 5 argüman alır:
-Kredi kartı numarası, cvc, son kullanma tarihi, son kullanma tarihi, kart sahibinin adı.
+Paytrek.CreditCard’s constructor takes 5 arguments in the following order:
+credit card number, cvc, expiration month, expiration year, card holder name.
 
-
-### Validasyonlar
+### Validations
 
 ```javascript
 if (creditCard.isValid()) {
@@ -439,33 +403,38 @@ if (creditCard.isValid()) {
 }
 ```
 
-Sahip olduğunuz kredi kartı örneğini doğrulayabilirsiniz.
-Paytrek.CreditCard sınıfı Kredi kartı numarası, cvc, son
-kullanma tarihi ve kart sahibinin adı bilgilerinin geçerliliğini
-sorgular.
+You can validate the credit card instance you have.
+Paytrek.CreditCard class supports validating
+credit card number, cvc, expiration date and the card holder name.
 
-Aşağıdakiler Paytrek.CreditCard'ın sağladığı yöntemlerin listesidir.
+The following are the list of methods that Paytrek.CreditCard provides.
 
-| Yöntem Adı| Açıklama |
+| Method Name| explanation  |
 |:-|:-|
-| isCvcValid() | CVC nin geçerliliğini sorgular.|
-| isCardNumberValid() | Kredi Kartı numarasının nin geçerliliğini sorgular.|
-| isdExpirationDateValid() | Son Kullanım tarihinin geçerliliğini sorgular.|
-| isCardHolderNameValid() | Kart sahibinin adının geçerliliğini sorgular.|
+|isCvcValid()| Validates the cvc.|
+|isCardNumberValid()| Validates the credit card number.|
+|isdExpirationDateValid()| Validates the expiration date.|
+|isCardHolderNameValid()| Validates the card holder name.|
 
-Yukarıdaki tüm yöntemleri çağırmak zorunda değilsiniz.
-Bir kredi kartı nesnesini doğrulamak için sadece isValid () yöntemini
-çağırmanız yeterlidir.
+You don’t have to call all of the methods above
+in order to validate a credit card object. You can just call the
+isValid() method.
 
-## Ödeme Seçenekleri
 
-PaytrekJS, her satış için kart tipi ücretlendirmelerini görebileceğiniz
-bir başka özelliğe daha sahiptir. Bu özelliğin kullanımı için
-Paytrek hesap yöneticinizle irtibata geçiniz.
+## Payment Options
 
-### Kart Tipi Ücretlendirmeleri
+PaytrekJS provides two more nice features which are card type fees
+and dynamic currency options per sale.
+Please seek advice from your Paytrek Account
+Representative whether your current subscription type supports these features.
 
-> Kart tipi ücretlendirmeleri için örnek kullanım;
+### Card Type Fees
+
+As Paytrek lets you set up fees per card type of your customers, PaytrekJS
+also lets you see and update the costs on the fly on your payment form.
+
+### Dynamic Currencies
+> Example;
 
 ```javascript
 paytrekForm.getPaymentOptions(function(response) {
@@ -482,26 +451,25 @@ paytrekForm.getPaymentOptions(function(response) {
 });
 ```
 
-Paytrek, PaytrekJs aracılığıyla müşterilerinizin kart türü başına ücretlerini
-ayarlamanıza ayrıca ödeme şeklinizdeki masrafları anında görmenize ve güncellemenize
-izin verir.
+Paytrek lets your customers to make payments in their own currencies.
+A nice, enabling feature of PaytrekJS is that it lets you do the same
+for your customers in your own payment pages.
+If you set dccEnabled property of Paytrek.Options to true,
+while creating a card token PaytrekJS will also return a
+list of available currencies. You can then display this list of
+available currencies in your card form and satisfy your customers.
 
 ## Paytrek.Checkout
 
-Paytrek.Checkout widget ile Web sitenize gömülü ödeme
-formunu inanılmaz derecede kolay şekilde entegre edebilirsiniz.
+Paytrek.Checkout widget allows you to integrate
+embedded checkout form on your web site incredibly easy.
+This widget will redirect the customer to the given
+`return_url`. In this `return_url`, you must query the status of
+the sale via [Sale Resource](#sale).
+If the sale status is one of **Paid**, **Ready to Send**, **Authorized** and
+**PreAuthorized** it means the sale has been successfully charged.
 
-Bu widget müşteriyi verilen `return_url` [1](#) e yönlendirecektir.
-Bu `return_url` e müşteri ödeme işlemi gerçekleştirdikten sonra `sale_token` ile
-yönlendirilecektir,
-Bu adımdan sonra `sale_token` kullanılarak [Sale Resource](#satis) üzerinden
-üye işyeri satışın son durumunu sorgulayabilir.
-
-Satışın durumu  **Paid**, **Ready to Send**,
-    **Authorized** veya **PreAuthorized** ise bu satışın başarılı bir şekilde gerçekleştiğini
-    gösterir.</sub>
-
-### Yapı
+### Constructor
 
 ```javascript
 function Checkout(saleData, options) {
@@ -509,10 +477,9 @@ function Checkout(saleData, options) {
 }
 ```
 
-Paytrek.Checkout öğesi `saleData` ve `options` olmak üzere
-iki parametre ile çalışmaktadır.Bu iki parametre de JavaScript Hash olarak
-tutulur. Sale Data içerisinde yer alan keyler Sale Kaynağına gönderilecek
-argümanları oluşturur.
+Paytrek.Checkout constructor takes two arguments, named
+saleData and options. Both saleData and options arguments
+are JavaScript Hashes. Keys for saleData argument are the fields for Sale Resource.
 
 ### Constructor Options
 
@@ -538,7 +505,7 @@ form.addEventListener('click', function(event){
 });
 ```
 
-> Gömülü Form
+> Embeded Form
 
 ```javascript
 var saleData = {
@@ -571,20 +538,19 @@ var options = {
 new Paytrek.Checkout(saleData, options).displayForm();
 ```
 
-Paytrek.Checkout ikinci parametre olarak options parametresini alır. Bu parametre
-aşağıdaki tabloda gösterilen değişken isimlerini içerebilir.
+Paytrek.Checkout accepts options as the second positional argument.
 
-| Özellik Adı | Açıklama |
+| Options | Description |
 |:-|:-|
-|openModal | Sayfanıza yerleştirilmiş formu görüntülemek veya kalıcı bir kutu olarak açmak isteyip istemediğinizi belirler. Varsayılan değer `true`.|
-|widgetParent | Modal kutusunu görüntülemek istemiyorsanız, gömülü formu görüntülemek istediğiniz üst DOM Öğesi.|
-|beforeCb | Ödeme işleminden önce çalıştırmak istediğiniz `callback` metodu.|
-|afterCb | Ödeme işleminden önce sonra istediğiniz `callback` metodu.|
-|errorCb | Ödeme işlemi sırasında herhangi bir hata oluştuğunda çalıştırılacak `callback` metodu.|
+|openModal|Sets if you would like to display the form embedded in your page or open as a modal box. Defaults to true.|
+|widgetParent|The parent DOM Element where you want to display the embedded form if you don’t wish to display the modal box.|
+|beforeCb|The callback function that you want to run before charging takes place.|
+|afterCb|The callback function that you want to run after charging takes place.|
+|errorCb|The callback function that you want to run when charging fails.|
 
-# Test Kartları
+# Test Cards
 
-Kullanabileceğiniz test kartları listesi verilmiştir.
+Here is a list of test credit cards that you can use.
 
 | Card Number        | Bank           | Expiration  | Cvc| 3D Pass
 | ------------- |:-------------| :-----:|:---:|:---:|
@@ -594,16 +560,13 @@ Kullanabileceğiniz test kartları listesi verilmiştir.
 | 4355084355084358 | Akbank | 12/18 |000| a |
 | 5456165456165454 | Finansbank | 12/18 |000| a |
 
-# Hata Kodları
+# Error Codes
 
-Paytrek özelinde tüm bankalara ait hata kodlarının eşleştirildiği bir hata kodu
-tablosu bulunmaktadır. Ödeme işlemi esnasında banka tarafından alınacak bir hata
-Paytrek tablosunda karşılığı bulunarak `error_code` ve `error_message` olarak
-cevap içerisinde üye işyerine dönülür.
+Paytrek handles possible error mappings between bank services. It returns you to user
+friendly error messages within `error_code` and `error_message`. Following table includes
+error codes and descriptions.
 
-Tablo Aşağıda Verilmiştir
-
-|Kod| Üye İşyeri Mesajı  |  Müşteri Mesajı  |
+|Code| Merchant Message  |  Customer Message  |
 |:-:|:-|:-|
 |30001|Invalid Business Member|An unexpected error has occurred, please contact the seller.|
 |10004|Transaction has been denied / General Rejection|Transaction has been denied, please contact your bank|
@@ -654,33 +617,30 @@ Tablo Aşağıda Verilmiştir
 |9001|3D Fields Do Not Match|3D Fields Do Not Match|
 |40002|Cardholder or Issuer Bank not Enrolled in 3D Secure System|We cannot proceed with your transaction, unable to perform 3D Secure Authentication.|
 
-# Paytrek Koleksiyon Cüzdanı
+# Paytrek Collection Wallet
 
-Paytrek Cüzdan, maaşlarınız için kazanç, komisyon veya bağlılık vb. Ödemeler yapmak için kullanılan ödeme platformudur.
-Platform, ödemeleri tamamlamak için iki ana bileşenden oluşmaktadır
-ve ödeme akışı. Bunlar [Wallet API](https://paytrekwallet.docs.apiary.io/#introduction/paytrek-wallet-api) and [Payee Dashboard](https://paytrekwallet.docs.apiary.io/#introduction/payee-dashboard).
+Paytrek Wallet is the payout platform that used to make payments for your payees such as earnings, commissions or loyalities etc.
+The platform comprise of two main components for completing payments
+and payout flow. They are [Wallet API](https://paytrekwallet.docs.apiary.io/#introduction/paytrek-wallet-api) and [Payee Dashboard](https://paytrekwallet.docs.apiary.io/#introduction/payee-dashboard).
 
 # <a href='#reference' style='color: white; text-decoration: none; color:#7ccfaf' > Reference </a>
 
-# Satış
+# Sale
 
-Satış Kaynağı, satışla ilgili bilgileri içeren bir satış nesnesi oluşturmak için kullanılır.
-Ödeme işlemi gerçekleşmeden önce ödemesi yapılacak ilgili nesne bu kaynak aracılığıyla oluşturulur.
-Bu kaynak ödeme yapılmadan önce işlemin tanımlanmasını sağlar.
-Bir ödeme Ön Otorizasyonlu olarak gerçekleştirilecek ise satış parametrelerinden (`pre_auth`  ```true```)
-olarak gönderilmelidir, ardından satış `capture` kaynağı kullanılarak `capture` edilir.
+Sale Resource provides you the endpoint to create a sale object that including sale related informations.
+It allows to define a proper transaction before charging the card.
+If the sale that you are going to charge is Pre-Authorized (`pre_auth` must be ```true```),
+the sale will be captured.
 
-Oluşturulan bir satış nesnesine ait bilgileri almak için, ```sale_token```
-Sale Kaynağına ` GET` HTTP metodu ile gönderilmelidir.
-
-Bu isteğin cevabında işlem bilgileri ve durumu ile ilgili satış detaylarını döndürür.
+To retrieve a created sale object, ```sale_token``` must be defined in url and send by `GET` HTTP method.
+It returns related sale details with transaction informations and status.
 
 (eg. `/api/v2/sale/f25356bab177416ba7b518cc1bd8a596/`)
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
+In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.
 
-## Satış Oluşturma
+## Create Sale
 
 > Request Headers
 
@@ -779,40 +739,14 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 }
 ```
 
-| İstek Türü | Kaynak(Endpoint) |
+| Request Type | Endpoint |
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/sale/ |
 
-Yan panelde örnek bir satış oluşturma isteği ve aşağıdaki tabloda bu istek
-içerisinde gönderebileceğiniz yada göndermeniz gereken parametrelerin
-listesi verilmiştir.
+There is an example request of sale creation request in left panel.
 
-|Üye İşyeri Mesajı  | Tip |  Müşteri Mesajı  |
-|:-|:--:|:-|
-|currency | string, zorunlu | 3 harfli para birimi ISO kodu.|
-|order_id | string, zorunlu | Siparişin Idsi.|
-|amount  | number, zorunlu | Sipariş Tutarı.|
-|customer_first_name | string, zorunlu | Müşteri adı.|
-|customer_last_name | string, zorunlu | Müşteri soyadı.|
-|customer_email | string, zorunlu | Müşteri email adresi.|
-|customer_ip_address | string, zorunlu | Müşteri ip adresi.  |
-|billing_address | string, zorunlu | Müşteri fatura adresi.|
-|billing_city | string, zorunlu | Müşteri fatura şehri.|
-|billing_state | string | Müşterinin faturalandırma durumu, ABD ve CA için posta kısaltmaları kullanın.|
-|billing_country | string, zorunlu | Müşterinin fatura ülkesi, 2 harfli ISO kodu.|
-|billing_zipcode | string, opsiyonel | Müşterinin fatura zip kodu.|
-|billing_phone | string, opsiyonel | Müşterinin fatura telfon numarası.|
-|items | object, zorunlu | Siparişe ait ürünlerin listesi.|
-|return_url | string | Ödeme tamamlandığında müşterinin yönlendirileceği sayfanın URL'i.|
-|hosted_payment | boolean | Ortak ödeme sayfası kullanım tercihi.|
-|hosted_payment_url | string | Ortak ödeme sayfası URL'i.|
-|installment | number, zorunlu | Taksit bilgisi.|
-|secure_option | boolean | Ödemenin 3D li ya da 3Dsiz geçme kararı.(Varsayılan: false) |
-|half_secure | boolean | 3D kayıt kontrolünün (mdstatus) 2, 3, 4 ile sonuçlanması durumunda satışın devam etme kararı.|
-|pre_auth | boolean | Satışın Ön otorizasyonlu olup olmayacağı kararı. (Default: false)|
-|sale_data | object | Satışa ait ekstra bilgi alanı.|
 
-## Satışı İnceleme
+## Retrieve Sale
 
 > Request Headers
 
@@ -884,11 +818,12 @@ listesi verilmiştir.
 }
 ```
 
-| İstek Türü | Kaynak(Endpoint) |
+| Request Type | Endpoint |
 |:-:|:-:|
 | GET | https://sandbox.paytrek.com/api/v2/sale/**sale_token**/ |
 
-# Ödeme
+
+# Charge
 
 > Request Headers
 
@@ -939,25 +874,25 @@ listesi verilmiştir.
 }
 ```
 
-Charge Kaynağı kredi kartı ile ödeme yapabilmenize imkan sağlayan kaynaktır.
-Ödeme işlemi yapmadan önce [satış oluşturma](#satis-olusturma) kaynağını kullanarak bir satış oluşturmanız gerekir.
+Charge Resource provides you the
+endpoint to charge a credit card.
+You must create a [Sale](#sale) object before charging your customer.
+If the sale that you are going to charge is Pre-Authorized (pre_auth must be true),
+the sale will be captured.
 
-Eğer ödeme işleminin ön otorizasyonlu olarak gerçekleşmesi için
-`pre_auth` parametresi `true` olarak gönderilmelidir. Ardından ilgili satış 'capture'
-edilir.
-
-| İstek Türü | Kaynak(Endpoint) |
+| Request Type | Endpoint |
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/charge/ |
 
-Bir ödeme işlemi yapılırken kullanılan kartın tekrardan kullanımı için saklanmasını
-istiyorsanız `save_card` parametresini `true` olarak belirlemeniz gerekir.
-Bu parametre `true` olacak şekilde istek yapıldığında kart 'vault' edilerek saklanır
-ve cevap içerisinde `card_token` parametresi dönülür.
+While charging a card, you can also store it with `save_card` option.
+If `save_card` is settled `true` in request then it will be vaulted and
+returns `card_token` in response. It allows to charge the card in
+the next payment within [Charge with token](#charge-with-token).
 
-Aşağıdaki tabloda bir ödeme işlemi için gönderilmesi gereken parametrelerin listesi verilmiştir.
+In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.
 
-| Parametre | Tip | Açıklama |
+| Parameter | Type | Description |
 |:-|:-|:-|
 |sale_token  | string, required | Sale kaynağı tarafından oluşturulan satışa ait token.|
 |number  | number, required | Kredi kartı numarası.|
@@ -966,7 +901,8 @@ Aşağıdaki tabloda bir ödeme işlemi için gönderilmesi gereken parametreler
 |card_holder_name | Kart üzerindeki isim.|
 |save_card  | boolean(Varsayılan: true) | Kart saklama parametresi.|
 
-# Direkt Ödeme
+
+# Direct Charge
 
 > Request Headers
 
@@ -1122,67 +1058,59 @@ Aşağıdaki tabloda bir ödeme işlemi için gönderilmesi gereken parametreler
 }
 ```
 
-Bu endpoint size herhangi bir sale isteğinde bulunmadan doğrudan kredi kartı
-kullanarak ödeme gerçekleştirme imkanı sağlar.
+Direct charge endpoint provides to charge a credit card instantly
+without creating any sale object. If the sale that you are going to charge is Pre-Authorized
+(`pre_auth` must be ```true```), the sale will be captured.
 
-Eğer ödeme işleminin ön otorizasyonlu olarak gerçekleşmesini istiyorsanız
-pre_auth parametresi true olarak gönderilmelidir. Ardından ilgili satış capture
-edilir.
+While charging a card, you can also store it with `save_card` option.
+If `save_card` is settled `true` in request then it will be vaulted and
+returns `card_token` in response. It allows to charge the card in
+the next payment within [Charge with token](#charge-with-token).
 
-Bir ödeme işlemi yapılırken kullanılan kartın tekrardan kullanımı için saklanmasını
-istiyorsanız `save_card` parametresini `true` olarak belirlemeniz gerekir.
-Bu parametre `true` olacak şekilde istek yapıldığında kart vault edilerek saklanır
-ve cevap içerisinde `card_token` parametresi dönülür. [Charge with token](#satis).
 
-| İstek Türü | Kaynak(Endpoint) |
-|:-:|:-:|
-| POST | https://sandbox.paytrek.com/api/v2/direct_charge/ |
-
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
-
-| Parametre | Tip | Açıklama |
+| Parameter | Type | Description |
 |:-|:-|:-|
-| currency | string, required | Para biriminin 3 harfli ISO kodu.|
-| order_id | string, required | Sipariş numarası.|
-| amount |  number, required | Siparişe ait tutar bilgisi.|
-| number | number, required | Kredi kartı numarası.|
-| expiration | string, required | Kredi kartı son kullanma tarihi, MM/YY formatında.|
-| cvc | number, required | Karta ait CVC numarası.|
-| card_holder_name | string | Kart hamilinin adı.|
-| installment | number, required | Taksit bilgisi.|
-| secure_option | boolean | Ödemenin 3D güvenli ödeme işlemi olup olmayacağı kararı.(Varsayılan: false)|
-| half_secure | boolean | 3D kayıt kontrolünün mdstatus) 2, 3, 4 ile sonuçlanması durumunda satışın devam etme kararı.|
-| return_url | string, required | Ödeme işlemi gerçekleştikten sonra müşterinin yönlendirileceği URL|
-| pre_auth | boolean | Ödemenin ön otorizasyonlu geçip geçmediği kontrolü(Varsayılan: false)|
-| items | object, required | Siparişe ait öğelerin listesi.|
-| customer_first_name | string, required | Müşterinin adı.|
-| customer_last_name | string, required | Müşterinin soyadı.|
-| customer_email | string, required | Müşteri emaili.|
-| customer_ip_address | string, required | Müşteri Ip adresi.  |
-| billing_address | string, required | Müşteri fatura adresi.|
-| billing_city | string, required | Müşteri fatura şehri.|
-| billing_state | string | Müşterinin faturalandırma durumu, ABD ve CA için posta kısaltmaları kullanın.|
-| billing_country | string, zorunlu | Müşterinin fatura ülkesi, 2 harfli ISO kodu.|
-| billing_zipcode | string, zorunlu | Müşterinin fatura zip kodu.|
-| billing_phone | string, zorunlu | Müşterinin fatura telfon numarası.|
-| sale_data | object | Satışa ait ekstra bilgi alanı|
+|currency|string, required|3-letter ISO code for currency.|
+|order_id|string, required|The order id of the sale.|
+|amount |number, required|The amount to charge the visitor.|
+|number|number, required|The credit card number.|
+|expiration|string, required|The expiration date of the credit card, in MM/YY format.|
+|cvc|number, required|The security number of the credit card.|
+|card_holder_name|string, required|The name on card.|
+|installment|number, required|The installment number of the sale.|
+|secure_option|boolean|Whether the sale is secure.(Default: false)|
+|half_secure|boolean|Whether the sale can be charged if 3d enrollment check returns mdstatus 2, 3, 4.|
+|return_url|string, required|Related link that user is redirected when payment completed.|
+|pre_auth|boolean|Indicates whether this sale should be pre-authorized.(Default: false)|
+|items|object, required|The item related informations which is selling.|
+|customer_first_name|string, required|Customer's first name.|
+|customer_last_name|string, required|Customer's last name.|
+|customer_email|string, required|Customer's email address.|
+|customer_ip_address|string, required|Customer's ip address.  |
+|billing_address|string, required|Customer's billing address.|
+|billing_city|string, required|Customer's billing city.|
+|billing_state|string|Customer's billing state, use postal abbreviations for US and CA.|
+|billing_country |string, required|Customer's billing country, 2-letter ISO code.|
+|billing_zipcode |string, required|Customer's billing zipcode.|
+|billing_phone |string, required|Customer's billing phone number.|
+|sale_data |object|Extra fields for sale.|
 
-# Kart Saklama
+# Vault
 
-Paytrek, müşterinizin PAN verilerini Paytrek'in güvenli kasasında saklamanıza olanak tanır.
-Bu endpointi kullanarak, Kredi kartı verilerini sadece müşterilerinizden yalnızca
-bir kez almanız gerekecek ve istediğiniz zaman ödeme işlemi için aynı verileri kullanabileceksiniz.
+Paytrek allows you to store your customer’s PAN data on Paytrek’s secure vault. By using this endpoint,
+you will only need to retrieve the credit card data from your customers only once and then you will be able to use the same data for charging any time you wish.
 
-+ Müşterilerin formunuza girdiği kredi kartı verilerini doğrulayın.
-+ Kredi kartı verileriyle Vault endpointine POST isteği gönderin.
-+ Paytrek size bir kart token cevap olarak döner.
-+ Bu token ile "charge_with_token" endpointi ile ödemenizi gerçekleştirin.
+Here are the steps you must take:
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
++ Validate the credit card data that customers enter on your form.
++ Send a POST request to Vault endpoint with the credit card data.
++ Paytrek will return you a card token.
++ Charge the customer with that token through `charge_with_token` endpoint.
 
-## Kart Saklama İşlemi
+In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.
+
+## Vaulting Card
 
 > Request Headers
 
@@ -1235,19 +1163,20 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 }
 ```
 
-| İstek Türü | Kaynak(Endpoint)|
+| Request Type | Endpoint |
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/vault/ |
 
-| Parametre | Tip | Açıklama |
+| Parameter | Type | Description |
 |:-|:-|:-|
-| number | number, zorunlu | Kart numarası.|
-| expiration | string, zorunlu | Kartın son kullanma tarihi, MM/YY formatında.|
-| cvc | number, zorunlu | Kartın CVC numarası.|
-| card_holder_name | string, zorunlu | Kart üzerindeki isim.|
-| card_label | string |  Kart alan adı.|
+|number | number, required | The credit card number.|
+|expiration | string, required| The expiration date of the credit card, in MM/YY format.|
+|cvc | number, required| The security number of the credit card.|
+|card_holder_name | string, required| The name on card.|
+|card_label | string | The optional card label name.|
 
-## Saklanan Kartı Görüntüleme
+## Retrieve Vaulted Card
+
 
 > Request Headers
 
@@ -1288,15 +1217,15 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
         }
 ```
 
-| İstek Türü | Kaynak(Endpoint)|
+| Request Type | Endpoint |
 |:-:|:-:|
 | GET | https://sandbox.paytrek.com/api/v2/vault/**card_token**/ |
 
-| Parametre | Açıklama |
+| Parameter | Description |
 |:-|:-|
 | card_token | Vault edilen karta ait kart token'ı |
 
-## Saklanan Kartları Listeleme
+## Listing Vaulted Cards
 
 > Request Headers
 
@@ -1359,16 +1288,17 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 }
 ```
 
-| İstek Türü | Kaynak(Endpoint)|
+| Request Type | Endpoint |
 |:-:|:-:|
 | GET | https://sandbox.paytrek.com/api/v2/vault/ |
 
-|Parametre|Tip|Açıklama|
-|:-:|:-|:-|
-|card_user_id | opsiyonel | Kart kullanıcısın idsi (Vault oluştururken bu değer belirlenebilir)|
-|card_label | opsiyonel | Kart etiketi|
+| İstek Türü | Endpoint|
+|:-:|:-:|
+| card_user_id | optional | Card user id (you can set when you create vault)|
+| card_label | optional | Card label|
 
-## Saklanan Kartı Silme
+
+## Delete Vaulted Card
 
 > Request Headers
 
@@ -1388,15 +1318,26 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 "Content-Type": "application/json"
 ```
 
-| İstek Türü | Kaynak(Endpoint)|
+| Request Type | Endpoint |
 |:-:|:-:|
 | DELETE | https://sandbox.paytrek.com/api/v2/vault/**card_token**/ |
 
 |Parametre|Tip|Açıklama|
 |:-:|:-|:-|
-|card_token | string | Vault işleminden sonra tarafınıza iletilen token |
+|card_token| string | Card token after vault operation.|
 
-# Kart Saklama ile Ödeme
+
+# Charge With Token
+
+This enpoint provides to charge the customer
+with created card token. You will notice there is no amount or quantity
+parameters for this endpoint. You must create a sale by using Sale endpoint
+and card token by using Vault endpoint before charging your customer.
+
+In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.
+
+## Charge With Token
 
 > Request Headers
 
@@ -1447,22 +1388,14 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 }
 ```
 
-Bu endpoint müşterinin kart tokenı kullanarak ödeme gerçekleştirmesini sağlar.
-Burada herhangi bir tutar ya da nicelik parametresi kullanılmaz. Yalnızca sale
-endpointi ile oluşturulan sale e ait `sale_token` bilgisi ve vault edilen karta
-ait `card_token` bilgisi ile ödeme gerçekleştirilir.
-
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
-
-| İstek Türü | Kaynak(Endpoint)|
+| Request Type | Endpoint |
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/charge_with_token/ |
 
 |Parametre|Tip|Açıklama|
 |:-:|:-|:-|
-|sale_token | string, zorunlu | Sale endpointi ile oluşturulan salee ait token.|
-|card_token | string, zorunlu | Vault endpointi ile vault edilen karta ait token.|
+|sale_token | string, required | The sale token created though sale endpoint.|
+|card_token | string, required | The card token created though vault endpoint.|
 
 # Capture
 
@@ -1506,32 +1439,30 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 }
 ```
 
-Bu endpoint ön otorizasyonda kalmış bir satışın capture edilmesini sağlar.
-Bir satışı capture etmek için capture endpointine ilgili satışın tokenı ile POST isteği atmanız yeterlidir.
-Ön otorizasyon durumunda olmayan bir satış capture edilemez.
-Ön otorizasyonda bir satış oluşturmak için ilgili satışı oluştururken `pre_auth` parametresini `true` göndermeniz
-gerekmektedir.
-Bir satış fraud kontrolü sonucunda `REVIEW` durumunda ise bu satış ön otorizasyonda oluşturulur ve tarafınızdan
-capture edilmesi gerekir.
+Capture endpoint provides to capture a payment.
+If you want to capture a payment that you've already pre-authorized, all you need to do is sending a POST request to the capture resource’s endpoint with the pre-authorized sale’s token.
+Please note that you cannot capture a payment that is not pre-authorized. If you would like to authorize a payment, you must create the sale with pre_auth field set to true.
+If your sale was in review status, the sale’s fraud decision will be updated as accepted after you capture it through the API.
 
-Ön otorizasyonlu satışın akışı:
+Flow of pre-authorized payment :
 
-+ `pre_auth` parametresi `true` olacak şekilde direct_charge endpointine istekte bulunulur.
-+ Bu işlemden sonra capture endpointine `sale_token` ile istekte bulunulur.
++ Send a request to `direct_charge` endpoint within required data and `pre_auth: true`.
++ After that use `sale_token` to capture the payment.
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
+In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.
 
-| İstek Türü | Kaynak(Endpoint)|
+| Request Type | Endpoint |
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/capture/ |
 
-|Parametre|Tip|Açıklama|
+|Parameter|Type|Description|
 |:-:|:-|:-|
-|sale_token | string, zorunlu | Sale endpointi ile oluşturulan sale'e ait token|
-|comments | string, opsiyonel | Fraud kontrol sonucunun kabul edilmesine dair yorum.|
+|sale_token | string, required | The sale token created though sale endpoint.|
+|comments | string, optional | Comments for accepting the fraud review decision.|
 
-# İptal
+
+# Cancel
 
 > Request Headers
 
@@ -1573,25 +1504,25 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 }
 ```
 
-Cancel endpointi bir satışı iptal ya da iade etmek için kullanılır.
-Cancel endpointine bir istekte bulunulduğunda satışın iptali ya da tam iadesi gerçekleşir.
-Bir satışla ilgili parçalı iade yapmak için ```Refund``` endpointi kullanılmalıdır.
-İki durumda da cevapta tutar bilgileri yer alacaktır.
-Eğer bir satış fraud kararı sonucu `REVIEW` da ise ve bu satış iptal edilirse satışa ait `REJECTED` a çevrilir.
+Cancel endpoint provides to cancel and refund a payment.
+When a request is sent to the Cancel endpoint, it will issue a full refund.
+If you’d like to issue a partial refund use ```Refund``` endpoint.
+In both of cases, the response will contain an amount information.
+If your sale was in review status, the sale’s fraud decision will be updated as rejected after you cancel it through the API.
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
+In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.
 
-| İstek Türü | Kaynak(Endpoint)|
+| Request Type | Endpoint |
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/cancel/ |
 
-|Parametre|Tip|Açıklama|
+|Parameter|Type|Description|
 |:-:|:-|:-|
-|sale_token | string, zorunlu | Sale endpointi ile oluşturulan sale'e ait token.|
-|comments | string, opsiyonel | Fraud kontrol sonucunun kabul edilmesine dair yorum.|
+|sale_token | string, required | The sale token created though sale endpoint.|
+|comments | string, optional | Comments for accepting the fraud review decision. |
 
-# İade
+## Refund [/refund/]
 
 > Request Headers
 
@@ -1641,35 +1572,35 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 }
 ```
 
-İade endpointi bir satışın iadesini gerçekleştirmek için kullanılır.
-Bir satışa ait tam iade isteğinde bulunduğunda; Paytrek tarafından öncelikle iptal işlemi gerçekleştirilir.
-Cancel işlemi başarılı sonuçlanmaz ise, satışın iadesi gerçekleştirilmeye çalışılır.
-Bir satışa ait parçalı iade yapılmak istendiğinde tutar parametresi gönderilmelidir.
+Refund endpoint provides refund a payment.
+When a request is sent to the Refund Resource, Paytrek will first try to cancel the payment.
+If there’s any error with the cancel request, it will issue a full refund.
+If you’d like to issue a partial refund, you’ll need to send the amount parameter.
+In both of cases, the response will contain an amount information.
+If your sale was in review status,
+the sale’s fraud decision will be updated as rejected
+after you cancel it through the API.
 
-İki durumda da cevapta tutar bilgileri yer alacaktır.
-Eğer bir satış fraud kararı sonucu `REVIEW` da ise ve bu satış iptal edilirse satışa ait `REJECTED` a çevrilir.
+In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
-
-| İstek Türü | Kaynak(Endpoint)|
+| Request Type | Endpoint |
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/refund/ |
 
 |Parametre|Tip|Açıklama|
 |:-:|:-|:-|
-|sale_token | string, zorunlu | Ödemesi yapılan sale'e ait `sale_token`|
-|amount | number, opsiyonel | İade edilen tutar.|
-|comments | string, opsiyonel | Fraud kontrol sonucunun kabul edilmesine dair yorum.|
+|sale_token | string, required | The sale token that charged sale object. |
+|amount | number, optional | Amount to refund.|
+|comments | string, optional | Comments for accepting the fraud review decision.|
 
-# Ödeme Planı
+# Subscription Plan
 
-Paytrek size tekrarlayan ödemeleriniz için ödeme planı oluşturma olanağı sağlar.
-Bu endpointe istekte bulunmak için kullanılacak alanlar [`Direct Charge`](#direkt-odeme-2)
-endpointi ile `recurring` harici aynıdır.
+Paytrek allows you to create subscription plans for recurring payments.
+Subscription plan endpoint requires almost the same request parameters
+with [`Direct Charge`](#direct-charge) except `recurring` one.
 
-Yan paneldeki JSON bloğu yeni bir plan oluşturmak için gereken parametreleri göstermektedir.
-
+It's a json block that includes following parameters for creating a new plan.
 ```json
 "recurring": {
     "name": "Test Store Recurring Payments",
@@ -1678,24 +1609,21 @@ Yan paneldeki JSON bloğu yeni bir plan oluşturmak için gereken parametreleri 
     "recurring_frequency": 4
 }
 ```
+If `start_date` isn't settled then **first payment** will be charged today.
+In addition, it's mandatory to set `save_card: true` while creating subscription plan.
 
-Eğer `start_date` parametresi belirlenmediyse **ilk ödeme** bugün gerçekleştirilir.
+#### Recurring Periods
 
-Ayrıca, abonelik planı oluşturulurken `save_card: true` ayarlanması zorunludur.
+ - Daily
+ - Weekly
+ - Monthly
+ - Yearly
 
-### Tekrarlayan Ödeme Periotları
+In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.
 
- - Günlük
- - Haftalık
- - Aylık
- - Yıllık
+## Create Subscription Plan
 
-
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
-
-
-## Ödeme Planı Oluşturma
 
 > Request Headers
 
@@ -1852,49 +1780,44 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
     "bin_number": "450803"
 }
 ```
-
-| İstek Türü | Kaynak(Endpoint)|
-|:-:|:-:|
-| POST | https://sandbox.paytrek.com/api/v2/subscription_plan/ |
-
-|Parametre|Tip|Açıklama|
+|Parameter|Type|Description|
 |:-|:-|:-|
-|currency |  string, required | Para biriminin 3 harfli ISO kodu.|
-|order_id |  string, required | Sipariş numarası.|
-|amount |   number, required | Siparişe ait tutar bilgisi.|
-|number |  number, required | Kredi kartı numarası.|
-|expiration |  string, required | Kredi kartı son kullanma tarihi, MM/YY formatında.|
-|cvc |  number, required | Karta ait CVC numarası.|
-|card_holder_name |   Kart hamilinin adı.|
-|recurring |  object, zorunlu | Ödeme planı özellikleri [1]|
-|installment |  number, required | Taksit bilgisi.|
-|secure_option |  boolean | Ödemenin 3D güvenli ödeme işlemi olup olmayacağı kararı.(Varsayılan: false)|
-|half_secure |  boolean | 3D kayıt kontrolünün (mdstatus) 2, 3, 4 ile sonuçlanması durumunda satışın devam etme kararı.|
-|return_url |  string, required | Ödeme işlemi gerçekleştikten sonra müşterinin yönlendirileceği URL|
-|pre_auth |  boolean | Ödemenin ön otorizasyonlu geçip geçmediği kontrolü(Varsayılan: false)|
-|items |  object, required | Siparişe ait öğelerin listesi.|
-|customer_first_name |  string, required | Müşterinin adı.|
-|customer_last_name |  string, required | Müşterinin soyadı.|
-|customer_email |  string, required | Müşteri emaili.|
-|customer_ip_address |  string, required | Müşteri Ip adresi.  |
-|billing_address |  string, required | Müşteri fatura adresi.|
-|billing_city |  string, required | Müşteri fatura şehri.|
-|billing_state |  string | Müşterinin faturalandırma durumu, ABD ve CA için posta kısaltmaları kullanın.|
-|billing_country |  string, zorunlu | Müşterinin fatura ülkesi, 2 harfli ISO kodu.|
-|billing_zipcode |  string, zorunlu | Müşterinin fatura zip kodu.|
-|billing_phone |  string, zorunlu | Müşterinin fatura telfon numarası.|
-|sale_data |  object | Satışa ait ekstra bilgi alanı|
+|currency |string, required|3-letter ISO code for currency.|
+|order_id |string, required|The order id of the sale.|
+|amount  |number, required|The amount to charge the visitor.|
+|number |number, required|The credit card number.|
+|expiration |string, required|The expiration date of the credit card, in MM/YY format.|
+|cvc |number, required|The security number of the credit card.|
+|card_holder_name | The name on card.|
+|recurring |object, required|Subscription plan proporties[1].|
+|installment |number, required|The installment number of the sale.|
+|secure_option |boolean|Whether the sale is secure(Default: False).|
+|half_secure |boolean|Whether the sale can be charged if 3d enrollment check returns mdstatus 2, 3, 4.|
+|return_url |string, required|Related link that user is redirected when payment completed.|
+|pre_auth |boolean|Indicates whether this sale should be pre-authorized(Default: False).|
+|items |object, required|The item related informations which is selling.|
+|customer_first_name |string, required|Customer's first name.|
+|customer_last_name |string, required|Customer's last name.|
+|customer_email |string, required|Customer's email address.|
+|customer_ip_address |string, required|Customer's ip address.  |
+|billing_address |string, required|Customer's billing address.|
+|billing_city |string, required|Customer's billing city.|
+|billing_state |string|Customer's billing state, use postal abbreviations for US and CA.|
+|billing_country |string, required|Customer's billing country, 2-letter ISO code.|
+|billing_zipcode |string, required|Customer's billing zipcode.|
+|billing_phone |string, required|Customer's billing phone number.|
+|sale_data |object|Extra fields for sale.|
 
-[1] Recurring parametresinin içeriği(JSON);
+[1] Parameters of Recurring parameter(JSON);
 
-|Parametre|Tip|Açıklama|
+|Parameter|Type|Description|
 |:-|:-|:-|
-|name | string, zorunlu | Ödeme planı adı.|
-|start_date | string | Ödeme planının başlangıç tarihi.|
-|recurring_period | string, zorunlu | Ödeme periodu|
-|recurring_frequency | number, zorunlu | Her periotta ödeme tekrarlama sıklığı.|
+|name|string, required|The name of subscriotion plan.|
+|start_date|string|To define when subscription plan will begin.|
+|recurring_period|string, required|The recurring period.|
+|recurring_frequency|number, required|The recurring frequency to define how many periods.|
 
-## Ödeme Planı Görüntüleme
+## Retrieve Subscription Plan
 
 > Request Headers
 
@@ -2006,16 +1929,16 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 }
 ```
 
-| İstek Türü | Kaynak(Endpoint)|
+| Request Type | Endpoint |
 |:-:|:-:|
 | GET | https://sandbox.paytrek.com/api/v2/subscription_plan/ |
 
 |Parametre|Tip|Açıklama|
 |:-|:-|:-|
-|plan_token|Ödeme planı tokenı|
+|plan_token|Subscription plan token.|
 
-## Ödeme Planı Güncelleme
 
+### Update Subscription Plan [PUT]
 > Request Headers
 
 ```json
@@ -2092,15 +2015,15 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 }
 ```
 
-| İstek Türü | Kaynak(Endpoint)|
+| Request Type | Endpoint |
 |:-:|:-:|
 | PUT | https://sandbox.paytrek.com/api/v2/subscription_plan/ |
 
-|Parametre|Tip|Açıklama|
+|Parameter|Type|Description|
 |:-|:-|:-|
-|plan_token|Ödeme planı tokenı|
+|plan_token|Subscription plan token.|
 
-# Taksitler
+# Installments
 
 > Request Headers
 
@@ -2186,17 +2109,18 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
  }
 ```
 
-Verilen ```bin_number``` ve ```amount``` bilgilerine bakılarak. Alternatif
-taksit listesini ve bu taksit bilgilerine ait seçeneklerin gösterildiği endpointtir.
+Installments endpoint provides to list installment alternatives and
+cards through by given ```bin_number``` and ```amount``` as parameters in url.
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
+In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.
 
-| İstek Türü | Kaynak(Endpoint)|
+
+| Request Type | Endpoint|
 |:-:|:-:|
 | GET | https://sandbox.paytrek.com/api/v2/installments/?bin_number=bin_number&amount=amount |
 
-|Parametre|Tip|Açıklama|
+|Parameter|Type|Description|
 |:-|:-|:-|
-|bin_number | optional | Kartın ilk 6 hanesi|
-|amount | - | Taksitlendirme planına ait tutar.|
+|bin_number | optional | First 6 digits of card.|
+|amount | - | Amount for installment plans.|
