@@ -196,38 +196,38 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all_nosearch.js"></script>
+    <link href="../stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all_nosearch.js"></script>
   </head>
 
-  <body class="index" data-languages="[]">
+  <body class="en en_index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" alt="Navbar" />
+        <img src="../images/navbar.png" alt="Navbar" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="../images/logo.png" class="logo" alt="Logo" />
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#giris" class="toc-h1 toc-link" data-title=" Giriş"><a href="#paytrek" style="color: white; text-decoration: none; color:#7ccfaf"> Giriş</a></a>
+            <a href="#paytrek" class="toc-h1 toc-link" data-title=" Paytrek"><a href="#paytrek" style="color: white; text-decoration: none; color:#7ccfaf"> Paytrek</a></a>
           </li>
           <li>
-            <a href="#odeme-akisi" class="toc-h1 toc-link" data-title="Ödeme Akışı">Ödeme Akışı</a>
+            <a href="#payment-flows" class="toc-h1 toc-link" data-title="Payment Flows">Payment Flows</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#paytrek-ortak-odeme-formu" class="toc-h2 toc-link" data-title="Paytrek Ortak Ödeme Formu">Paytrek Ortak Ödeme Formu</a>
+                    <a href="#paytrek-hosted-payment-flow" class="toc-h2 toc-link" data-title="Paytrek Hosted Payment Flow">Paytrek Hosted Payment Flow</a>
                   </li>
                   <li>
-                    <a href="#direkt-odeme" class="toc-h2 toc-link" data-title="Direkt Ödeme">Direkt Ödeme</a>
+                    <a href="#direct-charge" class="toc-h2 toc-link" data-title="Direct Charge">Direct Charge</a>
                   </li>
                   <li>
-                    <a href="#kart-saklama-ile-odeme" class="toc-h2 toc-link" data-title=" Kart Saklama ile Ödeme"> Kart Saklama ile Ödeme</a>
+                    <a href="#tokenization-flow" class="toc-h2 toc-link" data-title=" Tokenization Flow"> Tokenization Flow</a>
                   </li>
                   <li>
-                    <a href="#on-otorizasyon-ile-odeme" class="toc-h2 toc-link" data-title=" Ön Otorizasyon ile Ödeme"> Ön Otorizasyon ile Ödeme</a>
+                    <a href="#pre-authorization" class="toc-h2 toc-link" data-title=" Pre-Authorization"> Pre-Authorization</a>
                   </li>
               </ul>
           </li>
@@ -235,13 +235,13 @@
             <a href="#3d-transactions" class="toc-h1 toc-link" data-title="3D Transactions">3D Transactions</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#paytrek-ortak-odeme-ile-3d-guvenli-odeme-islemi" class="toc-h2 toc-link" data-title="Paytrek Ortak Ödeme ile 3D Güvenli Ödeme İşlemi">Paytrek Ortak Ödeme ile 3D Güvenli Ödeme İşlemi</a>
+                    <a href="#3d-transactions-on-paytrek-hosted-payment-form" class="toc-h2 toc-link" data-title="3D Transactions on Paytrek Hosted Payment Form">3D Transactions on Paytrek Hosted Payment Form</a>
                   </li>
                   <li>
-                    <a href="#direkt-odeme-ile-3d-guvenli-odeme-islemi" class="toc-h2 toc-link" data-title="Direkt Ödeme ile 3D Güvenli Ödeme İşlemi">Direkt Ödeme ile 3D Güvenli Ödeme İşlemi</a>
+                    <a href="#3d-transactions-on-direct-charge-flow" class="toc-h2 toc-link" data-title="3D Transactions on Direct Charge Flow">3D Transactions on Direct Charge Flow</a>
                   </li>
                   <li>
-                    <a href="#kart-saklama-ile-3d-guvenli-odeme-islemi" class="toc-h2 toc-link" data-title="Kart Saklama ile 3D Güvenli Ödeme İşlemi">Kart Saklama ile 3D Güvenli Ödeme İşlemi</a>
+                    <a href="#3d-transactions-on-tokenization-flow" class="toc-h2 toc-link" data-title="3D Transactions on Tokenization Flow">3D Transactions on Tokenization Flow</a>
                   </li>
               </ul>
           </li>
@@ -249,7 +249,7 @@
             <a href="#paytrek-api" class="toc-h1 toc-link" data-title="Paytrek API">Paytrek API</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#kimlik-dogrulama" class="toc-h2 toc-link" data-title="Kimlik Doğrulama">Kimlik Doğrulama</a>
+                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
                   </li>
                   <li>
                     <a href="#headers" class="toc-h2 toc-link" data-title="Headers">Headers</a>
@@ -258,21 +258,21 @@
                     <a href="#endpoints" class="toc-h2 toc-link" data-title="Endpoints">Endpoints</a>
                   </li>
                   <li>
-                    <a href="#paytrek-ortamlarinin-url-39-leri" class="toc-h2 toc-link" data-title="Paytrek Ortamlarının URL'leri">Paytrek Ortamlarının URL'leri</a>
+                    <a href="#paytrek-environment-urls" class="toc-h2 toc-link" data-title="Paytrek Environment URLs">Paytrek Environment URLs</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#paytrekjs-kutuphanesi" class="toc-h1 toc-link" data-title="PaytrekJS Kütüphanesi">PaytrekJS Kütüphanesi</a>
+            <a href="#paytrekjs-library" class="toc-h1 toc-link" data-title="PaytrekJS Library">PaytrekJS Library</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#paytrekjs-entegrasyonu" class="toc-h2 toc-link" data-title="PaytrekJS Entegrasyonu">PaytrekJS Entegrasyonu</a>
+                    <a href="#integrating-paytrekjs" class="toc-h2 toc-link" data-title="Integrating PaytrekJS">Integrating PaytrekJS</a>
                   </li>
                   <li>
-                    <a href="#paytrekjs-39-yi-sitenize-dahil-etmek" class="toc-h2 toc-link" data-title="PaytrekJS'yi Sitenize Dahil Etmek">PaytrekJS'yi Sitenize Dahil Etmek</a>
+                    <a href="#include-paytrekjs" class="toc-h2 toc-link" data-title="Include PaytrekJS">Include PaytrekJS</a>
                   </li>
                   <li>
-                    <a href="#paytrekjs-39-yi-konfigure-etme" class="toc-h2 toc-link" data-title="PaytrekJS'yi Konfigüre Etme">PaytrekJS'yi Konfigüre Etme</a>
+                    <a href="#configuring-paytrekjs" class="toc-h2 toc-link" data-title="Configuring PaytrekJS">Configuring PaytrekJS</a>
                   </li>
                   <li>
                     <a href="#paytrek-form" class="toc-h2 toc-link" data-title="Paytrek.Form">Paytrek.Form</a>
@@ -281,7 +281,7 @@
                     <a href="#paytrek-creditcard" class="toc-h2 toc-link" data-title="Paytrek.CreditCard">Paytrek.CreditCard</a>
                   </li>
                   <li>
-                    <a href="#odeme-secenekleri" class="toc-h2 toc-link" data-title="Ödeme Seçenekleri">Ödeme Seçenekleri</a>
+                    <a href="#payment-options" class="toc-h2 toc-link" data-title="Payment Options">Payment Options</a>
                   </li>
                   <li>
                     <a href="#paytrek-checkout" class="toc-h2 toc-link" data-title="Paytrek.Checkout">Paytrek.Checkout</a>
@@ -289,278 +289,236 @@
               </ul>
           </li>
           <li>
-            <a href="#test-kartlari" class="toc-h1 toc-link" data-title="Test Kartları">Test Kartları</a>
+            <a href="#test-cards" class="toc-h1 toc-link" data-title="Test Cards">Test Cards</a>
           </li>
           <li>
-            <a href="#hata-kodlari" class="toc-h1 toc-link" data-title="Hata Kodları">Hata Kodları</a>
+            <a href="#error-codes" class="toc-h1 toc-link" data-title="Error Codes">Error Codes</a>
           </li>
           <li>
-            <a href="#paytrek-koleksiyon-cuzdani" class="toc-h1 toc-link" data-title="Paytrek Koleksiyon Cüzdanı">Paytrek Koleksiyon Cüzdanı</a>
+            <a href="#paytrek-collection-wallet" class="toc-h1 toc-link" data-title="Paytrek Collection Wallet">Paytrek Collection Wallet</a>
           </li>
           <li>
             <a href="#reference" class="toc-h1 toc-link" data-title=" Reference "><a href="#reference" style="color: white; text-decoration: none; color:#7ccfaf"> Reference </a></a>
           </li>
           <li>
-            <a href="#satis" class="toc-h1 toc-link" data-title="Satış">Satış</a>
+            <a href="#sale" class="toc-h1 toc-link" data-title="Sale">Sale</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#satis-olusturma" class="toc-h2 toc-link" data-title="Satış Oluşturma">Satış Oluşturma</a>
+                    <a href="#create-sale" class="toc-h2 toc-link" data-title="Create Sale">Create Sale</a>
                   </li>
                   <li>
-                    <a href="#satisi-inceleme" class="toc-h2 toc-link" data-title="Satışı İnceleme">Satışı İnceleme</a>
+                    <a href="#retrieve-sale" class="toc-h2 toc-link" data-title="Retrieve Sale">Retrieve Sale</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#odeme" class="toc-h1 toc-link" data-title="Ödeme">Ödeme</a>
+            <a href="#charge" class="toc-h1 toc-link" data-title="Charge">Charge</a>
           </li>
           <li>
-            <a href="#direkt-odeme-2" class="toc-h1 toc-link" data-title="Direkt Ödeme">Direkt Ödeme</a>
+            <a href="#direct-charge-2" class="toc-h1 toc-link" data-title="Direct Charge">Direct Charge</a>
           </li>
           <li>
-            <a href="#kart-saklama" class="toc-h1 toc-link" data-title="Kart Saklama">Kart Saklama</a>
+            <a href="#vault" class="toc-h1 toc-link" data-title="Vault">Vault</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#kart-saklama-islemi" class="toc-h2 toc-link" data-title="Kart Saklama İşlemi">Kart Saklama İşlemi</a>
+                    <a href="#vaulting-card" class="toc-h2 toc-link" data-title="Vaulting Card">Vaulting Card</a>
                   </li>
                   <li>
-                    <a href="#saklanan-karti-goruntuleme" class="toc-h2 toc-link" data-title="Saklanan Kartı Görüntüleme">Saklanan Kartı Görüntüleme</a>
+                    <a href="#retrieve-vaulted-card" class="toc-h2 toc-link" data-title="Retrieve Vaulted Card">Retrieve Vaulted Card</a>
                   </li>
                   <li>
-                    <a href="#saklanan-kartlari-listeleme" class="toc-h2 toc-link" data-title="Saklanan Kartları Listeleme">Saklanan Kartları Listeleme</a>
+                    <a href="#listing-vaulted-cards" class="toc-h2 toc-link" data-title="Listing Vaulted Cards">Listing Vaulted Cards</a>
                   </li>
                   <li>
-                    <a href="#saklanan-karti-silme" class="toc-h2 toc-link" data-title="Saklanan Kartı Silme">Saklanan Kartı Silme</a>
+                    <a href="#delete-vaulted-card" class="toc-h2 toc-link" data-title="Delete Vaulted Card">Delete Vaulted Card</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#kart-saklama-ile-odeme-2" class="toc-h1 toc-link" data-title="Kart Saklama ile Ödeme">Kart Saklama ile Ödeme</a>
+            <a href="#charge-with-token" class="toc-h1 toc-link" data-title="Charge With Token">Charge With Token</a>
           </li>
           <li>
             <a href="#capture" class="toc-h1 toc-link" data-title="Capture">Capture</a>
           </li>
           <li>
-            <a href="#iptal" class="toc-h1 toc-link" data-title="İptal">İptal</a>
+            <a href="#cancel" class="toc-h1 toc-link" data-title="Cancel">Cancel</a>
           </li>
           <li>
-            <a href="#iade" class="toc-h1 toc-link" data-title="İade">İade</a>
+            <a href="#refund" class="toc-h1 toc-link" data-title="Refund">Refund</a>
           </li>
           <li>
-            <a href="#odeme-plani" class="toc-h1 toc-link" data-title="Ödeme Planı">Ödeme Planı</a>
+            <a href="#subscription-plan" class="toc-h1 toc-link" data-title="Subscription Plan">Subscription Plan</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#tekrarlayan-odeme-periotlari" class="toc-h2 toc-link" data-title="Tekrarlayan Ödeme Periotları">Tekrarlayan Ödeme Periotları</a>
+                    <a href="#create-subscription-plan" class="toc-h2 toc-link" data-title="Create Subscription Plan">Create Subscription Plan</a>
                   </li>
                   <li>
-                    <a href="#odeme-plani-olusturma" class="toc-h2 toc-link" data-title=" Ödeme Planı Oluşturma"> Ödeme Planı Oluşturma</a>
-                  </li>
-                  <li>
-                    <a href="#odeme-plani-goruntuleme" class="toc-h2 toc-link" data-title="Ödeme Planı Görüntüleme">Ödeme Planı Görüntüleme</a>
-                  </li>
-                  <li>
-                    <a href="#odeme-plani-guncelleme" class="toc-h2 toc-link" data-title="Ödeme Planı Güncelleme">Ödeme Planı Güncelleme</a>
+                    <a href="#retrieve-subscription-plan" class="toc-h2 toc-link" data-title="Retrieve Subscription Plan">Retrieve Subscription Plan</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#taksitler" class="toc-h1 toc-link" data-title="Taksitler">Taksitler</a>
+            <a href="#installments" class="toc-h1 toc-link" data-title="Installments">Installments</a>
           </li>
       </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='giris'><a href='#paytrek' style='color: white; text-decoration: none; color:#7ccfaf' > Giriş</a></h1>
-<p>Paytrek PCI DSS Seviye 1, en yüksek seviye kart sahibi bilgi güvenliği,
-sertifikası ile 100&#39;den fazla ülkede yasal kurulum gereksinimleri ücretsiz,
-kullanımı ve entegrasyonu kolay bir ödeme sistemi hizmeti sunmaktadır.</p>
-<h1 id='odeme-akisi'>Ödeme Akışı</h1>
-<p>Hızlı ve kolay entegrasyon için aşağıdaki ödeme akışları önerilmektedir.</p>
+        <h1 id='paytrek'><a href='#paytrek' style='color: white; text-decoration: none; color:#7ccfaf' > Paytrek</a></h1>
+<p>Paytrek creates the ability to process transactions in more than
+100 countries as well as ensuring the
+highest-level cardholder information safety with its PCI DSS Level 1
+certification. Paytrek introduces a payment system that is easy-to-use
+and free of pricey legal installation requirements.</p>
+<h1 id='payment-flows'>Payment Flows</h1>
+<p>Following payment flows are suggested ones for easy-to-use integrations.</p>
 
-<p>Paytrek ödeme sistemi kullanabilmeniz için öncelikle onaylanmış bir üye
-işyeri hesabına sahip olmanız gerekir.
-API isteğinde bulunabilmek için kullanıcı adı ve parolanız bulunmuyor
-ise lütfen <a href="https://sandbox.paytrek.com/sandbox/signup">https://sandbox.paytrek.com/sandbox/signup</a> adresine
-giderek kullanıcınızı oluşturun. Paytrek entegrasyonunuzu
-tamamladıktan sonra takımımız sizinle canlı ortam
-bilgileri paylaşılacaktır.</p>
+<p>In order to be able to use Paytrek you must be a valid merchant.
+If you don’t have a username and password to use in the API calls,
+please sign up at <a href="https://sandbox.paytrek.com/sandbox/signup">https://sandbox.paytrek.com/sandbox/signup</a>
+Once your integration is fully completed Paytrek Integration
+Team will provide the live credentials.</p>
 
-<p>Paytrek aşağıda belirtilen ödeme yöntemlerine sahiptir.</p>
+<p>Paytrek provides you following ways to integrate:</p>
 
 <ul>
-<li>Paytrek Ortak Ödeme Formu</li>
-<li>Direkt Ödeme</li>
-<li>Kart Saklama ile Ödeme</li>
-<li>Ön Otorizasyon ile Ödeme</li>
+<li>Paytrek Hosted Payment Form</li>
+<li>Direct Charge</li>
+<li>Tokenization Flow</li>
+<li>Pre-Authorization Flow</li>
 </ul>
-<h2 id='paytrek-ortak-odeme-formu'>Paytrek Ortak Ödeme Formu</h2>
+<h2 id='paytrek-hosted-payment-flow'>Paytrek Hosted Payment Flow</h2>
 <ol>
-<li>Müşteri üye iş yerinin web sitesinde bir sipariş verir.</li>
-<li>Üye işyeri Paytrek&#39;e <a href="#satis-sale">Sale</a> Kaynağını kullanarak token isteğinde bulunur.</li>
-<li>Tarafımızdan üye işyerine <code>sale_token</code> bilgisi cevap olarak verilir.</li>
-<li>Üye işyeri müşterisini yukarıdaki token aracılığıyla ödeme sayfasına yönlendirir. [1]</li>
-<li>Müşteri ortak ödeme sayfasında ödeme için gereken bilgileri doldurur.</li>
-<li>Paytrek ödeme işlemini gerçekleştirir.</li>
-<li>Paytrek müşterinin girdiği bilgiler doğrultusunda ödemeyi gerçekleştirdiği istemciden
-bilgileri alır.</li>
-<li>İşlem gerçekleştikten sonra muşteri ilgili üye işyerinin sayfasına <code>sale_token</code> ile yönlendirilir. [2]</li>
+<li>The customer submits an order on merchant web site.</li>
+<li>Merchant requests a token from Paytrek via the <a href="#sale">Sale</a> Resource.</li>
+<li>Paytrek returns the merchant a <code>sale_token</code>.</li>
+<li>Merchant redirects the customer to checkout form on Paytrek with the token[1].</li>
+<li>Customer enters card data on Paytrek Hosted Form.</li>
+<li>Paytrek processes the payment.</li>
+<li>Paytrek receives a response from the related processor.</li>
+<li>Paytrek redirects the customer to your web site with the <code>sale_token</code>[2].</li>
 </ol>
 
-<p><sub> * [1, 2] Sandbox ortak ödeme formu
-    <a href="https://sandbox.paytrek.com">https://sandbox.paytrek.com</a>, Production ortak ödeme sayfası ise
-    <a href="https://secure.paytrek.com">https://secure.paytrek.com</a> da yer alır.
-    Üye işyeri yönlendirme yaparken bu URL&#39;lerin sonuna <code>sale_token</code> bilgisi
-    ekleyerek ilgili ortamlarda bu sayfalara yönlendirme yapması gerekmektedir.
-    (ie. <a href="https://sandbox.paytrek.com/?token=TOKEN_VALUE">https://sandbox.paytrek.com/?token=TOKEN_VALUE</a>)</sub></p>
-
-<p><sub> * [1, 2] Ortak ödeme sayfasında müşteri
-    işlemi gerçekleştirdikten sonra Paytrek tarafından üye iş yeri sayfasına yönlendirilir
-    Bu esnada üye işyeri Sale Kaynağını kullanarak satışın durumunu sorgulamalıdır.
-    Satışın durumu  <strong>Paid</strong>, <strong>Ready to Send</strong>,
-    <strong>Authorized</strong> veya <strong>PreAuthorized</strong> ise bu satışın başarılı bir şekilde gerçekleştiğini
-    gösterir.</sub></p>
-<h2 id='direkt-odeme'>Direkt Ödeme</h2>
-<ol>
-<li>Müşteri üye işyerine ait ödeme sayfasına yönlenir.</li>
-<li>Müşteri kart bilgilerini üye işyerinin ödeme sayfasında paylaşır.</li>
-<li>Üye işyeri <a href="#direkt-odeme-2">Direct Charge</a> Kaynağını kullanarak
-müşteriden aldığı bilgilerle ödeme işlemi için Paytrek&#39;e istekte bulunur.</li>
-<li>Paytrek üye işyerinden gelen isteği karşılar.</li>
-<li>Paytrek ödemeyi gerçekleştirmek üzere ilgili istemciye istekte bulunur.</li>
-<li>Ödeme işleminin sonucu üye işyerine cevap olarak dönülür.</li>
-</ol>
-<h2 id='kart-saklama-ile-odeme'> Kart Saklama ile Ödeme</h2>
-<ol>
-<li>Müşteri üye işyerine ait ödeme sayfasına yönlenir.</li>
-<li>Müşteri kart bilgilerini üye işyerinin ödeme sayfasında paylaşır
-ve üye iş yeri PaytrekJS aracılığıyla <code>Create Card Token</code> kullanarak,
-kart bilgilerini tokenize eder.</li>
-<li>Üye iş yeri bu kart token&#39;ı kaydettikten sonra <a href="#satis">Sale</a> Kaynağını kullanarak
-satış oluşturur.</li>
-<li>Üye işyeri ilgili <code>card_token</code> ve <code>sale_token</code> kullanarak <a href="#kart-saklama-ile-odeme-2">Charge with Card Token</a> Kaynağına
-istekte bulunur.</li>
-<li>Paytrek üye işyerinden gelen isteği karşılar.</li>
-<li>Paytrek ödemeyi gerçekleştirmek üzere ilgili istemciye istekte bulunur.</li>
-<li>Ödeme işleminin sonucu üye işyerine cevap olarak dönülür.</li>
-</ol>
-<h2 id='on-otorizasyon-ile-odeme'> Ön Otorizasyon ile Ödeme</h2>
-<ol>
-<li>Müşteri üye işyerine ait ödeme sayfasına yönlenir.</li>
-<li>Müşteri kart bilgilerini üye işyerinin ödeme sayfasında paylaşır
-ve üye işyeri <a href="#direkt-odeme-2">Direct Charge</a> Kaynağına
-<code>pre_auth</code> parametresini <code>true</code> olacak şekilde gönderir (<code>pre_auth:true</code>).</li>
-<li>Üye iş yeri <code>sale_token</code> kullanarak <a href="#capture">Capture</a> Kaynağına
-istekte bulunur.</li>
-<li>Paytrek üye işyerinden gelen isteği karşılar.</li>
-<li>Paytrek ödemeyi gerçekleştirmek üzere ilgili istemciye istekte bulunur.</li>
-<li>Ödeme işleminin sonucu üye işyerine cevap olarak dönülür.</li>
-</ol>
-<h1 id='3d-transactions'>3D Transactions</h1>
-<p>Üye işyeri ve/veya müşteri ödeme işleminin MasterCard veya Visa
-tarafından sağlanan 3D güvenli ödeme işlemi olarak yapılmasını talep
-edebilir. Bu bağlamda Paytrek 3D ödeme işlemini tüm ödeme akışlarına
-desteklemektedir.</p>
-
-<p>Üye işyeri 3D güvenli ödeme işlemi gerçekleştirmek için bulunduğu isteklerin içerisine <code>secure_option</code> parametresini <code>true</code> olarak eklemelidir (<code>secure_option:true</code>).</p>
-<h2 id='paytrek-ortak-odeme-ile-3d-guvenli-odeme-islemi'>Paytrek Ortak Ödeme ile 3D Güvenli Ödeme İşlemi</h2>
-<ol>
-<li>Müşteri üye işyerine ait ödeme sayfasına yönlenir.</li>
-<li>Üye işyeri <a href="#satis">Sale</a> Kaynağını kullanarak satış oluşturur.</li>
-<li>Paytrek tarafından üye işyerine <code>sale_token</code> bilgili cevap olarak dönülür.</li>
-<li>Üye işyeri <code>sale_token</code> bilgisi kullanarak müşterisini ortak ödeme sayfasına
-yönlendirir. [1]</li>
-<li>Müşteri ortak ödeme sayfasında kart bilgilerini paylaşır.</li>
-<li>Paytrek tarafında 3D güvenli ödeme işlemi başlatılır ve müşteri karta ait
-istemcinin 3D güvenli ödeme sayfasına yönlendirilir.</li>
-<li>Müşteri 3D ödeme işlemini gerçekleştirmek üzere PIN girişi yapar.</li>
-<li>Müşteri 3D ödeme sayfasından Paytrek sayfasına yönlendirilir.</li>
-<li>Paytrek ödeme işlemini 3D güvenli ödeme işlemi sonucuna göre işler. Bu bağlamda
-Müşteri 3D işlemini başarılı bir şekilde tamamlayabilir ya da satışı 3D aşamasında
-bırakıp satışı tamamlamamayı tercih edebilir. İki durumda da paytrek tarafından üye
-işyerine işlem bilgili cevap olarak dönülür.</li>
-<li>Müşteri üye işyerinin sayfasına <code>sale_token</code> bilgisi ile yönlendirilir. [2]</li>
-</ol>
-
-<p><sub> * [1, 2] Sandbox ortak ödeme formu
-    https://sandbox.paytrek.com, Production ortak ödeme sayfası ise
-    https://secure.paytrek.com da yer alır.
-    Üye işyeri yönlendirme yaparken bu URL&#39;lerin sonuna <code>sale_token</code> bilgisi
-    ekleyerek ilgili ortamlarda bu sayfalara yönlendirme yapması gerekmektedir.
+<p><sub> * [1] Sandbox hosted form is located at
+    https://sandbox.paytrek.com and Production hosted form
+    is located at https://secure.paytrek.com.
+    You should redirect the user to these urls with
+    the token parameter added to the url.
     (ie. https://sandbox.paytrek.com/?token=TOKEN_VALUE)</sub></p>
 
-<p><sub> * [1, 2] Ortak ödeme sayfasında müşteri
-    işlemi gerçekleştirdikten sonra Paytrek tarafından üye iş yeri sayfasına yönlendirilir
-    Bu esnada üye işyeri Sale Kaynağını kullanarak satışın durumunu sorgulamalıdır.
-    Satışın durumu  <strong>Paid</strong>, <strong>Ready to Send</strong>,
-    <strong>Authorized</strong> veya <strong>PreAuthorized</strong> ise bu satışın başarılı bir şekilde gerçekleştiğini
-    gösterir.</sub></p>
-<h2 id='direkt-odeme-ile-3d-guvenli-odeme-islemi'>Direkt Ödeme ile 3D Güvenli Ödeme İşlemi</h2>
+<p><sub> * [2] You must check the status of the sale via Sale
+    Resource once the customer lands to your web site.
+    If the sale status is one of <strong>Paid</strong>, <strong>Ready to Send</strong>,
+    <strong>Authorized</strong> and <strong>PreAuthorized</strong> it means the sale has been
+    successfully charged.</sub></p>
+<h2 id='direct-charge'>Direct Charge</h2>
 <ol>
-<li>Müşteri üye işyerine ait ödeme sayfasına yönlenir.</li>
-<li>Müşteri kart bilgilerini üye işyerinin ödeme sayfasında paylaşır.</li>
-<li>Üye işyeri <a href="#direkt-odeme-2">Direct Charge</a> Kaynağını kullanarak
-müşteriden aldığı bilgilerle ödeme işlemi için Paytrek&#39;e istekte bulunur.</li>
-<li>Paytrek bu isteğe cevap olarak müşterinin 3D güvenli bilgilerini gireceği
-<code>forward_url</code> bilgisini üye işyeri ile paylaşır.</li>
-<li>Üye işyeri müşterisini ilgi <code>forward_url</code> e yönlendirir.</li>
-<li>Müşteri bu forward url aracılığıyla 3D güvenli ödeme sayfasına yönlenir.</li>
-<li>Müşteri 3D güvenli ödemeyi gerçekleştirmek için PIN bilgilerini girer.</li>
-<li>3D güvenli ödeme sayfasının başarılı bir şekilde tamamlanması sonucunda
-müşteri Paytrek&#39;e yönlendirilir.</li>
-<li>Paytrek ödeme işlemini 3D güvenli ödeme işlemi sonucuna göre işler. Bu bağlamda
-Müşteri 3D işlemini başarılı bir şekilde tamamlayabilir ya da satışı 3D aşamasında
-bırakıp satışı tamamlamamayı tercih edebilir. İki durumda da paytrek tarafından üye
-işyerine işlem bilgili cevap olarak dönülür.</li>
-<li>Müşteri üye işyerinin sayfasına yönlendirilir. [1]</li>
+<li>The customer checks out on your web site.</li>
+<li>Customer enters card data on your web site.</li>
+<li>You charge on Paytrek via the <a href="#direct-charge-2">Direct Charge</a> Resource.</li>
+<li>Paytrek processes the payment.</li>
+<li>Paytrek receives a response from the related processor.</li>
+<li>Paytrek returns you a response with the payment result.</li>
+</ol>
+<h2 id='tokenization-flow'> Tokenization Flow</h2>
+<ol>
+<li>The customer checks out on your web site.</li>
+<li>Customer enters card data on your form and and you make a call to <code>Create Card Token</code> with PaytrekJS.</li>
+<li>You save the card token and create a sale via <a href="#sale">Sale</a> Resource.</li>
+<li>You make a call to <a href="#charge-with-token">Charge with Card Token</a> Resource with card token and sale token.</li>
+<li>Paytrek processes the payment.</li>
+<li>Paytrek receives a response from the related processor.</li>
+<li>Paytrek returns you a response with the payment result.</li>
+</ol>
+<h2 id='pre-authorization'> Pre-Authorization</h2>
+<ol>
+<li>The customer checks out on your web site.</li>
+<li>Customer enters card data on your form and you make a call to <a href="#direct-charge">Direct Charge</a> Resource with <code>pre_auth: true</code> option.</li>
+<li>You make a call to <a href="#capture">Capture</a> endpoint with <code>sale_token</code>.</li>
+<li>Paytrek processes the payment.</li>
+<li>Paytrek receives a response from the related processor.</li>
+<li>Paytrek returns you a response with the payment result.</li>
+</ol>
+<h1 id='3d-transactions'>3D Transactions</h1>
+<p>You or your customers may choose a charge to be processed
+through 3D secure systems provided by MasterCard or Visa.
+In this case, Paytrek handles 3D transactions both on Hosted Form
+and Tokenization Flow.</p>
+
+<p>When you choose a charge to be processed through 3D secure system, your API request
+must include <code>secure_option</code> parameter with <code>true</code> variable.</p>
+<h2 id='3d-transactions-on-paytrek-hosted-payment-form'>3D Transactions on Paytrek Hosted Payment Form</h2>
+<ol>
+<li>The customer checks out on your web site.</li>
+<li>You request a token from Paytrek via the <a href="#sale">Sale</a> Resource.</li>
+<li>Paytrek returns you a <code>sale_token</code>.</li>
+<li>Redirect your customer to hosted form on Paytrek with the <code>sale_token</code>. [1]</li>
+<li>Customer enters card data.</li>
+<li>Paytrek starts a 3D transaction, redirects the customer to 3D secure system.</li>
+<li>Customer enters the PIN on the 3D secure system.</li>
+<li>3D Secure system redirects the customer back to Paytrek.</li>
+<li>Paytrek processes the payment if 3D secure result is a success or halts the process if 3D secure result is failure.</li>
+<li>Paytrek redirects the customer to your web site with the <code>sale_token</code>. [2]</li>
 </ol>
 
-<p><sub> * [1] Paytrek üye işyeri tarafından Sale Kaynağına istekte bulunurken,
-    paylaşmış olduğu <code>return_url</code> adresine müşteriyi yönlendirir. İlgili istek
-    içerisinde <code>return_url</code> bulunmuyor ise müşteri, üye işyerinin kullanıcı bilgileri
-    oluşturulurken vermiş olduğu url bilgisine yönlendirilir.</sub></p>
-<h2 id='kart-saklama-ile-3d-guvenli-odeme-islemi'>Kart Saklama ile 3D Güvenli Ödeme İşlemi</h2>
+<p><sub> * [1] Sandbox hosted form is located at
+    <a href="https://sandbox.paytrek.com">https://sandbox.paytrek.com</a> and Production hosted form
+    is located at <a href="https://secure.paytrek.com">https://secure.paytrek.com</a>.
+    You should redirect the user to these urls with
+    the token parameter added to the url.
+    (ie. <a href="https://sandbox.paytrek.com/?token=TOKEN_VALUE">https://sandbox.paytrek.com/?token=TOKEN_VALUE</a>))</sub></p>
+
+<p><sub> * [2] You must check the status of the sale via Sale
+    Resource once the customer lands to your web site.
+    If the sale status is one of <strong>Paid</strong>, <strong>Ready to Send</strong>,
+    <strong>Authorized</strong> and <strong>PreAuthorized</strong> it means the sale has been
+    successfully charged.</sub></p>
+<h2 id='3d-transactions-on-direct-charge-flow'>3D Transactions on Direct Charge Flow</h2>
 <ol>
-<li>Müşteri üye işyerine ait ödeme sayfasına yönlenir.</li>
-<li>Müşteri kart bilgilerini üye işyerinin ödeme sayfasında paylaşır
-ve üye iş yeri PaytrekJS aracılığıyla <code>Create Card Token</code> kullanarak,
-kart bilgilerini tokenize eder.</li>
-<li>Üye iş yeri bu kart token&#39;ı kaydettikten sonra <a href="#satis">Sale</a> Kaynağını kullanarak
-satış oluşturur.</li>
-<li>Üye işyeri ilgili <code>card_token</code> ve <code>sale_token</code> kullanarak <a href="#kart-saklama-ile-odeme-2">Charge with Card Token</a> Kaynağına
-istekte bulunur.</li>
-<li>Paytrek bu isteğe cevap olarak müşterinin 3D güvenli bilgilerini gireceği
-<code>forward_url</code> bilgisini üye işyeri ile paylaşır.</li>
-<li>Üye işyeri müşterisini ilgi <code>forward_url</code> e yönlendirir.</li>
-<li>Müşteri bu forward url aracılığıyla 3D güvenli ödeme sayfasına yönlenir.</li>
-<li>Müşteri 3D güvenli ödemeyi gerçekleştirmek için PIN bilgilerini girer.</li>
-<li>3D güvenli ödeme sayfasının başarılı bir şekilde tamamlanması sonucunda
-müşteri Paytrek&#39;e yönlendirilir.</li>
-<li>Paytrek ödeme işlemini 3D güvenli ödeme işlemi sonucuna göre işler. Bu bağlamda
-Müşteri 3D işlemini başarılı bir şekilde tamamlayabilir ya da satışı 3D aşamasında
-bırakıp satışı tamamlamamayı tercih edebilir. İki durumda da paytrek tarafından üye
-işyerine işlem bilgili cevap olarak dönülür.</li>
-<li>Müşteri üye işyerinin sayfasına yönlendirilir*.</li>
+<li>The customer checks out on your web site.</li>
+<li>Customer enters card data on your web site.</li>
+<li>You charge on Paytrek via the <a href="#direct-charge">Direct Charge</a> Resource.</li>
+<li>Paytrek returns you a response with a field <code>forward_url</code>.</li>
+<li>You redirect the customer to the given <code>forward_url</code>.</li>
+<li>Customer is redirected to Paytrek and Paytrek redirects the customer to 3D secure system.</li>
+<li>Customer enters the PIN on the 3D secure system.</li>
+<li>3D Secure system redirects the customer back to Paytrek.</li>
+<li>Paytrek processes the payment if 3D secure result is a success or halts the process if 3D secure result is failure.</li>
+<li>Paytrek redirects the customer to your web site. [1]</li>
 </ol>
 
-<p><sub> * Paytrek üye işyeri tarafından Sale Kaynağına istekte bulunurken,
-    paylaşmış olduğu <code>return_url</code> adresine müşteriyi yönlendirir. İlgili istek
-    içerisinde <code>return_url</code> bulunmuyor ise müşteri, üye işyerinin kullanıcı bilgileri
-    oluşturulurken vermiş olduğu url bilgisine yönlendirilir.</sub></p>
+<p><sub> * [3] Paytrek redirects the customer to the given
+    <code>return_url</code> field when creating a new sale via Sale Resource.</sub></p>
+<h2 id='3d-transactions-on-tokenization-flow'>3D Transactions on Tokenization Flow</h2>
+<ol>
+<li>The customer checks out on your web site.</li>
+<li>Customer enters card data on your form and and you make a call to <code>Create Card Token</code> with PaytrekJS.</li>
+<li>You save the <code>card_token</code> and create a sale via <a href="#sale">Sale Resource</a>.</li>
+<li>You send a request to <a href="#charge-with-token">Charge with Card Token Resource</a>  with the <code>card_token</code> you obtained and the sale you have created.</li>
+<li>Paytrek returns you a response with a field <code>forward_url</code>.</li>
+<li>You redirect the customer to the given <code>forward_url</code>.</li>
+<li>Customer is redirected to Paytrek and Paytrek redirects the customer to 3D secure system.</li>
+<li>Customer enters the PIN on the 3D secure system.</li>
+<li>3D Secure system redirects the customer back to Paytrek.</li>
+<li>Paytrek processes the payment if 3D secure result is a success or halts the process if 3D secure result is failure.</li>
+<li>Paytrek redirects the customer to your web site. [1]</li>
+</ol>
+
+<p><sub> * [1] Paytrek redirects the customer to the given
+    return_url field when creating a new sale via Sale Resource.</sub></p>
 <h1 id='paytrek-api'>Paytrek API</h1>
-<p>Paytrek gateway API RESTful mimarisi esas alınarak en iyi endütriyel standartlara
-göre dizayn edilmiştir.</p>
-<h2 id='kimlik-dogrulama'>Kimlik Doğrulama</h2>
-<p>Paytrek tarafına iletilen tüm istekler basit kimlik doğrulama yöntemi
-kullanılarak gönderilmelidir <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">Basic Auth</a>.</p>
+<p>Paytrek gateway API is designed with industry standard best practices,
+based on RESTful architecture.</p>
+<h2 id='authentication'>Authentication</h2>
+<p>All requests must be authenticated using <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">Basic Auth</a>.</p>
 
-<p>API isteği yapabilmek için bir kullanıcı adı(api_key) ve parola(secret) bilgisine sahip
-değilseniz lütfen <a href="https://sandbox.paytrek.com/sandbox/signup">https://sandbox.paytrek.com/sandbox/signup</a> adresinden kayıt olunuz.</p>
+<p>If you don’t have a username(api_key) and password(secret) to use in the API calls,
+please sign up at <a href="https://sandbox.paytrek.com/sandbox/signup">https://sandbox.paytrek.com/sandbox/signup</a>.</p>
 
-<p>Kullanıcı adı(api_key) ve parola(secret) bilgileriniz <a href="https://sandbox.paytrek.com/dashboard/account_info/">Hesap Bilgileri</a>
-sayfasında yer almaktadır.</p>
+<p>Your username(api_key) and password(secret) are located on <a href="https://sandbox.paytrek.com/dashboard/account_info/">Account Info</a> page.</p>
 <h2 id='headers'>Headers</h2>
-<p>Tüm isteklerin headerları <code>Content-Type: application/json</code> içermelidir.</p>
+<p>All requests must include <code>Content-Type: application/json</code></p>
 <h2 id='endpoints'>Endpoints</h2>
 <table><thead>
 <tr>
@@ -570,17 +528,17 @@ sayfasında yer almaktadır.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td><a href="#satis"><code>Sale</code></a></td>
+<td><a href="#sale"><code>Sale</code></a></td>
 <td style="text-align: left"><code>/api/v2/sale/</code></td>
 <td style="text-align: center"><code>POST</code> <code>GET</code></td>
 </tr>
 <tr>
-<td><a href="#odeme"><code>Charge</code></a></td>
+<td><a href="#charge"><code>Charge</code></a></td>
 <td style="text-align: left"><code>/api/v2/charge/</code></td>
 <td style="text-align: center"><code>POST</code></td>
 </tr>
 <tr>
-<td><a href="#direkt-odeme-2"><code>Direct Charge</code></a></td>
+<td><a href="#direct-charge"><code>Direct Charge</code></a></td>
 <td style="text-align: left"><code>/api/v2/direct_charge/</code></td>
 <td style="text-align: center"><code>POST</code></td>
 </tr>
@@ -590,7 +548,7 @@ sayfasında yer almaktadır.</p>
 <td style="text-align: center"><code>POST</code> <code>GET</code></td>
 </tr>
 <tr>
-<td><a href="#kart-saklama-ile-odeme-2"><code>Charge With Token</code></a></td>
+<td><a href="#charge-with-token"><code>Charge With Token</code></a></td>
 <td style="text-align: left"><code>/api/v2/charge_with_token/</code></td>
 <td style="text-align: center"><code>POST</code></td>
 </tr>
@@ -600,22 +558,22 @@ sayfasında yer almaktadır.</p>
 <td style="text-align: center"><code>POST</code></td>
 </tr>
 <tr>
-<td><a href="#iptal"><code>Cancel</code></a></td>
+<td><a href="#cancel"><code>Cancel</code></a></td>
 <td style="text-align: left"><code>/api/v2/cancel/</code></td>
 <td style="text-align: center"><code>POST</code></td>
 </tr>
 <tr>
-<td><a href="#iade"><code>Refund</code></a></td>
+<td><a href="#refund"><code>Refund</code></a></td>
 <td style="text-align: left"><code>/api/v2/refund/</code></td>
 <td style="text-align: center"><code>POST</code></td>
 </tr>
 <tr>
-<td><a href="#taksitler"><code>Installments</code></a></td>
+<td><a href="#installments"><code>Installments</code></a></td>
 <td style="text-align: left"><code>/api/v2/installments/</code></td>
 <td style="text-align: center"><code>GET</code></td>
 </tr>
 </tbody></table>
-<h2 id='paytrek-ortamlarinin-url-39-leri'>Paytrek Ortamlarının URL&#39;leri</h2>
+<h2 id='paytrek-environment-urls'>Paytrek Environment URLs</h2>
 <table><thead>
 <tr>
 <th style="text-align: left"></th>
@@ -623,39 +581,35 @@ sayfasında yer almaktadır.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">Sandbox (Test Ortamı)</td>
+<td style="text-align: left">Sandbox (Test)</td>
 <td style="text-align: left"><a href="https://sandbox.paytrek.com">https://sandbox.paytrek.com</a></td>
 </tr>
 <tr>
-<td style="text-align: left">Canlı Ortam</td>
+<td style="text-align: left">Live Environment</td>
 <td style="text-align: left"><a href="https://secure.paytrek.com.tr">https://secure.paytrek.com.tr</a></td>
 </tr>
 </tbody></table>
-<h1 id='paytrekjs-kutuphanesi'>PaytrekJS Kütüphanesi</h1>
-<p>PaytrekJS, Paytrek’e ait tokenization servisini müşteri tarafında bulunan
-uygulamanıza entegre etmenize yardımcı olacak küçük bir kütüphanedir.
-Bu bölümde bu kütüphaneyi inceleyeceğiz.</p>
-<h2 id='paytrekjs-entegrasyonu'>PaytrekJS Entegrasyonu</h2>
-<p>PaytrekJS, form gönderimlerinizi veya etkinlik işleyicilerinizi etkilemez.
-Formunuzun onsubmit işleyicisinde gerçekleştirmek istediğiniz her işlemi bir
-kere çağırmanız yeterlidir.</p>
-<h2 id='paytrekjs-39-yi-sitenize-dahil-etmek'>PaytrekJS&#39;yi Sitenize Dahil Etmek</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://secure.paytrek.com.tr/static/v2/js/paytrek.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<h1 id='paytrekjs-library'>PaytrekJS Library</h1>
+<p>PaytrekJS is a small library that will help you integrate Paytrek’s
+tokenization service with your client side application.
+In this section we are going to inspect this library.</p>
+<h2 id='integrating-paytrekjs'>Integrating PaytrekJS</h2>
+<p>PaytrekJS does not interfere with your form submissions or event handlers.
+It only requires you to call it once everything you’d like to perform
+on your form’s onsubmit handler is done.</p>
+<h2 id='include-paytrekjs'>Include PaytrekJS</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://secure.paytrek.com.tr/static/v2/js/paytrek.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre>
 <blockquote>
-<p>Paytrek Sandbox (Test Ortamı için), lütfen aşağıdaki şekilde sitenize dahil edin:</p>
+<p>For Paytrek Sandbox, please include the following:</p>
 </blockquote>
 <pre class="highlight html tab-html"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://sandbox.paytrek.com/static/v2/js/paytrek.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre>
-<p>PaytrekJS&#39;i kullanabilmek için web sayfanıza eklemeniz gerekmektedir.
-Header veya footera ekleyebilirsiniz.</p>
-<h2 id='paytrekjs-39-yi-konfigure-etme'>PaytrekJS&#39;yi Konfigüre Etme</h2>
-<p>PaytrekJS, ayarlamanız gereken bazı yapılandırma seçeneklerine sahiptir.
-Seçenekler aşağıdaki gibi açıklanmıştır:</p>
-<h3 id='paytrekjs-ayarlari'>PaytrekJS Ayarları</h3>
-<blockquote>
-<p>Aşağıda, PaytrekJS yi nasıl yerleştirebileceğinizi gösteren bir kod örneği verilmiştir.</p>
-</blockquote>
-<pre class="highlight javascript tab-javascript"><code><span class="nx">Paytrek</span><span class="p">.</span><span class="nx">Options</span> <span class="o">=</span> <span class="p">{</span>
+<p>In order to be able to use PaytrekJS you need to include it in your web page.
+You can either include it at the footer or the header.</p>
+<h2 id='configuring-paytrekjs'>Configuring PaytrekJS</h2>
+<p>PaytrekJS has some configuration options that you must set.
+The options are explained as follows:</p>
+<h3 id='paytrekjs-options'>PaytrekJS Options</h3><pre class="highlight javascript tab-javascript"><code><span class="nx">Paytrek</span><span class="p">.</span><span class="nx">Options</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"publishableKey"</span>          <span class="p">:</span> <span class="s2">"myPaytrekPublishableKey"</span><span class="p">,</span>
     <span class="s2">"host"</span>                    <span class="p">:</span> <span class="s2">"https://secure.paytrek.com"</span><span class="p">,</span>
     <span class="s2">"orderId"</span>                 <span class="p">:</span> <span class="s2">"1420199350"</span><span class="p">,</span>
@@ -684,82 +638,89 @@ Seçenekler aşağıdaki gibi açıklanmıştır:</p>
 </code></pre>
 <table><thead>
 <tr>
-<th style="text-align: left">Değişken Adı</th>
-<th style="text-align: left">Açıklama</th>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: left">publishableKey</td>
-<td style="text-align: left">string Paytrek Dashboard üzerinden aldığınız publishable key bilgisi</td>
+<td style="text-align: left">string The publishable key that you’ve obtained from Paytrek Dashboard.</td>
 </tr>
 <tr>
 <td style="text-align: left">host</td>
-<td style="text-align: left">string İstekte bulunacağınız paytrek istemci bilgileri. Canlı ortam için host bilgisi secure.paytrek.com.tr test ortamı içinse sandbox.paytrek.com host bilgisi olarak kullanılabilir.</td>
+<td style="text-align: left">string Paytrek host that you are going to make the request. You need to use the secure.paytrek.com.tr host otherwise you have to use the secure.paytrek.com host.</td>
 </tr>
 <tr>
 <td style="text-align: left">orderId</td>
-<td style="text-align: left">string Satış oluştururken kullanacağınız sipariş id bilgisi.Sipariş idsi her bir satış için tekil olmalıdır.</td>
+<td style="text-align: left">string The order id for the sale that you will use when creating a sale. Order ids must be unique for each sale.</td>
 </tr>
 <tr>
 <td style="text-align: left">currency</td>
-<td style="text-align: left">string Para biriminin ISO kodu formatı (ie: TRY, USD, EUR)</td>
+<td style="text-align: left">string The 3 letter currency symbol for the sale. (ie: TRY, USD, EUR)</td>
 </tr>
 <tr>
 <td style="text-align: left">amount</td>
-<td style="text-align: left">string Satışa ait tutar bilgisi. (ie: 23.99)</td>
+<td style="text-align: left">string The amount of the sale. (ie: 23.99)</td>
+</tr>
+<tr>
+<td style="text-align: left">dccEnabled</td>
+<td style="text-align: left">true or false Whether you wish to enable listing dynamic currency options.</td>
 </tr>
 <tr>
 <td style="text-align: left">removeCardElements</td>
-<td style="text-align: left">true ya da false. Paytrek Form&#39;un bir token aldıktan sonra kredi kartıyla ilgili tüm öğeleri formunuzdan kaldırması gerekip gerekmediği kararı.</td>
+<td style="text-align: left">true or false. Whether Paytrek.Form should remove all credit card related elements from your form after obtaining a payment token.</td>
 </tr>
 <tr>
 <td style="text-align: left">resetCardElementValues</td>
-<td style="text-align: left">true or false. Paytrek Form&#39;un bir kart belirteci aldıktan sonra kredi kartıyla ilgili tüm öğelerin değerini boş bir dizeye sıfırlayıp sıfırlamaması kararı.</td>
+<td style="text-align: left">true or false. Whether Paytrek.Form should reset all credit card related elements’ value to an empty string after obtaining a card token.</td>
 </tr>
 <tr>
 <td style="text-align: left">cardTokenField</td>
-<td style="text-align: left">string Paytrekten alınacak payment tokenın yazılabileceği hidden input alanının idsi.</td>
+<td style="text-align: left">string. Id of the hidden input field of which value will be set to the payment token after obtaining it.</td>
 </tr>
 <tr>
 <td style="text-align: left">useVaultField</td>
-<td style="text-align: left">string Ödeme işlemi yapıldıktan sonra kartın kaydedilip kaydedilmeyeceğine karar verilen checkbox alanının idsi</td>
+<td style="text-align: left">string Id of the checkbox field of which value will be checked if the customer wanted their card data to be stored.</td>
 </tr>
 </tbody></table>
 
-<p>PaytrekJS, iki temel bileşenden oluşur:</p>
+<p>The following is a code sample to show you how you can embed PaytrekJS in
+your form submissions.</p>
+
+<p>PaytrekJS consists of two components that we will cover:</p>
 <h2 id='paytrek-form'>Paytrek.Form</h2>
-<p>Bu sınıf dosyası, ödeme formunuza bir JavaScript nesnesi eşlemesidir. Sınıfın özelliklerine göre
-Kredi kartı numaranızı, cvv, son kullanma tarihi ve kart sahibinin adı alanlarını eşler.</p>
-<h3 id='yapi'> Yapı</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">// creating a Paytrek.Form object with an id</span>
+<p>This class file is a JavaScript object mapping to your checkout form. It will map your credit card number, cvc,
+expiration date and card holder name fields to its own properties.</p>
+<h3 id='constructor'> Constructor</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">// creating a Paytrek.Form object with an id</span>
 <span class="kd">var</span> <span class="nx">paytrekForm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Paytrek</span><span class="p">.</span><span class="nx">Form</span><span class="p">(</span><span class="s2">"myFormId"</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="c1">// creating a Paytrek.Form object with a form element</span>
 <span class="kd">var</span> <span class="nx">paytrekForm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Paytrek</span><span class="p">.</span><span class="nx">Form</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"myFormId"</span><span class="p">));</span>
 <span class="kd">var</span> <span class="nx">paytrekForm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Paytrek</span><span class="p">.</span><span class="nx">Form</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 </code></pre>
-<p>Formunuzun id niteliğini veya form öğesinin kendisini sağlayarak Paytrek.Form sınıfını başlatabilirsiniz.
-İsteğinize göre form objesini ve objenin ilişkilendiği satış bilgilerini konfigüre edebilirsiniz.</p>
+<p>You can instantiate Paytrek.Form class by providing your form’s id attribute or the form element itself,
+an optional configuration object and an object related to sale information.</p>
 
-<p>Form bulunamaz ise ilgili öğe tarafından hata fırlatılır.</p>
-<h3 id='sale-data-objesi'>Sale Data Objesi</h3>
-<p>Sale Data objesi bir card token oluşturulurken satışa ait asgari
-verinin tutulduğu objedir.
-Bu verilerden bazıları card token oluşturulurken halihazırda bildiğiniz satışa
-ait sipariş numarası, sipariş tutarı, para birimi gibi bilgilerdir.</p>
+<p>If the constructor cannot find the form, it will throw an Error.</p>
+<h3 id='sale-data-object'>Sale Data Object</h3>
+<p>Sale Data is an object that holds the minimum information
+regarding a sale that you will create after obtaining a card token.
+These are the data that you know beforehand creating a card token or
+sale such as the sale’s order id, sale’s amount and currency.</p>
 
-<p>Satış verileriyle gönderilecek tüm veriler string formatına dönüştürülmelidir.</p>
-<h3 id='kart-token-olusturma'>Kart Token Oluşturma</h3><pre class="highlight javascript tab-javascript"><code><span class="nx">paytrekForm</span><span class="p">.</span><span class="nx">createToken</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+<p>All the data that will be sent through sale data must be converted to string.</p>
+<h3 id='creating-card-token'>Creating Card Token</h3><pre class="highlight javascript tab-javascript"><code><span class="nx">paytrekForm</span><span class="p">.</span><span class="nx">createToken</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
     <span class="c1">// response is an object returned by the xhr call.</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">card_token</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre>
-<p>Bir Paytrek.Form örneğiniz hazır olduğunda
-Kart belirteci almak için yapmanız gereken
-tek şey, <code>createToken ()</code> yöntemini çağırmaktır.</p>
+<p>Once you have a Paytrek.Form instance ready,
+all you have to do is to call the <code>createToken()</code> method on your
+instance in order to obtain a card token.</p>
 
-<p><code>createToken ()</code> yöntemi tek bir argüman alır:
-Bu argüman Paytrek API tarafından callback fonksiyonu olarak
-dönülen ilk cevaptır.</p>
-<h3 id='kart-token-cevabi'>Kart Token Cevabı</h3><pre class="highlight javascript tab-javascript"><code><span class="nx">paytrekForm</span><span class="p">.</span><span class="nx">createToken</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+<p><code>createToken()</code> method takes only one argument:
+A callback function as an argument of which the first
+argument is the response returned from the Paytrek API.</p>
+<h3 id='card-token-response'>Card Token Response</h3><pre class="highlight javascript tab-javascript"><code><span class="nx">paytrekForm</span><span class="p">.</span><span class="nx">createToken</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">card_token</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// handle failure case</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -767,42 +728,40 @@ dönülen ilk cevaptır.</p>
     <span class="p">}</span>
 <span class="p">});</span>
 </code></pre>
-<p>Paytrek Tokenization API&#39;nin döndürdüğü HTTP yanıtı her zaman
-JSON formatında olur.
-<code>Card_token</code> veya <code>error</code> anahtarlarına  sahip olacaktır.</p>
-<h3 id='form-elementleri'>Form Elementleri</h3>
+<p>The HTTP response that Paytrek Tokenization API returns will always
+be in JSON format. It will have either <code>card_token</code> or <code>errors</code> keys.</p>
+<h3 id='form-elements'>Form Elements</h3>
 <blockquote>
-<p> Form Örneği;</p>
+<p>Example</p>
 </blockquote>
 <pre class="highlight html tab-html"><code><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"checkout"</span><span class="nt">&gt;</span>
    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"payment_token"</span> <span class="na">name=</span><span class="s">"payment_token"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span>
    <span class="nt">&lt;div&gt;</span>
-     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"number"</span><span class="nt">&gt;</span>Kredi Kartı Numarası:<span class="nt">&lt;/label&gt;</span>
+     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"number"</span><span class="nt">&gt;</span>Credit Card Number:<span class="nt">&lt;/label&gt;</span>
      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"number"</span> <span class="na">data-paytrek-field=</span><span class="s">"number"</span> <span class="nt">/&gt;</span>
    <span class="nt">&lt;/div&gt;</span>
    <span class="nt">&lt;div&gt;</span>
-     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"chname"</span><span class="nt">&gt;</span>Kart Sahibi İsmi:<span class="nt">&lt;/label&gt;</span>
+     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"chname"</span><span class="nt">&gt;</span>Card Holder Name:<span class="nt">&lt;/label&gt;</span>
      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"chname"</span> <span class="na">data-paytrek-field=</span><span class="s">"card-holder-name"</span> <span class="nt">/&gt;</span>
    <span class="nt">&lt;/div&gt;</span>
    <span class="nt">&lt;div&gt;</span>
-     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expmonth"</span><span class="nt">&gt;</span>Son Kullanım Ayı:<span class="nt">&lt;/label&gt;</span>
+     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expmonth"</span><span class="nt">&gt;</span>Expiration Month:<span class="nt">&lt;/label&gt;</span>
      <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"expmonth"</span> <span class="na">data-paytrek-field=</span><span class="s">"expiration-month"</span><span class="nt">&gt;</span>
        <span class="nt">&lt;option&gt;</span>1..12<span class="nt">&lt;/option&gt;</span>
      <span class="nt">&lt;/select&gt;</span>
    <span class="nt">&lt;/div&gt;</span>
    <span class="nt">&lt;div&gt;</span>
-     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expyear"</span><span class="nt">&gt;</span>Son Kullanım Yılı:<span class="nt">&lt;/label&gt;</span>
+     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"expyear"</span><span class="nt">&gt;</span>Expiration Year:<span class="nt">&lt;/label&gt;</span>
      <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"expyear"</span> <span class="na">data-paytrek-field=</span><span class="s">"expiration-year"</span><span class="nt">&gt;</span>
        <span class="nt">&lt;option&gt;</span>2014..2020<span class="nt">&lt;/option&gt;</span>
      <span class="nt">&lt;/select&gt;</span>
    <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
 </code></pre>
-<p>Yeni bir Paytrek.Form nesnesi oluşturduktan sonra,
-form öğenizin altındaki bir özelliğe sahip tüm düğümlere
-“data-paytrek-field” denir.</p>
-
-<p>Yan panelde data-paytrek-field niteliğine sahip alanlara sahip form örneği yer almaktadır.</p>
+<p>Once you create a new Paytrek.Form object, it will search for all the
+nodes under your form element that have an attribute
+called “data-paytrek-field”. There is an example of a
+form with fields having data-paytrek-field attribute in left panel.</p>
 <h2 id='paytrek-creditcard'>Paytrek.CreditCard</h2><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">creditCard</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Paytrek</span><span class="p">.</span><span class="nx">CreditCard</span><span class="p">(</span>
     <span class="nx">number</span><span class="p">,</span>
     <span class="nx">cvc</span><span class="p">,</span>
@@ -811,59 +770,62 @@ form öğenizin altındaki bir özelliğe sahip tüm düğümlere
     <span class="nx">cardHolderName</span>
 <span class="p">);</span>
 </code></pre>
-<p>Bu sınıf, kredi kartı ile ilgilenen bir JavaScript sınıfıdır.
-API isteği yapmadan önce kart verilerinin doğrulaması bu sınıf aracılığıyla yapılır.</p>
-<h3 id='yapi-2'>Yapı</h3>
-<p>Paytrek.CreditCard’ın ilgili öğesi, aşağıdaki sırayla 5 argüman alır:
-Kredi kartı numarası, cvc, son kullanma tarihi, son kullanma tarihi, kart sahibinin adı.</p>
-<h3 id='validasyonlar'>Validasyonlar</h3><pre class="highlight javascript tab-javascript"><code><span class="k">if</span> <span class="p">(</span><span class="nx">creditCard</span><span class="p">.</span><span class="nx">isValid</span><span class="p">())</span> <span class="p">{</span>
+<p>This is a JavaScript class that takes care of the credit
+card data and its validation before making an actual API request.</p>
+<h3 id='constructor-2'>Constructor</h3>
+<p>Paytrek.CreditCard’s constructor takes 5 arguments in the following order:
+credit card number, cvc, expiration month, expiration year, card holder name.</p>
+<h3 id='validations'>Validations</h3><pre class="highlight javascript tab-javascript"><code><span class="k">if</span> <span class="p">(</span><span class="nx">creditCard</span><span class="p">.</span><span class="nx">isValid</span><span class="p">())</span> <span class="p">{</span>
     <span class="c1">// credit card is valid</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
    <span class="c1">// credit card is invalid</span>
    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">creditCard</span><span class="p">.</span><span class="nx">errors</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<p>Sahip olduğunuz kredi kartı örneğini doğrulayabilirsiniz.
-Paytrek.CreditCard sınıfı Kredi kartı numarası, cvc, son
-kullanma tarihi ve kart sahibinin adı bilgilerinin geçerliliğini
-sorgular.</p>
+<p>You can validate the credit card instance you have.
+Paytrek.CreditCard class supports validating
+credit card number, cvc, expiration date and the card holder name.</p>
 
-<p>Aşağıdakiler Paytrek.CreditCard&#39;ın sağladığı yöntemlerin listesidir.</p>
+<p>The following are the list of methods that Paytrek.CreditCard provides.</p>
 
 <table><thead>
 <tr>
-<th style="text-align: left">Yöntem Adı</th>
-<th style="text-align: left">Açıklama</th>
+<th style="text-align: left">Method Name</th>
+<th style="text-align: left">explanation</th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: left">isCvcValid()</td>
-<td style="text-align: left">CVC nin geçerliliğini sorgular.</td>
+<td style="text-align: left">Validates the cvc.</td>
 </tr>
 <tr>
 <td style="text-align: left">isCardNumberValid()</td>
-<td style="text-align: left">Kredi Kartı numarasının nin geçerliliğini sorgular.</td>
+<td style="text-align: left">Validates the credit card number.</td>
 </tr>
 <tr>
 <td style="text-align: left">isdExpirationDateValid()</td>
-<td style="text-align: left">Son Kullanım tarihinin geçerliliğini sorgular.</td>
+<td style="text-align: left">Validates the expiration date.</td>
 </tr>
 <tr>
 <td style="text-align: left">isCardHolderNameValid()</td>
-<td style="text-align: left">Kart sahibinin adının geçerliliğini sorgular.</td>
+<td style="text-align: left">Validates the card holder name.</td>
 </tr>
 </tbody></table>
 
-<p>Yukarıdaki tüm yöntemleri çağırmak zorunda değilsiniz.
-Bir kredi kartı nesnesini doğrulamak için sadece isValid () yöntemini
-çağırmanız yeterlidir.</p>
-<h2 id='odeme-secenekleri'>Ödeme Seçenekleri</h2>
-<p>PaytrekJS, her satış için kart tipi ücretlendirmelerini görebileceğiniz
-bir başka özelliğe daha sahiptir. Bu özelliğin kullanımı için
-Paytrek hesap yöneticinizle irtibata geçiniz.</p>
-<h3 id='kart-tipi-ucretlendirmeleri'>Kart Tipi Ücretlendirmeleri</h3>
+<p>You don’t have to call all of the methods above
+in order to validate a credit card object. You can just call the
+isValid() method.</p>
+<h2 id='payment-options'>Payment Options</h2>
+<p>PaytrekJS provides two more nice features which are card type fees
+and dynamic currency options per sale.
+Please seek advice from your Paytrek Account
+Representative whether your current subscription type supports these features.</p>
+<h3 id='card-type-fees'>Card Type Fees</h3>
+<p>As Paytrek lets you set up fees per card type of your customers, PaytrekJS
+also lets you see and update the costs on the fly on your payment form.</p>
+<h3 id='dynamic-currencies'>Dynamic Currencies</h3>
 <blockquote>
-<p>Kart tipi ücretlendirmeleri için örnek kullanım;</p>
+<p>Example;</p>
 </blockquote>
 <pre class="highlight javascript tab-javascript"><code><span class="nx">paytrekForm</span><span class="p">.</span><span class="nx">getPaymentOptions</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -878,30 +840,28 @@ Paytrek hesap yöneticinizle irtibata geçiniz.</p>
     }*/</span>
 <span class="p">});</span>
 </code></pre>
-<p>Paytrek, PaytrekJs aracılığıyla müşterilerinizin kart türü başına ücretlerini
-ayarlamanıza ayrıca ödeme şeklinizdeki masrafları anında görmenize ve güncellemenize
-izin verir.</p>
+<p>Paytrek lets your customers to make payments in their own currencies.
+A nice, enabling feature of PaytrekJS is that it lets you do the same
+for your customers in your own payment pages.
+If you set dccEnabled property of Paytrek.Options to true,
+while creating a card token PaytrekJS will also return a
+list of available currencies. You can then display this list of
+available currencies in your card form and satisfy your customers.</p>
 <h2 id='paytrek-checkout'>Paytrek.Checkout</h2>
-<p>Paytrek.Checkout widget ile Web sitenize gömülü ödeme
-formunu inanılmaz derecede kolay şekilde entegre edebilirsiniz.</p>
-
-<p>Bu widget müşteriyi verilen <code>return_url</code> <a href="#">1</a> e yönlendirecektir.
-Bu <code>return_url</code> e müşteri ödeme işlemi gerçekleştirdikten sonra <code>sale_token</code> ile
-yönlendirilecektir,
-Bu adımdan sonra <code>sale_token</code> kullanılarak <a href="#satis">Sale Resource</a> üzerinden
-üye işyeri satışın son durumunu sorgulayabilir.</p>
-
-<p>Satışın durumu  <strong>Paid</strong>, <strong>Ready to Send</strong>,
-    <strong>Authorized</strong> veya <strong>PreAuthorized</strong> ise bu satışın başarılı bir şekilde gerçekleştiğini
-    gösterir.</sub></p>
-<h3 id='yapi-3'>Yapı</h3><pre class="highlight javascript tab-javascript"><code><span class="kd">function</span> <span class="nx">Checkout</span><span class="p">(</span><span class="nx">saleData</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+<p>Paytrek.Checkout widget allows you to integrate
+embedded checkout form on your web site incredibly easy.
+This widget will redirect the customer to the given
+<code>return_url</code>. In this <code>return_url</code>, you must query the status of
+the sale via <a href="#sale">Sale Resource</a>.
+If the sale status is one of <strong>Paid</strong>, <strong>Ready to Send</strong>, <strong>Authorized</strong> and
+<strong>PreAuthorized</strong> it means the sale has been successfully charged.</p>
+<h3 id='constructor-3'>Constructor</h3><pre class="highlight javascript tab-javascript"><code><span class="kd">function</span> <span class="nx">Checkout</span><span class="p">(</span><span class="nx">saleData</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Paytrek.Checkout implementation</span>
 <span class="p">}</span>
 </code></pre>
-<p>Paytrek.Checkout öğesi <code>saleData</code> ve <code>options</code> olmak üzere
-iki parametre ile çalışmaktadır.Bu iki parametre de JavaScript Hash olarak
-tutulur. Sale Data içerisinde yer alan keyler Sale Kaynağına gönderilecek
-argümanları oluşturur.</p>
+<p>Paytrek.Checkout constructor takes two arguments, named
+saleData and options. Both saleData and options arguments
+are JavaScript Hashes. Keys for saleData argument are the fields for Sale Resource.</p>
 <h3 id='constructor-options'>Constructor Options</h3>
 <blockquote>
 <p>Modal Form</p>
@@ -925,7 +885,7 @@ argümanları oluşturur.</p>
 <span class="p">});</span>
 </code></pre>
 <blockquote>
-<p>Gömülü Form</p>
+<p>Embeded Form</p>
 </blockquote>
 <pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">saleData</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">amount</span><span class="p">:</span> <span class="s2">"10.20"</span><span class="p">,</span>
@@ -956,38 +916,37 @@ argümanları oluşturur.</p>
 
 <span class="k">new</span> <span class="nx">Paytrek</span><span class="p">.</span><span class="nx">Checkout</span><span class="p">(</span><span class="nx">saleData</span><span class="p">,</span> <span class="nx">options</span><span class="p">).</span><span class="nx">displayForm</span><span class="p">();</span>
 </code></pre>
-<p>Paytrek.Checkout ikinci parametre olarak options parametresini alır. Bu parametre
-aşağıdaki tabloda gösterilen değişken isimlerini içerebilir.</p>
+<p>Paytrek.Checkout accepts options as the second positional argument.</p>
 
 <table><thead>
 <tr>
-<th style="text-align: left">Özellik Adı</th>
-<th style="text-align: left">Açıklama</th>
+<th style="text-align: left">Options</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: left">openModal</td>
-<td style="text-align: left">Sayfanıza yerleştirilmiş formu görüntülemek veya kalıcı bir kutu olarak açmak isteyip istemediğinizi belirler. Varsayılan değer <code>true</code>.</td>
+<td style="text-align: left">Sets if you would like to display the form embedded in your page or open as a modal box. Defaults to true.</td>
 </tr>
 <tr>
 <td style="text-align: left">widgetParent</td>
-<td style="text-align: left">Modal kutusunu görüntülemek istemiyorsanız, gömülü formu görüntülemek istediğiniz üst DOM Öğesi.</td>
+<td style="text-align: left">The parent DOM Element where you want to display the embedded form if you don’t wish to display the modal box.</td>
 </tr>
 <tr>
 <td style="text-align: left">beforeCb</td>
-<td style="text-align: left">Ödeme işleminden önce çalıştırmak istediğiniz <code>callback</code> metodu.</td>
+<td style="text-align: left">The callback function that you want to run before charging takes place.</td>
 </tr>
 <tr>
 <td style="text-align: left">afterCb</td>
-<td style="text-align: left">Ödeme işleminden önce sonra istediğiniz <code>callback</code> metodu.</td>
+<td style="text-align: left">The callback function that you want to run after charging takes place.</td>
 </tr>
 <tr>
 <td style="text-align: left">errorCb</td>
-<td style="text-align: left">Ödeme işlemi sırasında herhangi bir hata oluştuğunda çalıştırılacak <code>callback</code> metodu.</td>
+<td style="text-align: left">The callback function that you want to run when charging fails.</td>
 </tr>
 </tbody></table>
-<h1 id='test-kartlari'>Test Kartları</h1>
-<p>Kullanabileceğiniz test kartları listesi verilmiştir.</p>
+<h1 id='test-cards'>Test Cards</h1>
+<p>Here is a list of test credit cards that you can use.</p>
 
 <table><thead>
 <tr>
@@ -1034,19 +993,16 @@ aşağıdaki tabloda gösterilen değişken isimlerini içerebilir.</p>
 <td style="text-align: center">a</td>
 </tr>
 </tbody></table>
-<h1 id='hata-kodlari'>Hata Kodları</h1>
-<p>Paytrek özelinde tüm bankalara ait hata kodlarının eşleştirildiği bir hata kodu
-tablosu bulunmaktadır. Ödeme işlemi esnasında banka tarafından alınacak bir hata
-Paytrek tablosunda karşılığı bulunarak <code>error_code</code> ve <code>error_message</code> olarak
-cevap içerisinde üye işyerine dönülür.</p>
-
-<p>Tablo Aşağıda Verilmiştir</p>
+<h1 id='error-codes'>Error Codes</h1>
+<p>Paytrek handles possible error mappings between bank services. It returns you to user
+friendly error messages within <code>error_code</code> and <code>error_message</code>. Following table includes
+error codes and descriptions.</p>
 
 <table><thead>
 <tr>
-<th style="text-align: center">Kod</th>
-<th style="text-align: left">Üye İşyeri Mesajı</th>
-<th style="text-align: left">Müşteri Mesajı</th>
+<th style="text-align: center">Code</th>
+<th style="text-align: left">Merchant Message</th>
+<th style="text-align: left">Customer Message</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -1290,27 +1246,24 @@ cevap içerisinde üye işyerine dönülür.</p>
 <td style="text-align: left">We cannot proceed with your transaction, unable to perform 3D Secure Authentication.</td>
 </tr>
 </tbody></table>
-<h1 id='paytrek-koleksiyon-cuzdani'>Paytrek Koleksiyon Cüzdanı</h1>
-<p>Paytrek Cüzdan, maaşlarınız için kazanç, komisyon veya bağlılık vb. Ödemeler yapmak için kullanılan ödeme platformudur.
-Platform, ödemeleri tamamlamak için iki ana bileşenden oluşmaktadır
-ve ödeme akışı. Bunlar <a href="https://paytrekwallet.docs.apiary.io/#introduction/paytrek-wallet-api">Wallet API</a> and <a href="https://paytrekwallet.docs.apiary.io/#introduction/payee-dashboard">Payee Dashboard</a>.</p>
-<h1 id='reference'><a href='#reference' style='color: white; text-decoration: none; color:#7ccfaf' > Reference </a></h1><h1 id='satis'>Satış</h1>
-<p>Satış Kaynağı, satışla ilgili bilgileri içeren bir satış nesnesi oluşturmak için kullanılır.
-Ödeme işlemi gerçekleşmeden önce ödemesi yapılacak ilgili nesne bu kaynak aracılığıyla oluşturulur.
-Bu kaynak ödeme yapılmadan önce işlemin tanımlanmasını sağlar.
-Bir ödeme Ön Otorizasyonlu olarak gerçekleştirilecek ise satış parametrelerinden (<code>pre_auth</code>  <code>true</code>)
-olarak gönderilmelidir, ardından satış <code>capture</code> kaynağı kullanılarak <code>capture</code> edilir.</p>
+<h1 id='paytrek-collection-wallet'>Paytrek Collection Wallet</h1>
+<p>Paytrek Wallet is the payout platform that used to make payments for your payees such as earnings, commissions or loyalities etc.
+The platform comprise of two main components for completing payments
+and payout flow. They are <a href="https://paytrekwallet.docs.apiary.io/#introduction/paytrek-wallet-api">Wallet API</a> and <a href="https://paytrekwallet.docs.apiary.io/#introduction/payee-dashboard">Payee Dashboard</a>.</p>
+<h1 id='reference'><a href='#reference' style='color: white; text-decoration: none; color:#7ccfaf' > Reference </a></h1><h1 id='sale'>Sale</h1>
+<p>Sale Resource provides you the endpoint to create a sale object that including sale related informations.
+It allows to define a proper transaction before charging the card.
+If the sale that you are going to charge is Pre-Authorized (<code>pre_auth</code> must be <code>true</code>),
+the sale will be captured.</p>
 
-<p>Oluşturulan bir satış nesnesine ait bilgileri almak için, <code>sale_token</code>
-Sale Kaynağına <code>GET</code> HTTP metodu ile gönderilmelidir.</p>
-
-<p>Bu isteğin cevabında işlem bilgileri ve durumu ile ilgili satış detaylarını döndürür.</p>
+<p>To retrieve a created sale object, <code>sale_token</code> must be defined in url and send by <code>GET</code> HTTP method.
+It returns related sale details with transaction informations and status.</p>
 
 <p>(eg. <code>/api/v2/sale/f25356bab177416ba7b518cc1bd8a596/</code>)</p>
 
-<p>İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.</p>
-<h2 id='satis-olusturma'>Satış Oluşturma</h2>
+<p>In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.</p>
+<h2 id='create-sale'>Create Sale</h2>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -1406,8 +1359,8 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 </span></code></pre>
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -1416,129 +1369,8 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 </tr>
 </tbody></table>
 
-<p>Yan panelde örnek bir satış oluşturma isteği ve aşağıdaki tabloda bu istek
-içerisinde gönderebileceğiniz yada göndermeniz gereken parametrelerin
-listesi verilmiştir.</p>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Üye İşyeri Mesajı</th>
-<th style="text-align: center">Tip</th>
-<th style="text-align: left">Müşteri Mesajı</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">currency</td>
-<td style="text-align: center">string, zorunlu</td>
-<td style="text-align: left">3 harfli para birimi ISO kodu.</td>
-</tr>
-<tr>
-<td style="text-align: left">order_id</td>
-<td style="text-align: center">string, zorunlu</td>
-<td style="text-align: left">Siparişin Idsi.</td>
-</tr>
-<tr>
-<td style="text-align: left">amount</td>
-<td style="text-align: center">number, zorunlu</td>
-<td style="text-align: left">Sipariş Tutarı.</td>
-</tr>
-<tr>
-<td style="text-align: left">customer_first_name</td>
-<td style="text-align: center">string, zorunlu</td>
-<td style="text-align: left">Müşteri adı.</td>
-</tr>
-<tr>
-<td style="text-align: left">customer_last_name</td>
-<td style="text-align: center">string, zorunlu</td>
-<td style="text-align: left">Müşteri soyadı.</td>
-</tr>
-<tr>
-<td style="text-align: left">customer_email</td>
-<td style="text-align: center">string, zorunlu</td>
-<td style="text-align: left">Müşteri email adresi.</td>
-</tr>
-<tr>
-<td style="text-align: left">customer_ip_address</td>
-<td style="text-align: center">string, zorunlu</td>
-<td style="text-align: left">Müşteri ip adresi.</td>
-</tr>
-<tr>
-<td style="text-align: left">billing_address</td>
-<td style="text-align: center">string, zorunlu</td>
-<td style="text-align: left">Müşteri fatura adresi.</td>
-</tr>
-<tr>
-<td style="text-align: left">billing_city</td>
-<td style="text-align: center">string, zorunlu</td>
-<td style="text-align: left">Müşteri fatura şehri.</td>
-</tr>
-<tr>
-<td style="text-align: left">billing_state</td>
-<td style="text-align: center">string</td>
-<td style="text-align: left">Müşterinin faturalandırma durumu, ABD ve CA için posta kısaltmaları kullanın.</td>
-</tr>
-<tr>
-<td style="text-align: left">billing_country</td>
-<td style="text-align: center">string, zorunlu</td>
-<td style="text-align: left">Müşterinin fatura ülkesi, 2 harfli ISO kodu.</td>
-</tr>
-<tr>
-<td style="text-align: left">billing_zipcode</td>
-<td style="text-align: center">string, opsiyonel</td>
-<td style="text-align: left">Müşterinin fatura zip kodu.</td>
-</tr>
-<tr>
-<td style="text-align: left">billing_phone</td>
-<td style="text-align: center">string, opsiyonel</td>
-<td style="text-align: left">Müşterinin fatura telfon numarası.</td>
-</tr>
-<tr>
-<td style="text-align: left">items</td>
-<td style="text-align: center">object, zorunlu</td>
-<td style="text-align: left">Siparişe ait ürünlerin listesi.</td>
-</tr>
-<tr>
-<td style="text-align: left">return_url</td>
-<td style="text-align: center">string</td>
-<td style="text-align: left">Ödeme tamamlandığında müşterinin yönlendirileceği sayfanın URL&#39;i.</td>
-</tr>
-<tr>
-<td style="text-align: left">hosted_payment</td>
-<td style="text-align: center">boolean</td>
-<td style="text-align: left">Ortak ödeme sayfası kullanım tercihi.</td>
-</tr>
-<tr>
-<td style="text-align: left">hosted_payment_url</td>
-<td style="text-align: center">string</td>
-<td style="text-align: left">Ortak ödeme sayfası URL&#39;i.</td>
-</tr>
-<tr>
-<td style="text-align: left">installment</td>
-<td style="text-align: center">number, zorunlu</td>
-<td style="text-align: left">Taksit bilgisi.</td>
-</tr>
-<tr>
-<td style="text-align: left">secure_option</td>
-<td style="text-align: center">boolean</td>
-<td style="text-align: left">Ödemenin 3D li ya da 3Dsiz geçme kararı.(Varsayılan: false)</td>
-</tr>
-<tr>
-<td style="text-align: left">half_secure</td>
-<td style="text-align: center">boolean</td>
-<td style="text-align: left">3D kayıt kontrolünün (mdstatus) 2, 3, 4 ile sonuçlanması durumunda satışın devam etme kararı.</td>
-</tr>
-<tr>
-<td style="text-align: left">pre_auth</td>
-<td style="text-align: center">boolean</td>
-<td style="text-align: left">Satışın Ön otorizasyonlu olup olmayacağı kararı. (Default: false)</td>
-</tr>
-<tr>
-<td style="text-align: left">sale_data</td>
-<td style="text-align: center">object</td>
-<td style="text-align: left">Satışa ait ekstra bilgi alanı.</td>
-</tr>
-</tbody></table>
-<h2 id='satisi-inceleme'>Satışı İnceleme</h2>
+<p>There is an example request of sale creation request in left panel.</p>
+<h2 id='retrieve-sale'>Retrieve Sale</h2>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -1607,8 +1439,8 @@ listesi verilmiştir.</p>
 </span></code></pre>
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -1616,7 +1448,7 @@ listesi verilmiştir.</p>
 <td style="text-align: center">https://sandbox.paytrek.com/api/v2/sale/<strong>sale_token</strong>/</td>
 </tr>
 </tbody></table>
-<h1 id='odeme'>Ödeme</h1>
+<h1 id='charge'>Charge</h1>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -1661,17 +1493,16 @@ listesi verilmiştir.</p>
     </span><span class="s2">"return_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"?token=c626f49193114e24ad0980752b749318"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Charge Kaynağı kredi kartı ile ödeme yapabilmenize imkan sağlayan kaynaktır.
-Ödeme işlemi yapmadan önce <a href="#satis-olusturma">satış oluşturma</a> kaynağını kullanarak bir satış oluşturmanız gerekir.</p>
-
-<p>Eğer ödeme işleminin ön otorizasyonlu olarak gerçekleşmesi için
-<code>pre_auth</code> parametresi <code>true</code> olarak gönderilmelidir. Ardından ilgili satış &#39;capture&#39;
-edilir.</p>
+<p>Charge Resource provides you the
+endpoint to charge a credit card.
+You must create a <a href="#sale">Sale</a> object before charging your customer.
+If the sale that you are going to charge is Pre-Authorized (pre_auth must be true),
+the sale will be captured.</p>
 
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -1680,18 +1511,19 @@ edilir.</p>
 </tr>
 </tbody></table>
 
-<p>Bir ödeme işlemi yapılırken kullanılan kartın tekrardan kullanımı için saklanmasını
-istiyorsanız <code>save_card</code> parametresini <code>true</code> olarak belirlemeniz gerekir.
-Bu parametre <code>true</code> olacak şekilde istek yapıldığında kart &#39;vault&#39; edilerek saklanır
-ve cevap içerisinde <code>card_token</code> parametresi dönülür.</p>
+<p>While charging a card, you can also store it with <code>save_card</code> option.
+If <code>save_card</code> is settled <code>true</code> in request then it will be vaulted and
+returns <code>card_token</code> in response. It allows to charge the card in
+the next payment within <a href="#charge-with-token">Charge with token</a>.</p>
 
-<p>Aşağıdaki tabloda bir ödeme işlemi için gönderilmesi gereken parametrelerin listesi verilmiştir.</p>
+<p>In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.</p>
 
 <table><thead>
 <tr>
-<th style="text-align: left">Parametre</th>
-<th style="text-align: left">Tip</th>
-<th style="text-align: left"> Açıklama</th>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left"> Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -1725,7 +1557,7 @@ ve cevap içerisinde <code>card_token</code> parametresi dönülür.</p>
 <td style="text-align: left">Kart saklama parametresi.</td>
 </tr>
 </tbody></table>
-<h1 id='direkt-odeme-2'>Direkt Ödeme</h1>
+<h1 id='direct-charge-2'>Direct Charge</h1>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -1875,176 +1707,159 @@ ve cevap içerisinde <code>card_token</code> parametresi dönülür.</p>
     </span><span class="s2">"billing_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Bu endpoint size herhangi bir sale isteğinde bulunmadan doğrudan kredi kartı
-kullanarak ödeme gerçekleştirme imkanı sağlar.</p>
+<p>Direct charge endpoint provides to charge a credit card instantly
+without creating any sale object. If the sale that you are going to charge is Pre-Authorized
+(<code>pre_auth</code> must be <code>true</code>), the sale will be captured.</p>
 
-<p>Eğer ödeme işleminin ön otorizasyonlu olarak gerçekleşmesini istiyorsanız
-pre_auth parametresi true olarak gönderilmelidir. Ardından ilgili satış capture
-edilir.</p>
-
-<p>Bir ödeme işlemi yapılırken kullanılan kartın tekrardan kullanımı için saklanmasını
-istiyorsanız <code>save_card</code> parametresini <code>true</code> olarak belirlemeniz gerekir.
-Bu parametre <code>true</code> olacak şekilde istek yapıldığında kart vault edilerek saklanır
-ve cevap içerisinde <code>card_token</code> parametresi dönülür. <a href="#satis">Charge with token</a>.</p>
+<p>While charging a card, you can also store it with <code>save_card</code> option.
+If <code>save_card</code> is settled <code>true</code> in request then it will be vaulted and
+returns <code>card_token</code> in response. It allows to charge the card in
+the next payment within <a href="#charge-with-token">Charge with token</a>.</p>
 
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: center">POST</td>
-<td style="text-align: center">https://sandbox.paytrek.com/api/v2/direct_charge/</td>
-</tr>
-</tbody></table>
-
-<p>İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.</p>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Parametre</th>
-<th style="text-align: left">Tip</th>
-<th style="text-align: left"> Açıklama</th>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: left">currency</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Para biriminin 3 harfli ISO kodu.</td>
+<td style="text-align: left">3-letter ISO code for currency.</td>
 </tr>
 <tr>
 <td style="text-align: left">order_id</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Sipariş numarası.</td>
+<td style="text-align: left">The order id of the sale.</td>
 </tr>
 <tr>
 <td style="text-align: left">amount</td>
 <td style="text-align: left">number, required</td>
-<td style="text-align: left">Siparişe ait tutar bilgisi.</td>
+<td style="text-align: left">The amount to charge the visitor.</td>
 </tr>
 <tr>
 <td style="text-align: left">number</td>
 <td style="text-align: left">number, required</td>
-<td style="text-align: left">Kredi kartı numarası.</td>
+<td style="text-align: left">The credit card number.</td>
 </tr>
 <tr>
 <td style="text-align: left">expiration</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Kredi kartı son kullanma tarihi, MM/YY formatında.</td>
+<td style="text-align: left">The expiration date of the credit card, in MM/YY format.</td>
 </tr>
 <tr>
 <td style="text-align: left">cvc</td>
 <td style="text-align: left">number, required</td>
-<td style="text-align: left">Karta ait CVC numarası.</td>
+<td style="text-align: left">The security number of the credit card.</td>
 </tr>
 <tr>
 <td style="text-align: left">card_holder_name</td>
-<td style="text-align: left">string</td>
-<td style="text-align: left">Kart hamilinin adı.</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">The name on card.</td>
 </tr>
 <tr>
 <td style="text-align: left">installment</td>
 <td style="text-align: left">number, required</td>
-<td style="text-align: left">Taksit bilgisi.</td>
+<td style="text-align: left">The installment number of the sale.</td>
 </tr>
 <tr>
 <td style="text-align: left">secure_option</td>
 <td style="text-align: left">boolean</td>
-<td style="text-align: left">Ödemenin 3D güvenli ödeme işlemi olup olmayacağı kararı.(Varsayılan: false)</td>
+<td style="text-align: left">Whether the sale is secure.(Default: false)</td>
 </tr>
 <tr>
 <td style="text-align: left">half_secure</td>
 <td style="text-align: left">boolean</td>
-<td style="text-align: left">3D kayıt kontrolünün mdstatus) 2, 3, 4 ile sonuçlanması durumunda satışın devam etme kararı.</td>
+<td style="text-align: left">Whether the sale can be charged if 3d enrollment check returns mdstatus 2, 3, 4.</td>
 </tr>
 <tr>
 <td style="text-align: left">return_url</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Ödeme işlemi gerçekleştikten sonra müşterinin yönlendirileceği URL</td>
+<td style="text-align: left">Related link that user is redirected when payment completed.</td>
 </tr>
 <tr>
 <td style="text-align: left">pre_auth</td>
 <td style="text-align: left">boolean</td>
-<td style="text-align: left">Ödemenin ön otorizasyonlu geçip geçmediği kontrolü(Varsayılan: false)</td>
+<td style="text-align: left">Indicates whether this sale should be pre-authorized.(Default: false)</td>
 </tr>
 <tr>
 <td style="text-align: left">items</td>
 <td style="text-align: left">object, required</td>
-<td style="text-align: left">Siparişe ait öğelerin listesi.</td>
+<td style="text-align: left">The item related informations which is selling.</td>
 </tr>
 <tr>
 <td style="text-align: left">customer_first_name</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Müşterinin adı.</td>
+<td style="text-align: left">Customer&#39;s first name.</td>
 </tr>
 <tr>
 <td style="text-align: left">customer_last_name</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Müşterinin soyadı.</td>
+<td style="text-align: left">Customer&#39;s last name.</td>
 </tr>
 <tr>
 <td style="text-align: left">customer_email</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Müşteri emaili.</td>
+<td style="text-align: left">Customer&#39;s email address.</td>
 </tr>
 <tr>
 <td style="text-align: left">customer_ip_address</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Müşteri Ip adresi.</td>
+<td style="text-align: left">Customer&#39;s ip address.</td>
 </tr>
 <tr>
 <td style="text-align: left">billing_address</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Müşteri fatura adresi.</td>
+<td style="text-align: left">Customer&#39;s billing address.</td>
 </tr>
 <tr>
 <td style="text-align: left">billing_city</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Müşteri fatura şehri.</td>
+<td style="text-align: left">Customer&#39;s billing city.</td>
 </tr>
 <tr>
 <td style="text-align: left">billing_state</td>
 <td style="text-align: left">string</td>
-<td style="text-align: left">Müşterinin faturalandırma durumu, ABD ve CA için posta kısaltmaları kullanın.</td>
+<td style="text-align: left">Customer&#39;s billing state, use postal abbreviations for US and CA.</td>
 </tr>
 <tr>
 <td style="text-align: left">billing_country</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Müşterinin fatura ülkesi, 2 harfli ISO kodu.</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">Customer&#39;s billing country, 2-letter ISO code.</td>
 </tr>
 <tr>
 <td style="text-align: left">billing_zipcode</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Müşterinin fatura zip kodu.</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">Customer&#39;s billing zipcode.</td>
 </tr>
 <tr>
 <td style="text-align: left">billing_phone</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Müşterinin fatura telfon numarası.</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">Customer&#39;s billing phone number.</td>
 </tr>
 <tr>
 <td style="text-align: left">sale_data</td>
 <td style="text-align: left">object</td>
-<td style="text-align: left">Satışa ait ekstra bilgi alanı</td>
+<td style="text-align: left">Extra fields for sale.</td>
 </tr>
 </tbody></table>
-<h1 id='kart-saklama'>Kart Saklama</h1>
-<p>Paytrek, müşterinizin PAN verilerini Paytrek&#39;in güvenli kasasında saklamanıza olanak tanır.
-Bu endpointi kullanarak, Kredi kartı verilerini sadece müşterilerinizden yalnızca
-bir kez almanız gerekecek ve istediğiniz zaman ödeme işlemi için aynı verileri kullanabileceksiniz.</p>
+<h1 id='vault'>Vault</h1>
+<p>Paytrek allows you to store your customer’s PAN data on Paytrek’s secure vault. By using this endpoint,
+you will only need to retrieve the credit card data from your customers only once and then you will be able to use the same data for charging any time you wish.</p>
+
+<p>Here are the steps you must take:</p>
 
 <ul>
-<li>Müşterilerin formunuza girdiği kredi kartı verilerini doğrulayın.</li>
-<li>Kredi kartı verileriyle Vault endpointine POST isteği gönderin.</li>
-<li>Paytrek size bir kart token cevap olarak döner.</li>
-<li>Bu token ile &quot;charge_with_token&quot; endpointi ile ödemenizi gerçekleştirin.</li>
+<li>Validate the credit card data that customers enter on your form.</li>
+<li>Send a POST request to Vault endpoint with the credit card data.</li>
+<li>Paytrek will return you a card token.</li>
+<li>Charge the customer with that token through <code>charge_with_token</code> endpoint.</li>
 </ul>
 
-<p>İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.</p>
-<h2 id='kart-saklama-islemi'>Kart Saklama İşlemi</h2>
+<p>In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.</p>
+<h2 id='vaulting-card'>Vaulting Card</h2>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -2093,8 +1908,8 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 </span></code></pre>
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -2105,38 +1920,38 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 
 <table><thead>
 <tr>
-<th style="text-align: left">Parametre</th>
-<th style="text-align: left">Tip</th>
-<th style="text-align: left">Açıklama</th>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: left">number</td>
-<td style="text-align: left">number, zorunlu</td>
-<td style="text-align: left">Kart numarası.</td>
+<td style="text-align: left">number, required</td>
+<td style="text-align: left">The credit card number.</td>
 </tr>
 <tr>
 <td style="text-align: left">expiration</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Kartın son kullanma tarihi, MM/YY formatında.</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">The expiration date of the credit card, in MM/YY format.</td>
 </tr>
 <tr>
 <td style="text-align: left">cvc</td>
-<td style="text-align: left">number, zorunlu</td>
-<td style="text-align: left">Kartın CVC numarası.</td>
+<td style="text-align: left">number, required</td>
+<td style="text-align: left">The security number of the credit card.</td>
 </tr>
 <tr>
 <td style="text-align: left">card_holder_name</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Kart üzerindeki isim.</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">The name on card.</td>
 </tr>
 <tr>
 <td style="text-align: left">card_label</td>
 <td style="text-align: left">string</td>
-<td style="text-align: left">Kart alan adı.</td>
+<td style="text-align: left">The optional card label name.</td>
 </tr>
 </tbody></table>
-<h2 id='saklanan-karti-goruntuleme'>Saklanan Kartı Görüntüleme</h2>
+<h2 id='retrieve-vaulted-card'>Retrieve Vaulted Card</h2>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -2174,8 +1989,8 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 </span></code></pre>
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -2186,8 +2001,8 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 
 <table><thead>
 <tr>
-<th style="text-align: left">Parametre</th>
-<th style="text-align: left">Açıklama</th>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -2195,7 +2010,7 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 <td style="text-align: left">Vault edilen karta ait kart token&#39;ı</td>
 </tr>
 </tbody></table>
-<h2 id='saklanan-kartlari-listeleme'>Saklanan Kartları Listeleme</h2>
+<h2 id='listing-vaulted-cards'>Listing Vaulted Cards</h2>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -2255,8 +2070,8 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 </span></code></pre>
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -2267,23 +2082,20 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 
 <table><thead>
 <tr>
-<th style="text-align: center">Parametre</th>
-<th style="text-align: left">Tip</th>
-<th style="text-align: left">Açıklama</th>
+<th style="text-align: center">İstek Türü</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: center">card_user_id</td>
-<td style="text-align: left">opsiyonel</td>
-<td style="text-align: left">Kart kullanıcısın idsi (Vault oluştururken bu değer belirlenebilir)</td>
+<td style="text-align: center">optional</td>
 </tr>
 <tr>
 <td style="text-align: center">card_label</td>
-<td style="text-align: left">opsiyonel</td>
-<td style="text-align: left">Kart etiketi</td>
+<td style="text-align: center">optional</td>
 </tr>
 </tbody></table>
-<h2 id='saklanan-karti-silme'>Saklanan Kartı Silme</h2>
+<h2 id='delete-vaulted-card'>Delete Vaulted Card</h2>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -2302,8 +2114,8 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 </span></code></pre>
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -2322,10 +2134,10 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 <tr>
 <td style="text-align: center">card_token</td>
 <td style="text-align: left">string</td>
-<td style="text-align: left">Vault işleminden sonra tarafınıza iletilen token</td>
+<td style="text-align: left">Card token after vault operation.</td>
 </tr>
 </tbody></table>
-<h1 id='kart-saklama-ile-odeme-2'>Kart Saklama ile Ödeme</h1>
+<h1 id='charge-with-token'>Charge With Token</h1>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -2370,18 +2182,18 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
     </span><span class="s2">"return_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"?token=5f20ca43d47244509949eb32c80e522a"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Bu endpoint müşterinin kart tokenı kullanarak ödeme gerçekleştirmesini sağlar.
-Burada herhangi bir tutar ya da nicelik parametresi kullanılmaz. Yalnızca sale
-endpointi ile oluşturulan sale e ait <code>sale_token</code> bilgisi ve vault edilen karta
-ait <code>card_token</code> bilgisi ile ödeme gerçekleştirilir.</p>
+<p>This enpoint provides to charge the customer
+with created card token. You will notice there is no amount or quantity
+parameters for this endpoint. You must create a sale by using Sale endpoint
+and card token by using Vault endpoint before charging your customer.</p>
 
-<p>İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.</p>
+<p>In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.</p>
 
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -2399,13 +2211,13 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 </thead><tbody>
 <tr>
 <td style="text-align: center">sale_token</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Sale endpointi ile oluşturulan salee ait token.</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">The sale token created though sale endpoint.</td>
 </tr>
 <tr>
 <td style="text-align: center">card_token</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Vault endpointi ile vault edilen karta ait token.</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">The card token created though vault endpoint.</td>
 </tr>
 </tbody></table>
 <h1 id='capture'>Capture</h1>
@@ -2444,28 +2256,25 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
     </span><span class="s2">"succeeded"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Bu endpoint ön otorizasyonda kalmış bir satışın capture edilmesini sağlar.
-Bir satışı capture etmek için capture endpointine ilgili satışın tokenı ile POST isteği atmanız yeterlidir.
-Ön otorizasyon durumunda olmayan bir satış capture edilemez.
-Ön otorizasyonda bir satış oluşturmak için ilgili satışı oluştururken <code>pre_auth</code> parametresini <code>true</code> göndermeniz
-gerekmektedir.
-Bir satış fraud kontrolü sonucunda <code>REVIEW</code> durumunda ise bu satış ön otorizasyonda oluşturulur ve tarafınızdan
-capture edilmesi gerekir.</p>
+<p>Capture endpoint provides to capture a payment.
+If you want to capture a payment that you&#39;ve already pre-authorized, all you need to do is sending a POST request to the capture resource’s endpoint with the pre-authorized sale’s token.
+Please note that you cannot capture a payment that is not pre-authorized. If you would like to authorize a payment, you must create the sale with pre_auth field set to true.
+If your sale was in review status, the sale’s fraud decision will be updated as accepted after you capture it through the API.</p>
 
-<p>Ön otorizasyonlu satışın akışı:</p>
+<p>Flow of pre-authorized payment :</p>
 
 <ul>
-<li><code>pre_auth</code> parametresi <code>true</code> olacak şekilde direct_charge endpointine istekte bulunulur.</li>
-<li>Bu işlemden sonra capture endpointine <code>sale_token</code> ile istekte bulunulur.</li>
+<li>Send a request to <code>direct_charge</code> endpoint within required data and <code>pre_auth: true</code>.</li>
+<li>After that use <code>sale_token</code> to capture the payment.</li>
 </ul>
 
-<p>İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.</p>
+<p>In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.</p>
 
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -2476,23 +2285,23 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 
 <table><thead>
 <tr>
-<th style="text-align: center">Parametre</th>
-<th style="text-align: left">Tip</th>
-<th style="text-align: left">Açıklama</th>
+<th style="text-align: center">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: center">sale_token</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Sale endpointi ile oluşturulan sale&#39;e ait token</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">The sale token created though sale endpoint.</td>
 </tr>
 <tr>
 <td style="text-align: center">comments</td>
-<td style="text-align: left">string, opsiyonel</td>
-<td style="text-align: left">Fraud kontrol sonucunun kabul edilmesine dair yorum.</td>
+<td style="text-align: left">string, optional</td>
+<td style="text-align: left">Comments for accepting the fraud review decision.</td>
 </tr>
 </tbody></table>
-<h1 id='iptal'>İptal</h1>
+<h1 id='cancel'>Cancel</h1>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -2528,19 +2337,19 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
     </span><span class="s2">"succeeded"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Cancel endpointi bir satışı iptal ya da iade etmek için kullanılır.
-Cancel endpointine bir istekte bulunulduğunda satışın iptali ya da tam iadesi gerçekleşir.
-Bir satışla ilgili parçalı iade yapmak için <code>Refund</code> endpointi kullanılmalıdır.
-İki durumda da cevapta tutar bilgileri yer alacaktır.
-Eğer bir satış fraud kararı sonucu <code>REVIEW</code> da ise ve bu satış iptal edilirse satışa ait <code>REJECTED</code> a çevrilir.</p>
+<p>Cancel endpoint provides to cancel and refund a payment.
+When a request is sent to the Cancel endpoint, it will issue a full refund.
+If you’d like to issue a partial refund use <code>Refund</code> endpoint.
+In both of cases, the response will contain an amount information.
+If your sale was in review status, the sale’s fraud decision will be updated as rejected after you cancel it through the API.</p>
 
-<p>İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.</p>
+<p>In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.</p>
 
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -2551,23 +2360,23 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 
 <table><thead>
 <tr>
-<th style="text-align: center">Parametre</th>
-<th style="text-align: left">Tip</th>
-<th style="text-align: left">Açıklama</th>
+<th style="text-align: center">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: center">sale_token</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Sale endpointi ile oluşturulan sale&#39;e ait token.</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">The sale token created though sale endpoint.</td>
 </tr>
 <tr>
 <td style="text-align: center">comments</td>
-<td style="text-align: left">string, opsiyonel</td>
-<td style="text-align: left">Fraud kontrol sonucunun kabul edilmesine dair yorum.</td>
+<td style="text-align: left">string, optional</td>
+<td style="text-align: left">Comments for accepting the fraud review decision.</td>
 </tr>
 </tbody></table>
-<h1 id='iade'>İade</h1>
+<h1 id='refund'>Refund</h1>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -2611,21 +2420,22 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
     </span><span class="s2">"succeeded"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>İade endpointi bir satışın iadesini gerçekleştirmek için kullanılır.
-Bir satışa ait tam iade isteğinde bulunduğunda; Paytrek tarafından öncelikle iptal işlemi gerçekleştirilir.
-Cancel işlemi başarılı sonuçlanmaz ise, satışın iadesi gerçekleştirilmeye çalışılır.
-Bir satışa ait parçalı iade yapılmak istendiğinde tutar parametresi gönderilmelidir.</p>
+<p>Refund endpoint provides refund a payment.
+When a request is sent to the Refund Resource, Paytrek will first try to cancel the payment.
+If there’s any error with the cancel request, it will issue a full refund.
+If you’d like to issue a partial refund, you’ll need to send the amount parameter.
+In both of cases, the response will contain an amount information.
+If your sale was in review status,
+the sale’s fraud decision will be updated as rejected
+after you cancel it through the API.</p>
 
-<p>İki durumda da cevapta tutar bilgileri yer alacaktır.
-Eğer bir satış fraud kararı sonucu <code>REVIEW</code> da ise ve bu satış iptal edilirse satışa ait <code>REJECTED</code> a çevrilir.</p>
-
-<p>İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.</p>
+<p>In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.</p>
 
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -2636,54 +2446,54 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 
 <table><thead>
 <tr>
-<th style="text-align: center">Parametre</th>
-<th style="text-align: left">Tip</th>
-<th style="text-align: left">Açıklama</th>
+<th style="text-align: center">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: center">sale_token</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Ödemesi yapılan sale&#39;e ait <code>sale_token</code></td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">The sale token that charged sale object.</td>
 </tr>
 <tr>
 <td style="text-align: center">amount</td>
-<td style="text-align: left">number, opsiyonel</td>
-<td style="text-align: left">İade edilen tutar.</td>
+<td style="text-align: left">number, optional</td>
+<td style="text-align: left">Amount to refund.</td>
 </tr>
 <tr>
 <td style="text-align: center">comments</td>
-<td style="text-align: left">string, opsiyonel</td>
-<td style="text-align: left">Fraud kontrol sonucunun kabul edilmesine dair yorum.</td>
+<td style="text-align: left">string, optional</td>
+<td style="text-align: left">Comments for accepting the fraud review decision.</td>
 </tr>
 </tbody></table>
-<h1 id='odeme-plani'>Ödeme Planı</h1>
-<p>Paytrek size tekrarlayan ödemeleriniz için ödeme planı oluşturma olanağı sağlar.
-Bu endpointe istekte bulunmak için kullanılacak alanlar <a href="#direkt-odeme-2"><code>Direct Charge</code></a>
-endpointi ile <code>recurring</code> harici aynıdır.</p>
+<h1 id='subscription-plan'>Subscription Plan</h1>
+<p>Paytrek allows you to create subscription plans for recurring payments.
+Subscription plan endpoint requires almost the same request parameters
+with <a href="#direct-charge"><code>Direct Charge</code></a> except <code>recurring</code> one.</p>
 
-<p>Yan paneldeki JSON bloğu yeni bir plan oluşturmak için gereken parametreleri göstermektedir.</p>
-<pre class="highlight json tab-json"><code><span class="s2">"recurring"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Store Recurring Payments"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"recurring_period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monthly"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-30"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"recurring_frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Eğer <code>start_date</code> parametresi belirlenmediyse <strong>ilk ödeme</strong> bugün gerçekleştirilir.</p>
-
-<p>Ayrıca, abonelik planı oluşturulurken <code>save_card: true</code> ayarlanması zorunludur.</p>
-<h3 id='tekrarlayan-odeme-periotlari'>Tekrarlayan Ödeme Periotları</h3>
+<p>It&#39;s a json block that includes following parameters for creating a new plan.
+<code>json
+&quot;recurring&quot;: {
+    &quot;name&quot;: &quot;Test Store Recurring Payments&quot;,
+    &quot;recurring_period&quot;: &quot;Monthly&quot;,
+    &quot;start_date&quot;: &quot;2018-08-30&quot;,
+    &quot;recurring_frequency&quot;: 4
+}
+</code>
+If <code>start_date</code> isn&#39;t settled then <strong>first payment</strong> will be charged today.
+In addition, it&#39;s mandatory to set <code>save_card: true</code> while creating subscription plan.</p>
+<h4 id='recurring-periods'>Recurring Periods</h4>
 <ul>
-<li>Günlük</li>
-<li>Haftalık</li>
-<li>Aylık</li>
-<li>Yıllık</li>
+<li>Daily</li>
+<li>Weekly</li>
+<li>Monthly</li>
+<li>Yearly</li>
 </ul>
 
-<p>İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.</p>
-<h2 id='odeme-plani-olusturma'> Ödeme Planı Oluşturma</h2>
+<p>In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.</p>
+<h2 id='create-subscription-plan'>Create Subscription Plan</h2>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -2837,181 +2647,169 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 </span></code></pre>
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: center">POST</td>
-<td style="text-align: center">https://sandbox.paytrek.com/api/v2/subscription_plan/</td>
-</tr>
-</tbody></table>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Parametre</th>
-<th style="text-align: left">Tip</th>
-<th style="text-align: left">Açıklama</th>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: left">currency</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Para biriminin 3 harfli ISO kodu.</td>
+<td style="text-align: left">3-letter ISO code for currency.</td>
 </tr>
 <tr>
 <td style="text-align: left">order_id</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Sipariş numarası.</td>
+<td style="text-align: left">The order id of the sale.</td>
 </tr>
 <tr>
 <td style="text-align: left">amount</td>
 <td style="text-align: left">number, required</td>
-<td style="text-align: left">Siparişe ait tutar bilgisi.</td>
+<td style="text-align: left">The amount to charge the visitor.</td>
 </tr>
 <tr>
 <td style="text-align: left">number</td>
 <td style="text-align: left">number, required</td>
-<td style="text-align: left">Kredi kartı numarası.</td>
+<td style="text-align: left">The credit card number.</td>
 </tr>
 <tr>
 <td style="text-align: left">expiration</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Kredi kartı son kullanma tarihi, MM/YY formatında.</td>
+<td style="text-align: left">The expiration date of the credit card, in MM/YY format.</td>
 </tr>
 <tr>
 <td style="text-align: left">cvc</td>
 <td style="text-align: left">number, required</td>
-<td style="text-align: left">Karta ait CVC numarası.</td>
+<td style="text-align: left">The security number of the credit card.</td>
 </tr>
 <tr>
 <td style="text-align: left">card_holder_name</td>
-<td style="text-align: left">Kart hamilinin adı.</td>
+<td style="text-align: left">The name on card.</td>
 <td style="text-align: left"></td>
 </tr>
 <tr>
 <td style="text-align: left">recurring</td>
-<td style="text-align: left">object, zorunlu</td>
-<td style="text-align: left">Ödeme planı özellikleri [1]</td>
+<td style="text-align: left">object, required</td>
+<td style="text-align: left">Subscription plan proporties[1].</td>
 </tr>
 <tr>
 <td style="text-align: left">installment</td>
 <td style="text-align: left">number, required</td>
-<td style="text-align: left">Taksit bilgisi.</td>
+<td style="text-align: left">The installment number of the sale.</td>
 </tr>
 <tr>
 <td style="text-align: left">secure_option</td>
 <td style="text-align: left">boolean</td>
-<td style="text-align: left">Ödemenin 3D güvenli ödeme işlemi olup olmayacağı kararı.(Varsayılan: false)</td>
+<td style="text-align: left">Whether the sale is secure(Default: False).</td>
 </tr>
 <tr>
 <td style="text-align: left">half_secure</td>
 <td style="text-align: left">boolean</td>
-<td style="text-align: left">3D kayıt kontrolünün (mdstatus) 2, 3, 4 ile sonuçlanması durumunda satışın devam etme kararı.</td>
+<td style="text-align: left">Whether the sale can be charged if 3d enrollment check returns mdstatus 2, 3, 4.</td>
 </tr>
 <tr>
 <td style="text-align: left">return_url</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Ödeme işlemi gerçekleştikten sonra müşterinin yönlendirileceği URL</td>
+<td style="text-align: left">Related link that user is redirected when payment completed.</td>
 </tr>
 <tr>
 <td style="text-align: left">pre_auth</td>
 <td style="text-align: left">boolean</td>
-<td style="text-align: left">Ödemenin ön otorizasyonlu geçip geçmediği kontrolü(Varsayılan: false)</td>
+<td style="text-align: left">Indicates whether this sale should be pre-authorized(Default: False).</td>
 </tr>
 <tr>
 <td style="text-align: left">items</td>
 <td style="text-align: left">object, required</td>
-<td style="text-align: left">Siparişe ait öğelerin listesi.</td>
+<td style="text-align: left">The item related informations which is selling.</td>
 </tr>
 <tr>
 <td style="text-align: left">customer_first_name</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Müşterinin adı.</td>
+<td style="text-align: left">Customer&#39;s first name.</td>
 </tr>
 <tr>
 <td style="text-align: left">customer_last_name</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Müşterinin soyadı.</td>
+<td style="text-align: left">Customer&#39;s last name.</td>
 </tr>
 <tr>
 <td style="text-align: left">customer_email</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Müşteri emaili.</td>
+<td style="text-align: left">Customer&#39;s email address.</td>
 </tr>
 <tr>
 <td style="text-align: left">customer_ip_address</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Müşteri Ip adresi.</td>
+<td style="text-align: left">Customer&#39;s ip address.</td>
 </tr>
 <tr>
 <td style="text-align: left">billing_address</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Müşteri fatura adresi.</td>
+<td style="text-align: left">Customer&#39;s billing address.</td>
 </tr>
 <tr>
 <td style="text-align: left">billing_city</td>
 <td style="text-align: left">string, required</td>
-<td style="text-align: left">Müşteri fatura şehri.</td>
+<td style="text-align: left">Customer&#39;s billing city.</td>
 </tr>
 <tr>
 <td style="text-align: left">billing_state</td>
 <td style="text-align: left">string</td>
-<td style="text-align: left">Müşterinin faturalandırma durumu, ABD ve CA için posta kısaltmaları kullanın.</td>
+<td style="text-align: left">Customer&#39;s billing state, use postal abbreviations for US and CA.</td>
 </tr>
 <tr>
 <td style="text-align: left">billing_country</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Müşterinin fatura ülkesi, 2 harfli ISO kodu.</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">Customer&#39;s billing country, 2-letter ISO code.</td>
 </tr>
 <tr>
 <td style="text-align: left">billing_zipcode</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Müşterinin fatura zip kodu.</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">Customer&#39;s billing zipcode.</td>
 </tr>
 <tr>
 <td style="text-align: left">billing_phone</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Müşterinin fatura telfon numarası.</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">Customer&#39;s billing phone number.</td>
 </tr>
 <tr>
 <td style="text-align: left">sale_data</td>
 <td style="text-align: left">object</td>
-<td style="text-align: left">Satışa ait ekstra bilgi alanı</td>
+<td style="text-align: left">Extra fields for sale.</td>
 </tr>
 </tbody></table>
 
-<p>[1] Recurring parametresinin içeriği(JSON);</p>
+<p>[1] Parameters of Recurring parameter(JSON);</p>
 
 <table><thead>
 <tr>
-<th style="text-align: left">Parametre</th>
-<th style="text-align: left">Tip</th>
-<th style="text-align: left">Açıklama</th>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: left">name</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Ödeme planı adı.</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">The name of subscriotion plan.</td>
 </tr>
 <tr>
 <td style="text-align: left">start_date</td>
 <td style="text-align: left">string</td>
-<td style="text-align: left">Ödeme planının başlangıç tarihi.</td>
+<td style="text-align: left">To define when subscription plan will begin.</td>
 </tr>
 <tr>
 <td style="text-align: left">recurring_period</td>
-<td style="text-align: left">string, zorunlu</td>
-<td style="text-align: left">Ödeme periodu</td>
+<td style="text-align: left">string, required</td>
+<td style="text-align: left">The recurring period.</td>
 </tr>
 <tr>
 <td style="text-align: left">recurring_frequency</td>
-<td style="text-align: left">number, zorunlu</td>
-<td style="text-align: left">Her periotta ödeme tekrarlama sıklığı.</td>
+<td style="text-align: left">number, required</td>
+<td style="text-align: left">The recurring frequency to define how many periods.</td>
 </tr>
 </tbody></table>
-<h2 id='odeme-plani-goruntuleme'>Ödeme Planı Görüntüleme</h2>
+<h2 id='retrieve-subscription-plan'>Retrieve Subscription Plan</h2>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -3120,8 +2918,8 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 </span></code></pre>
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -3139,11 +2937,11 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 </thead><tbody>
 <tr>
 <td style="text-align: left">plan_token</td>
-<td style="text-align: left">Ödeme planı tokenı</td>
+<td style="text-align: left">Subscription plan token.</td>
 <td style="text-align: left"></td>
 </tr>
 </tbody></table>
-<h2 id='odeme-plani-guncelleme'>Ödeme Planı Güncelleme</h2>
+<h3 id='update-subscription-plan-put'>Update Subscription Plan [PUT]</h3>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -3217,8 +3015,8 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 </span></code></pre>
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -3229,18 +3027,18 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 
 <table><thead>
 <tr>
-<th style="text-align: left">Parametre</th>
-<th style="text-align: left">Tip</th>
-<th style="text-align: left">Açıklama</th>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: left">plan_token</td>
-<td style="text-align: left">Ödeme planı tokenı</td>
+<td style="text-align: left">Subscription plan token.</td>
 <td style="text-align: left"></td>
 </tr>
 </tbody></table>
-<h1 id='taksitler'>Taksitler</h1>
+<h1 id='installments'>Installments</h1>
 <blockquote>
 <p>Request Headers</p>
 </blockquote>
@@ -3321,16 +3119,16 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
      </span><span class="p">]</span><span class="w">
  </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Verilen <code>bin_number</code> ve <code>amount</code> bilgilerine bakılarak. Alternatif
-taksit listesini ve bu taksit bilgilerine ait seçeneklerin gösterildiği endpointtir.</p>
+<p>Installments endpoint provides to list installment alternatives and
+cards through by given <code>bin_number</code> and <code>amount</code> as parameters in url.</p>
 
-<p>İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.</p>
+<p>In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.</p>
 
 <table><thead>
 <tr>
-<th style="text-align: center">İstek Türü</th>
-<th style="text-align: center">Kaynak(Endpoint)</th>
+<th style="text-align: center">Request Type</th>
+<th style="text-align: center">Endpoint</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -3341,20 +3139,20 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 
 <table><thead>
 <tr>
-<th style="text-align: left">Parametre</th>
-<th style="text-align: left">Tip</th>
-<th style="text-align: left">Açıklama</th>
+<th style="text-align: left">Parameter</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td style="text-align: left">bin_number</td>
 <td style="text-align: left">optional</td>
-<td style="text-align: left">Kartın ilk 6 hanesi</td>
+<td style="text-align: left">First 6 digits of card.</td>
 </tr>
 <tr>
 <td style="text-align: left">amount</td>
 <td style="text-align: left">-</td>
-<td style="text-align: left">Taksitlendirme planına ait tutar.</td>
+<td style="text-align: left">Amount for installment plans.</td>
 </tr>
 </tbody></table>
 
