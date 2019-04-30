@@ -52,7 +52,7 @@ Paytrek provides you following ways to integrate:
 
 1. The customer checks out on your web site.
 2. Customer enters card data on your web site.
-3. You charge on Paytrek via the [Direct Charge](#direct-charge) Resource.
+3. You charge on Paytrek via the [Direct Charge](#direct-charge-2) Resource.
 4. Paytrek processes the payment.
 5. Paytrek receives a response from the related processor.
 6. Paytrek returns you a response with the payment result.
@@ -135,16 +135,16 @@ must include ```secure_option``` parameter with `true` variable.
 1. The customer checks out on your web site.
 2. Customer enters card data on your form and and you make a call to `Create Card Token` with PaytrekJS.
 3. You save the `card_token` and create a sale via [Sale Resource](#sale).
-4. You send a request to [Charge with Card Token Resource](#charge_with_token)  with the `card_token` you obtained and the sale you have created.
+4. You send a request to [Charge with Card Token Resource](#charge-with-token)  with the `card_token` you obtained and the sale you have created.
 5. Paytrek returns you a response with a field `forward_url`.
 6. You redirect the customer to the given `forward_url`.
 7. Customer is redirected to Paytrek and Paytrek redirects the customer to 3D secure system.
 8. Customer enters the PIN on the 3D secure system.
 9. 3D Secure system redirects the customer back to Paytrek.
 10. Paytrek processes the payment if 3D secure result is a success or halts the process if 3D secure result is failure.
-11. Paytrek redirects the customer to your web site. [[3]](#)
+11. Paytrek redirects the customer to your web site. [1]
 
-<sub> * [3] Paytrek redirects the customer to the given
+<sub> * [1] Paytrek redirects the customer to the given
     return_url field when creating a new sale via Sale Resource.</sub>
 
 # Paytrek API
@@ -222,8 +222,6 @@ PaytrekJS has some configuration options that you must set.
 The options are explained as follows:
 
 ### PaytrekJS Options
-
-> Aşağıda, PaytrekJS yi nasıl yerleştirebileceğinizi gösteren bir kod örneği verilmiştir.
 
 ```javascript
 Paytrek.Options = {
@@ -1329,15 +1327,6 @@ between tabs via using swicth console.
 
 # Charge With Token
 
-This enpoint provides to charge the customer
-with created card token. You will notice there is no amount or quantity
-parameters for this endpoint. You must create a sale by using Sale endpoint
-and card token by using Vault endpoint before charging your customer.
-
-In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
-between tabs via using swicth console.
-
-## Charge With Token
 
 > Request Headers
 
@@ -1387,6 +1376,14 @@ between tabs via using swicth console.
     "return_url": "?token=5f20ca43d47244509949eb32c80e522a"
 }
 ```
+
+This enpoint provides to charge the customer
+with created card token. You will notice there is no amount or quantity
+parameters for this endpoint. You must create a sale by using Sale endpoint
+and card token by using Vault endpoint before charging your customer.
+
+In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
+between tabs via using swicth console.
 
 | Request Type | Endpoint |
 |:-:|:-:|
@@ -1522,7 +1519,7 @@ between tabs via using swicth console.
 |sale_token | string, required | The sale token created though sale endpoint.|
 |comments | string, optional | Comments for accepting the fraud review decision. |
 
-## Refund [/refund/]
+# Refund
 
 > Request Headers
 
@@ -1588,7 +1585,7 @@ between tabs via using swicth console.
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/refund/ |
 
-|Parametre|Tip|Açıklama|
+|Parameter|Type|Description|
 |:-:|:-|:-|
 |sale_token | string, required | The sale token that charged sale object. |
 |amount | number, optional | Amount to refund.|
