@@ -1,3 +1,6 @@
+---
+search: true
+---
 # <a href='#paytrek' style='color: white; text-decoration: none; color:#7ccfaf' > Giriş</a>
 
 Paytrek PCI DSS Seviye 1, en yüksek seviye kart sahibi bilgi güvenliği,

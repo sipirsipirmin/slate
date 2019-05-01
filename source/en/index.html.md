@@ -1,3 +1,6 @@
+---
+search: true
+---
 # <a href='#paytrek' style='color: white; text-decoration: none; color:#7ccfaf' > Paytrek</a>
 
 Paytrek creates the ability to process transactions in more than
