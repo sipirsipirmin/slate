@@ -1,5 +1,8 @@
 ---
 search: true
+
+toc_footers:
+ - <a href='/en/'>Click for English version </a>
 ---
 # <a href='#paytrek' style='color: white; text-decoration: none; color:#7ccfaf' > Giriş</a>
 

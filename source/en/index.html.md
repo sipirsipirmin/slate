@@ -1,7 +1,11 @@
 ---
 search: true
+
+toc_footers:
+ - <a href='/'>Türkçe dökümantasyon için tıklayınız </a>
 ---
 # <a href='#paytrek' style='color: white; text-decoration: none; color:#7ccfaf' > Paytrek</a>
+
 
 Paytrek creates the ability to process transactions in more than
 100 countries as well as ensuring the
@@ -895,12 +899,12 @@ between tabs via using swicth console.
 
 | Parameter | Type | Description |
 |:-|:-|:-|
-|sale_token  | string, required | Sale kaynağı tarafından oluşturulan satışa ait token.|
-|number  | number, required | Kredi kartı numarası.|
-|expiration  | string, required | Kredi kartı son kullanım tarihi MM/YY formatında.|
-|cvc  | number, required | Karta ait CVC numarası.|
-|card_holder_name | Kart üzerindeki isim.|
-|save_card  | boolean(Varsayılan: true) | Kart saklama parametresi.|
+|sale_token  | string, required | The sale token created though sale endpoint.|
+|number  | number, required | The credit card number. |
+|expiration  | string, required | The expiration date of the credit card, in MM/YY format.|
+|cvc  | number, required | The security number of the credit card.|
+|card_holder_name | The name on card.|
+|save_card  | boolean(Default: true) | The card storing option.|
 
 
 # Direct Charge
@@ -1222,9 +1226,9 @@ between tabs via using swicth console.
 |:-:|:-:|
 | GET | https://sandbox.paytrek.com/api/v2/vault/**card_token**/ |
 
-| Parameter | Description |
-|:-|:-|
-| card_token | Vault edilen karta ait kart token'ı |
+| Parameter | Type | Description |
+|:-|:-|:-|
+| card_token | string, required | Card token after vault operation. |
 
 ## Listing Vaulted Cards
 
@@ -1293,8 +1297,8 @@ between tabs via using swicth console.
 |:-:|:-:|
 | GET | https://sandbox.paytrek.com/api/v2/vault/ |
 
-| İstek Türü | Endpoint|
-|:-:|:-:|
+| Parameter | Type | Description |
+|:-|:-|:-|
 | card_user_id | optional | Card user id (you can set when you create vault)|
 | card_label | optional | Card label|
 
@@ -1323,8 +1327,8 @@ between tabs via using swicth console.
 |:-:|:-:|
 | DELETE | https://sandbox.paytrek.com/api/v2/vault/**card_token**/ |
 
-|Parametre|Tip|Açıklama|
-|:-:|:-|:-|
+| Parameter | Type | Description |
+|:-|:-|:-|
 |card_token| string | Card token after vault operation.|
 
 
@@ -1392,8 +1396,8 @@ between tabs via using swicth console.
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/charge_with_token/ |
 
-|Parametre|Tip|Açıklama|
-|:-:|:-|:-|
+| Parameter | Type | Description |
+|:-|:-|:-|
 |sale_token | string, required | The sale token created though sale endpoint.|
 |card_token | string, required | The card token created though vault endpoint.|
 
@@ -1933,12 +1937,12 @@ between tabs via using swicth console.
 |:-:|:-:|
 | GET | https://sandbox.paytrek.com/api/v2/subscription_plan/ |
 
-|Parametre|Tip|Açıklama|
+| Parameter | Type | Description |
 |:-|:-|:-|
 |plan_token|Subscription plan token.|
 
 
-### Update Subscription Plan [PUT]
+### Update Subscription Plan
 > Request Headers
 
 ```json
