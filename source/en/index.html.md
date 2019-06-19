@@ -647,8 +647,7 @@ It returns related sale details with transaction informations and status.
 
 (eg. `/api/v2/sale/f25356bab177416ba7b518cc1bd8a596/`)
 
-In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
-between tabs via using swicth console.
+
 
 ## Create Sale
 
@@ -755,6 +754,30 @@ between tabs via using swicth console.
 
 There is an example request of sale creation request in left panel.
 
+| Parameter | Type | Description |
+|:-|:-|:-|
+|currency | string, required | 3-letter ISO code for currency.|
+|order_id | string, required | The order id of the sale.|
+|amount |  number, required | The amount to charge the visitor.|
+|customer_first_name | string, required | Customer's first name.|
+|customer_last_name | string, required | Customer's last name. |
+|customer_email | string, required | Customer's email address.|
+|customer_ip_address | string, required | Customer's ip address.  |
+|billing_address | string, required | Customer's billing address.|
+|billing_city | string, required | Customer's billing city.|
+|billing_state | string | Customer's billing state, use postal abbreviations for US and CA.|
+|billing_country | string, required | Customer's billing country, 2-letter ISO code. |
+|billing_zipcode | string, optional | Customer's billing zipcode.|
+|billing_phone | string, optional | Customer's billing phone number.|
+|items | object, required | The item related informations which is selling.|
+|return_url | string | Related link that user is redirected when payment completed.|
+|hosted_payment | boolean | To use the hosted payment page.|
+|hosted_payment_url | string | Returns to hosted payment page url.|
+|installment | number, required | The installment number of the sale.|
+|secure_option | boolean | Whether the sale is secure.(Default: false)|
+|half_secure | boolean | Whether the sale can be charged if 3d enrollment check returns mdstatus 2, 3, 4.|
+|pre_auth | boolean | Indicates whether this sale should be pre-authorized.(Default: false)|
+|sale_data | object | Extra fields for sale.|
 
 ## Retrieve Sale
 
@@ -899,8 +922,7 @@ If `save_card` is settled `true` in request then it will be vaulted and
 returns `card_token` in response. It allows to charge the card in
 the next payment within [Charge with token](#charge-with-token).
 
-In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
-between tabs via using swicth console.
+
 
 | Parameter | Type | Description |
 |:-|:-|:-|
@@ -1123,9 +1145,6 @@ Here are the steps you must take:
 + Send a POST request to Vault endpoint with the credit card data.
 + Paytrek will return you a card token.
 + Charge the customer with that token through `charge_with_token` endpoint.
-
-In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
-between tabs via using swicth console.
 
 ## Vaulting Card
 
@@ -1401,9 +1420,6 @@ with created card token. You will notice there is no amount or quantity
 parameters for this endpoint. You must create a sale by using Sale endpoint
 and card token by using Vault endpoint before charging your customer.
 
-In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
-between tabs via using swicth console.
-
 | Request Type | Endpoint |
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/charge_with_token/ |
@@ -1465,8 +1481,7 @@ Flow of pre-authorized payment :
 + Send a request to `direct_charge` endpoint within required data and `pre_auth: true`.
 + After that use `sale_token` to capture the payment.
 
-In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
-between tabs via using swicth console.
+
 
 | Request Type | Endpoint |
 |:-:|:-:|
@@ -1529,8 +1544,7 @@ If you’d like to issue a partial refund use ```Refund``` endpoint.
 In both of cases, the response will contain an amount information.
 If your sale was in review status, the sale’s fraud decision will be updated as rejected after you cancel it through the API.
 
-In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
-between tabs via using swicth console.
+
 
 | Request Type | Endpoint |
 |:-:|:-:|
@@ -1600,9 +1614,6 @@ If your sale was in review status,
 the sale’s fraud decision will be updated as rejected
 after you cancel it through the API.
 
-In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
-between tabs via using swicth console.
-
 | Request Type | Endpoint |
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/refund/ |
@@ -1638,8 +1649,7 @@ In addition, it's mandatory to set `save_card: true` while creating subscription
  - Monthly
  - Yearly
 
-In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
-between tabs via using swicth console.
+
 
 ## Create Subscription Plan
 
@@ -2131,8 +2141,7 @@ between tabs via using swicth console.
 Installments endpoint provides to list installment alternatives and
 cards through by given ```bin_number``` and ```amount``` as parameters in url.
 
-In  order to make request you may find the necessary parameters on  following link in by opening new tab and you may also make the request  by
-between tabs via using swicth console.
+
 
 
 | Request Type | Endpoint|

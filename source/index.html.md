@@ -97,9 +97,6 @@ Paytrek aşağıda belirtilen ödeme yöntemlerine sahiptir.
 4. Paytrek üye işyerinden gelen isteği karşılar.
 5. Paytrek ödemeyi gerçekleştirmek üzere ilgili istemciye istekte bulunur.
 6. Ödeme işleminin sonucu üye işyerine cevap olarak dönülür.
-
-
-
 # 3D Transactions
 Üye işyeri ve/veya müşteri ödeme işleminin MasterCard veya Visa
 tarafından sağlanan 3D güvenli ödeme işlemi olarak yapılmasını talep
@@ -689,8 +686,7 @@ Bu isteğin cevabında işlem bilgileri ve durumu ile ilgili satış detayların
 
 (eg. `/api/v2/sale/f25356bab177416ba7b518cc1bd8a596/`)
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
+
 
 ## Satış Oluşturma
 
@@ -797,9 +793,9 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 
 Yan panelde örnek bir satış oluşturma isteği ve aşağıdaki tabloda bu istek
 içerisinde gönderebileceğiniz yada göndermeniz gereken parametrelerin
-listesi verilmiştir.
+listesi verilmiştir. Ayrıca [https://www.youtube.com/watch?v=ZDM97tTRC10&t=42s](https://www.youtube.com/watch?v=ZDM97tTRC10&t=42s) adresinden ilgili entegrasyon videosuna ulaşabilirsiniz.
 
-|Üye İşyeri Mesajı  | Tip |  Müşteri Mesajı  |
+| Parametre  | Tip |  Açıklama  |
 |:-|:--:|:-|
 |currency | string, zorunlu | 3 harfli para birimi ISO kodu.|
 |order_id | string, zorunlu | Siparişin Idsi.|
@@ -967,7 +963,7 @@ istiyorsanız `save_card` parametresini `true` olarak belirlemeniz gerekir.
 Bu parametre `true` olacak şekilde istek yapıldığında kart 'vault' edilerek saklanır
 ve cevap içerisinde `card_token` parametresi dönülür.
 
-Aşağıdaki tabloda bir ödeme işlemi için gönderilmesi gereken parametrelerin listesi verilmiştir.
+Aşağıdaki tabloda bir ödeme işlemi için gönderilmesi gereken parametrelerin listesi verilmiştir. Ayrıca [https://www.youtube.com/watch?v=ZDM97tTRC10&t=42s](https://www.youtube.com/watch?v=ZDM97tTRC10&t=42s) adresinden ilgili entegrasyon videosuna ulaşabilirsiniz.
 
 | Parametre | Tip | Açıklama |
 |:-|:-|:-|
@@ -1197,8 +1193,7 @@ bir kez almanız gerekecek ve istediğiniz zaman ödeme işlemi için aynı veri
 + Paytrek size bir kart token cevap olarak döner.
 + Bu token ile "charge_with_token" endpointi ile ödemenizi gerçekleştirin.
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
+Ayrıca kart saklama entegrasyonu videosuna [https://www.youtube.com/watch?v=234soj1jLgE](https://www.youtube.com/watch?v=234soj1jLgE) linkini kullanarak erişebilirsiniz
 
 ## Kart Saklama İşlemi
 
@@ -1470,8 +1465,7 @@ Burada herhangi bir tutar ya da nicelik parametresi kullanılmaz. Yalnızca sale
 endpointi ile oluşturulan sale e ait `sale_token` bilgisi ve vault edilen karta
 ait `card_token` bilgisi ile ödeme gerçekleştirilir.
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
+
 
 | İstek Türü | Kaynak(Endpoint)|
 |:-:|:-:|
@@ -1537,8 +1531,7 @@ capture edilmesi gerekir.
 + `pre_auth` parametresi `true` olacak şekilde direct_charge endpointine istekte bulunulur.
 + Bu işlemden sonra capture endpointine `sale_token` ile istekte bulunulur.
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
+
 
 | İstek Türü | Kaynak(Endpoint)|
 |:-:|:-:|
@@ -1601,8 +1594,7 @@ Bir satışla ilgili parçalı iade yapmak için ```Refund``` endpointi kullanı
 İki durumda da cevapta tutar bilgileri yer alacaktır.
 Eğer bir satış fraud kararı sonucu `REVIEW` da ise ve bu satış iptal edilirse satışa ait `REJECTED` a çevrilir.
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
+
 
 | İstek Türü | Kaynak(Endpoint)|
 |:-:|:-:|
@@ -1671,9 +1663,6 @@ Bir satışa ait parçalı iade yapılmak istendiğinde tutar parametresi gönde
 İki durumda da cevapta tutar bilgileri yer alacaktır.
 Eğer bir satış fraud kararı sonucu `REVIEW` da ise ve bu satış iptal edilirse satışa ait `REJECTED` a çevrilir.
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
-
 | İstek Türü | Kaynak(Endpoint)|
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/refund/ |
@@ -1683,6 +1672,7 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 |sale_token | string, zorunlu | Ödemesi yapılan sale'e ait `sale_token`|
 |amount | number, opsiyonel | İade edilen tutar.|
 |comments | string, opsiyonel | Fraud kontrol sonucunun kabul edilmesine dair yorum.|
+
 
 # Ödeme Planı
 
@@ -1713,8 +1703,7 @@ Ayrıca, abonelik planı oluşturulurken `save_card: true` ayarlanması zorunlud
  - Yıllık
 
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
+
 
 
 ## Ödeme Planı Oluşturma
@@ -2211,8 +2200,7 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 Verilen ```bin_number``` ve ```amount``` bilgilerine bakılarak. Alternatif
 taksit listesini ve bu taksit bilgilerine ait seçeneklerin gösterildiği endpointtir.
 
-İstekte bulunmak için aşağıdaki linkten gerekli parametreleri yeni bir sekme açarak bulabilir
-e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulunabilirsiniz.
+
 
 | İstek Türü | Kaynak(Endpoint)|
 |:-:|:-:|
