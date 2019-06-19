@@ -97,13 +97,18 @@ Paytrek aşağıda belirtilen ödeme yöntemlerine sahiptir.
 4. Paytrek üye işyerinden gelen isteği karşılar.
 5. Paytrek ödemeyi gerçekleştirmek üzere ilgili istemciye istekte bulunur.
 6. Ödeme işleminin sonucu üye işyerine cevap olarak dönülür.
+
+
 # 3D Transactions
+
 Üye işyeri ve/veya müşteri ödeme işleminin MasterCard veya Visa
 tarafından sağlanan 3D güvenli ödeme işlemi olarak yapılmasını talep
 edebilir. Bu bağlamda Paytrek 3D ödeme işlemini tüm ödeme akışlarına
 desteklemektedir.
 
 Üye işyeri 3D güvenli ödeme işlemi gerçekleştirmek için bulunduğu isteklerin içerisine ```secure_option``` parametresini ```true``` olarak eklemelidir (```secure_option:true```).
+
+İlgili entegrasyon videosuna [https://www.youtube.com/watch?v=iRoovGRCSNg](https://www.youtube.com/watch?v=iRoovGRCSNg) linkini kullanarak erişebilirsiniz.
 
 ## Paytrek Ortak Ödeme ile 3D Güvenli Ödeme İşlemi
 
@@ -1146,6 +1151,7 @@ istiyorsanız `save_card` parametresini `true` olarak belirlemeniz gerekir.
 Bu parametre `true` olacak şekilde istek yapıldığında kart vault edilerek saklanır
 ve cevap içerisinde `card_token` parametresi dönülür. [Charge with token](#satis).
 
+Ayrıca ilgili entegrasyon videosuna [https://www.youtube.com/watch?v=JTihgikbwdo](https://www.youtube.com/watch?v=JTihgikbwdo) adresinden ulaşabilirsiniz.
 | İstek Türü | Kaynak(Endpoint) |
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/direct_charge/ |
@@ -1465,7 +1471,7 @@ Burada herhangi bir tutar ya da nicelik parametresi kullanılmaz. Yalnızca sale
 endpointi ile oluşturulan sale e ait `sale_token` bilgisi ve vault edilen karta
 ait `card_token` bilgisi ile ödeme gerçekleştirilir.
 
-
+İlgili entegrasyon videosu [https://www.youtube.com/watch?v=eMMEIvtWSjs](https://www.youtube.com/watch?v=eMMEIvtWSjs) adresinde bulunmaktadır.
 
 | İstek Türü | Kaynak(Endpoint)|
 |:-:|:-:|
@@ -1531,7 +1537,7 @@ capture edilmesi gerekir.
 + `pre_auth` parametresi `true` olacak şekilde direct_charge endpointine istekte bulunulur.
 + Bu işlemden sonra capture endpointine `sale_token` ile istekte bulunulur.
 
-
+Ön otorizasyon ile ödeme entegrasyonu ile alakalı video [https://www.youtube.com/watch?v=md8a6RW-taw](https://www.youtube.com/watch?v=md8a6RW-taw) adresinde bulunmaktadır.
 
 | İstek Türü | Kaynak(Endpoint)|
 |:-:|:-:|
@@ -1594,7 +1600,7 @@ Bir satışla ilgili parçalı iade yapmak için ```Refund``` endpointi kullanı
 İki durumda da cevapta tutar bilgileri yer alacaktır.
 Eğer bir satış fraud kararı sonucu `REVIEW` da ise ve bu satış iptal edilirse satışa ait `REJECTED` a çevrilir.
 
-
+İptal entegrasyonu ile alakalı video [https://www.youtube.com/watch?v=FzoCVdF9kUI](https://www.youtube.com/watch?v=FzoCVdF9kUI) adresinde bulunmaktadır.
 
 | İstek Türü | Kaynak(Endpoint)|
 |:-:|:-:|
@@ -1673,6 +1679,7 @@ Eğer bir satış fraud kararı sonucu `REVIEW` da ise ve bu satış iptal edili
 |amount | number, opsiyonel | İade edilen tutar.|
 |comments | string, opsiyonel | Fraud kontrol sonucunun kabul edilmesine dair yorum.|
 
+Ayrıca iade entegrasyonuna ait videoya [https://www.youtube.com/watch?v=hksUSWIHA7U](https://www.youtube.com/watch?v=hksUSWIHA7U) adresinden erişebilirsiniz.
 
 # Ödeme Planı
 
@@ -2198,9 +2205,8 @@ Ayrıca, abonelik planı oluşturulurken `save_card: true` ayarlanması zorunlud
 ```
 
 Verilen ```bin_number``` ve ```amount``` bilgilerine bakılarak. Alternatif
-taksit listesini ve bu taksit bilgilerine ait seçeneklerin gösterildiği endpointtir.
-
-
+taksit listesini ve bu taksit bilgilerine ait seçeneklerin gösterildiği endpointtir. [https://www.youtube.com/watch?v=pt3O9F5RJ7A](https://www.youtube.com/watch?v=pt3O9F5RJ7A) adresinden
+entegrasyon ile alakalı videoya erişebilirsiniz.
 
 | İstek Türü | Kaynak(Endpoint)|
 |:-:|:-:|
