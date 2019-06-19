@@ -2,7 +2,7 @@
 search: true
 
 toc_footers:
- - <a href='/en/'>Click for English version </a>
+ - <a href='en'>Click for English version </a>
 ---
 # <a href='#paytrek' style='color: white; text-decoration: none; color:#7ccfaf' > Giriş</a>
 
@@ -30,7 +30,7 @@ Paytrek aşağıda belirtilen ödeme yöntemlerine sahiptir.
 + Ön Otorizasyon ile Ödeme
 
 <aside class="notice">
-  Belirtilen bu kaynakları kullanırken, satışın son durumunu <a href="#satisi-inceleme"><b> Sale </b></a>kaynağını kullanarak mutlaka kontrol etmelisiniz.
+  Belirtilen bu kaynakları kullanırken, satışın son durumunu <a href="#satisi-inceleme"><b> Sale </b></a> kaynağını kullanarak mutlaka kontrol etmelisiniz.
 </aside>
 
 ## Paytrek Ortak Ödeme Formu
@@ -979,7 +979,7 @@ Aşağıdaki tabloda bir ödeme işlemi için gönderilmesi gereken parametreler
 |save_card  | boolean(Varsayılan: true) | Kart saklama parametresi.|
 
 <aside class="notice">
-  Bu kaynağın kullanımı sonrasında, satışın son durumunu <a href="#satisi-inceleme"><b>Sale</b></a>kaynağını kullanarak mutlaka kontrol ediniz.
+  Bu kaynağın kullanımı sonrasında, satışın son durumunu <a href="#satisi-inceleme"><b>Sale</b></a> kaynağını kullanarak mutlaka kontrol ediniz.
 </aside>
 
 # Direkt Ödeme
@@ -1183,7 +1183,7 @@ ve cevap içerisinde `card_token` parametresi dönülür. [Charge with token](#s
 | sale_data | object | Satışa ait ekstra bilgi alanı|
 
 <aside class="notice">
-  Bu kaynağın kullanımı sonrasında, satışın son durumunu <a href="#satisi-inceleme"><b>Sale</b></a>kaynağını kullanarak mutlaka kontrol ediniz.
+  Bu kaynağın kullanımı sonrasında, satışın son durumunu <a href="#satisi-inceleme"><b>Sale</b></a> kaynağını kullanarak mutlaka kontrol ediniz.
 </aside>
 
 # Kart Saklama
@@ -1550,7 +1550,7 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 |comments | string, opsiyonel | Fraud kontrol sonucunun kabul edilmesine dair yorum.|
 
 <aside class="notice">
-  Bu kaynağın kullanımı sonrasında, satışın son durumunu <a href="#satisi-inceleme"><b>Sale</b></a>kaynağını kullanarak mutlaka kontrol ediniz.
+  Bu kaynağın kullanımı sonrasında, satışın son durumunu <a href="#satisi-inceleme"><b>Sale</b></a> kaynağını kullanarak mutlaka kontrol ediniz.
 </aside>
 
 # İptal
