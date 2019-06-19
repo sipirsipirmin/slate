@@ -90,6 +90,7 @@ Paytrek provides you following ways to integrate:
 
 
 # 3D Transactions
+
 You or your customers may choose a charge to be processed
 through 3D secure systems provided by MasterCard or Visa.
 In this case, Paytrek handles 3D transactions both on Hosted Form
@@ -97,6 +98,10 @@ and Tokenization Flow.
 
 When you choose a charge to be processed through 3D secure system, your API request
 must include ```secure_option``` parameter with `true` variable.
+
+<aside class="notice">
+  You must check <a href="#retrieve-sale"><b> Sale </b></a> status when you complete charging with this endpoints.
+</aside>
 
 ## 3D Transactions on Paytrek Hosted Payment Form
 

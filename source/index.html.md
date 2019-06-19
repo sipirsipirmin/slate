@@ -110,6 +110,10 @@ desteklemektedir.
 
 İlgili entegrasyon videosuna [https://www.youtube.com/watch?v=iRoovGRCSNg](https://www.youtube.com/watch?v=iRoovGRCSNg) linkini kullanarak erişebilirsiniz.
 
+<aside class="notice">
+  Belirtilen bu kaynakları kullanırken, satışın son durumunu <a href="#satisi-inceleme"><b> Sale </b></a> kaynağını kullanarak mutlaka kontrol etmelisiniz.
+</aside>
+
 ## Paytrek Ortak Ödeme ile 3D Güvenli Ödeme İşlemi
 
 1. Müşteri üye işyerine ait ödeme sayfasına yönlenir.
