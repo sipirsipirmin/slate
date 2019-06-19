@@ -29,10 +29,14 @@ Paytrek aşağıda belirtilen ödeme yöntemlerine sahiptir.
 + Kart Saklama ile Ödeme
 + Ön Otorizasyon ile Ödeme
 
+<aside class="notice">
+  Belirtilen bu kaynakları kullanırken, satışın son durumunu <a href="#satisi-inceleme"><b> Sale </b></a>kaynağını kullanarak mutlaka kontrol etmelisiniz.
+</aside>
+
 ## Paytrek Ortak Ödeme Formu
 
 1. Müşteri üye iş yerinin web sitesinde bir sipariş verir.
-2. Üye işyeri Paytrek'e [Sale](#satis-sale) Kaynağını kullanarak token isteğinde bulunur.
+2. Üye işyeri Paytrek'e [Sale](#satis) Kaynağını kullanarak token isteğinde bulunur.
 3. Tarafımızdan üye işyerine `sale_token` bilgisi cevap olarak verilir.
 4. Üye işyeri müşterisini yukarıdaki token aracılığıyla ödeme sayfasına yönlendirir. [1]
 5. Müşteri ortak ödeme sayfasında ödeme için gereken bilgileri doldurur.
@@ -40,18 +44,20 @@ Paytrek aşağıda belirtilen ödeme yöntemlerine sahiptir.
 7. Paytrek müşterinin girdiği bilgiler doğrultusunda ödemeyi gerçekleştirdiği istemciden
     bilgileri alır.
 8. İşlem gerçekleştikten sonra muşteri ilgili üye işyerinin sayfasına `sale_token` ile yönlendirilir. [2]
+9. İşlemlerin sonunda [`Sale`](#satisi-inceleme) kaynağına `GET` isteği yapılarak satışın sonucu üye iş yeri tarafından sorgulanır.
 
 
 <sub> * [1, 2] Sandbox ortak ödeme formu
     [https://sandbox.paytrek.com](https://sandbox.paytrek.com), Production ortak ödeme sayfası ise
-    [https://secure.paytrek.com](https://secure.paytrek.com) da yer alır.
+    yurtdışı müşterilerimiz için [https://secure.paytrek.com](https://secure.paytrek.com) da,
+    yurtiçi müşterilerimiz için ise [https://secure.paytrek.com.tr](https://secure.paytrek.com.tr) de yer alır.
     Üye işyeri yönlendirme yaparken bu URL'lerin sonuna `sale_token` bilgisi
     ekleyerek ilgili ortamlarda bu sayfalara yönlendirme yapması gerekmektedir.
-    (ie. [https://sandbox.paytrek.com/?token=TOKEN_VALUE](https://sandbox.paytrek.com/?token=TOKEN_VALUE))</sub>
+    (ie. https://sandbox.paytrek.com/?token=TOKEN_VALUE)</sub>
 
 <sub> * [1, 2] Ortak ödeme sayfasında müşteri
     işlemi gerçekleştirdikten sonra Paytrek tarafından üye iş yeri sayfasına yönlendirilir
-    Bu esnada üye işyeri Sale Kaynağını kullanarak satışın durumunu sorgulamalıdır.
+    Bu işlemlerin sonunda üye işyeri [`Sale`](#satisi-inceleme) Kaynağını kullanarak satışın durumunu sorgulamalıdır.
     Satışın durumu  **Paid**, **Ready to Send**,
     **Authorized** veya **PreAuthorized** ise bu satışın başarılı bir şekilde gerçekleştiğini
     gösterir.</sub>
@@ -972,6 +978,10 @@ Aşağıdaki tabloda bir ödeme işlemi için gönderilmesi gereken parametreler
 |card_holder_name | Kart üzerindeki isim.|
 |save_card  | boolean(Varsayılan: true) | Kart saklama parametresi.|
 
+<aside class="notice">
+  Bu kaynağın kullanımı sonrasında, satışın son durumunu <a href="#satisi-inceleme"><b>Sale</b></a>kaynağını kullanarak mutlaka kontrol ediniz.
+</aside>
+
 # Direkt Ödeme
 
 > Request Headers
@@ -1171,6 +1181,10 @@ ve cevap içerisinde `card_token` parametresi dönülür. [Charge with token](#s
 | billing_zipcode | string, zorunlu | Müşterinin fatura zip kodu.|
 | billing_phone | string, zorunlu | Müşterinin fatura telfon numarası.|
 | sale_data | object | Satışa ait ekstra bilgi alanı|
+
+<aside class="notice">
+  Bu kaynağın kullanımı sonrasında, satışın son durumunu <a href="#satisi-inceleme"><b>Sale</b></a>kaynağını kullanarak mutlaka kontrol ediniz.
+</aside>
 
 # Kart Saklama
 
@@ -1534,6 +1548,10 @@ e aynı zamanda anahtar konsolunu kullanarak sekmeler arasında da istekte bulun
 |:-:|:-|:-|
 |sale_token | string, zorunlu | Sale endpointi ile oluşturulan sale'e ait token|
 |comments | string, opsiyonel | Fraud kontrol sonucunun kabul edilmesine dair yorum.|
+
+<aside class="notice">
+  Bu kaynağın kullanımı sonrasında, satışın son durumunu <a href="#satisi-inceleme"><b>Sale</b></a>kaynağını kullanarak mutlaka kontrol ediniz.
+</aside>
 
 # İptal
 

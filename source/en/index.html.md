@@ -30,6 +30,10 @@ Paytrek provides you following ways to integrate:
 + Tokenization Flow
 + Pre-Authorization Flow
 
+<aside class="notice">
+  You must check <a href="#retrieve-sale"><b> Sale </b></a> status when you complete charging with this endpoints.
+</aside>
+
 ## Paytrek Hosted Payment Flow
 
 1. The customer submits an order on merchant web site.
@@ -40,11 +44,12 @@ Paytrek provides you following ways to integrate:
 6. Paytrek processes the payment.
 7. Paytrek receives a response from the related processor.
 8. Paytrek redirects the customer to your web site with the `sale_token`[2].
+9. Merchant checks sale status with <a href="#retrieve-sale"><b>Retrieve Sale</b></a> endpoint.
 
 
 <sub> * [1] Sandbox hosted form is located at
-    https://sandbox.paytrek.com and Production hosted form
-    is located at https://secure.paytrek.com.
+    [https://sandbox.paytrek.com](https://sandbox.paytrek.com) and Production hosted form
+    is located at [https://secure.paytrek.com](https://secure.paytrek.com) and [https://secure.paytrek.com.tr](https://secure.paytrek.com.tr) for Turkey.
     You should redirect the user to these urls with
     the token parameter added to the url.
     (ie. https://sandbox.paytrek.com/?token=TOKEN_VALUE)</sub>
@@ -906,6 +911,9 @@ between tabs via using swicth console.
 |card_holder_name | The name on card.|
 |save_card  | boolean(Default: true) | The card storing option.|
 
+<aside class="notice">
+You must check <a href="#retrieve-sale"><b> Sale </b></a> status when you complete charging with this endpoints.
+</aside>
 
 # Direct Charge
 
@@ -1099,6 +1107,10 @@ the next payment within [Charge with token](#charge-with-token).
 |billing_zipcode |string, required|Customer's billing zipcode.|
 |billing_phone |string, required|Customer's billing phone number.|
 |sale_data |object|Extra fields for sale.|
+
+<aside class="notice">
+You must check <a href="#retrieve-sale"><b> Sale </b></a> status when you complete charging with this endpoints.
+</aside>
 
 # Vault
 
@@ -1465,6 +1477,9 @@ between tabs via using swicth console.
 |sale_token | string, required | The sale token created though sale endpoint.|
 |comments | string, optional | Comments for accepting the fraud review decision.|
 
+<aside class="notice">
+You must check <a href="#retrieve-sale"><b> Sale </b></a> status when you complete charging with this endpoints.
+</aside>
 
 # Cancel
 
