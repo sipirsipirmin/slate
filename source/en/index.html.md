@@ -2,7 +2,7 @@
 search: true
 
 toc_footers:
- - <a href='/'>Türkçe dökümantasyon için tıklayınız </a>
+ - <a href='../'>Türkçe dökümantasyon için tıklayınız </a>
 ---
 # <a href='#paytrek' style='color: white; text-decoration: none; color:#7ccfaf' > Paytrek</a>
 
