@@ -2164,3 +2164,9 @@ cards through by given ```bin_number``` and ```amount``` as parameters in url.
 |:-|:-|:-|
 |bin_number | optional | First 6 digits of card.|
 |amount | - | Amount for installment plans.|
+
+# Examples
+
+There is some basic examples following link for authentication with different languages.
+
+[https://github.com/paytrek/BasicAuthExamples](https://github.com/paytrek/BasicAuthExamples)

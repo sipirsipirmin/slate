@@ -2225,3 +2225,9 @@ entegrasyon ile alakalı videoya erişebilirsiniz.
 |:-|:-|:-|
 |bin_number | optional | Kartın ilk 6 hanesi|
 |amount | - | Taksitlendirme planına ait tutar.|
+
+# Örnekler
+
+Aşağıda bulunan GitHub linkinde, farklı dillerde kimlik doğrulamak için basit örnek kodlar bulunmaktadır.
+
+[https://github.com/paytrek/BasicAuthExamples](https://github.com/paytrek/BasicAuthExamples)
