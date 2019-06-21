@@ -1156,6 +1156,7 @@ Bu parametre `true` olacak şekilde istek yapıldığında kart vault edilerek s
 ve cevap içerisinde `card_token` parametresi dönülür. [Charge with token](#satis).
 
 Ayrıca ilgili entegrasyon videosuna [https://www.youtube.com/watch?v=JTihgikbwdo](https://www.youtube.com/watch?v=JTihgikbwdo) adresinden ulaşabilirsiniz.
+
 | İstek Türü | Kaynak(Endpoint) |
 |:-:|:-:|
 | POST | https://sandbox.paytrek.com/api/v2/direct_charge/ |
@@ -1485,6 +1486,10 @@ ait `card_token` bilgisi ile ödeme gerçekleştirilir.
 |:-:|:-|:-|
 |sale_token | string, zorunlu | Sale endpointi ile oluşturulan salee ait token.|
 |card_token | string, zorunlu | Vault endpointi ile vault edilen karta ait token.|
+
+<aside class="notice">
+  Belirtilen bu kaynapı kullanırken, satışın son durumunu <a href="#satisi-inceleme"><b> Sale </b></a> kaynağını kullanarak mutlaka kontrol etmelisiniz.
+</aside>
 
 # Capture
 

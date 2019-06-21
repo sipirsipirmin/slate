@@ -1107,6 +1107,9 @@ If `save_card` is settled `true` in request then it will be vaulted and
 returns `card_token` in response. It allows to charge the card in
 the next payment within [Charge with token](#charge-with-token).
 
+| Request Type | Endpoint |
+|:-:|:-:|
+| POST | https://sandbox.paytrek.com/api/v2/direct_charge/ |
 
 | Parameter | Type | Description |
 |:-|:-|:-|
@@ -1433,6 +1436,10 @@ and card token by using Vault endpoint before charging your customer.
 |:-|:-|:-|
 |sale_token | string, required | The sale token created though sale endpoint.|
 |card_token | string, required | The card token created though vault endpoint.|
+
+<aside class="notice">
+  You must check <a href="#retrieve-sale"><b> Sale </b></a> status when you complete charging with this endpoint.
+</aside>
 
 # Capture
 
