@@ -567,13 +567,25 @@ Paytrek.Checkout accepts options as the second positional argument.
 
 Here is a list of test credit cards that you can use.
 
-| Card Number        | Bank           | Expiration  | Cvc| 3D Pass
+| Card Number        | Bank           | Expiration  | Cvv/Cvc| 3D Pass
 | ------------- |:-------------| :-----:|:---:|:---:|
-| 4508034508034509     | İşbank | 12/20 |000| |
-| 4506347043358536      | YKB      |  08/19 |000| |
-| 4508034508034509 | ING      |   12/18 |000| |
-| 4355084355084358 | Akbank | 12/18 |000| a |
-| 5456165456165454 | Finansbank | 12/18 |000| a |
+| 4508034508034509     | İşbank | 12/24 |000| |
+| 4506347043358536      | YKB      |  08/23 |000| |
+| 4508034508034509 | ING      |   12/21 |000| |
+| 4355084355084358 | Akbank | 12/22 |000| a |
+| 5456165456165454 | Finansbank | 12/25 |000| a |
+
+# Error Returning Cvc / Cvv Samples for Test Cards
+
+You can get specified errors using the [test cards](#test-cards) with the Cvv/Cvc codes given below;
+
+| Cvc/Cvv | Error Code| Error Message | Description|
+|:--:|--|--| -- | 
+| 050 | 10004 | Transaction has been denied / General Rejection | Card holder should call his bank for the reason of rejection. |
+| 120 | 30002 | Invalid Transaction | Transaction may not been recognized from bank. Please contact to help desk. |
+| 340 | 10003 | Block The Card | Card has been blocked from the bank because of the suspicion of fraud. |
+| 540 | 10023 | Card has Expired | Card has expired. |
+| 820 | 10033 | Wrong / Invalid Cvv | Invalid Cvc/Cvv. |
 
 # Error Codes
 

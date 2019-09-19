@@ -606,11 +606,23 @@ Kullanabileceğiniz test kartları listesi verilmiştir.
 
 | Card Number        | Bank           | Expiration  | Cvc| 3D Pass
 | ------------- |:-------------| :-----:|:---:|:---:|
-| 4508034508034509     | İşbank | 12/20 |000| |
-| 4506347043358536      | YKB      |  08/19 |000| |
-| 4508034508034509 | ING      |   12/18 |000| |
-| 4355084355084358 | Akbank | 12/18 |000| a |
-| 5456165456165454 | Finansbank | 12/18 |000| a |
+| 4508034508034509     | İşbank | 12/24 |000| |
+| 4506347043358536      | YKB      |  08/23 |000| |
+| 4508034508034509 | ING      |   12/21 |000| |
+| 4355084355084358 | Akbank | 12/22 |000| a |
+| 5456165456165454 | Finansbank | 12/25 |000| a |
+
+# Test Kartları için Hata Döndüren CVV Örnekleri
+
+[Test kartları](#test-kartlari)nı aşağıda verilen CVV kodları ile kullanarak, belirtilen hataları alabilirsiniz.
+
+| CVV | Hata Kodu| Hata Mesajı | Açıklama |
+|:--:|--|--| -- | 
+| 050 | 10004 | Transaction has been denied / General Rejection | Kart sahibi bankasını arayarak neden ret mesajı aldığını sormalıdır. |
+| 120 | 30002 | Invalid Transaction | Gönderdiğiniz işlem banka tarafından tanımlanmamış olabilir. Konuyu destek masasına iletmeniz gerekmektedir. |
+| 340 | 10003 | Block The Card | Sahte bir işlem şüphesi ile banka tarafından karta el konulmuştur.|
+| 540 | 10023 | Card has Expired | Kartın süresi dolmuştur. |
+| 820 | 10033 | Wrong / Invalid Cvv | Hatalı veya geçersiz CVV. |
 
 # Hata Kodları
 
